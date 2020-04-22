@@ -33,10 +33,16 @@ at family photos, human eyes could easily tell the simliarity faces. As
 computer vision performance developed, we could use deep learning to recognise
 the kinship. Possible applications could be missing-children and parents
 matching, personal photos sharing among families, socal networking apps,
-searching lost sibling/relatives, crime investigation.
+searching lost sibling/relatives, crime investigation. We are going to build a
+model to classify whether two faces are parents-child, sibling, or not related.
 
 \section{Challenges}
-It might be hard to achieve higher accuracy since people without any family kinship would look simliar to each other.
+It might be hard to achieve higher accuracy since people without any family
+kinship would look simliar to each other. There are other metrics that we could
+consider to determine if the kinship exists. Such information includes hands
+shape, nail types, foot toes, ears, hairs. Due to time limitation and team
+size, we aren't able to collect this data. Otherwise the prediction would
+improve a lot.
 
 \section{Dataset}
 We are going to use Families In The Wild (FIW) Database. FIW is the largest and
@@ -54,13 +60,16 @@ includes 533 pairs of parent-child type images.
 We divided 95 of the images as training set, 5 percent as test set.
 
 \section{Models and Evaluation}
-we use classifier to indicate the kinship distance between two faces. The output layer could be softmax function of {p-c, sibling, no-relationship}.
+we use multi-classifier to indicate what the kinship between two faces is. The
+output layer we choose is softmax layer of {parents-children, siblings, no-relationship}.  We
+choose triplets image training function.
 
-
+Face model I choose to use VGG-Face model FaceNet
 
 \section*{References}
 \medskip
 \small
 [1] Robinson, J.P., Shao, M., Wu, Y.\ \& Fu, Y.\ (2017) Families in the Wild (FIW): Large-Scale Kinship Image Database and Benchmarks \ arXiv:1604.02182 [cs.CV]
+[2] Schroff, F., Kalenichenko, D., & Philbin, J. (2015). FaceNet: A unified embedding for face recognition and clustering. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). doi: 10.1109/cvpr.2015.7298682
 
 \end{document}
