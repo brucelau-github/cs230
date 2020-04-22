@@ -12,32 +12,10 @@
 \title{Family kinship Recognition Using Deep Learning}
 
 \author{
-  Bruce Jianye Liu\thanks{personal github profile
-    https://github.com/brucelau-github\\
+  Bruce Jianye Liu\\
   Department of Computer Science\\
   Stanford University\\
   \texttt{bruceliu@stanford.edu} \\
-  %% examples of more authors
-  %% \And
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
-  %% \AND
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
-  %% \And
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
-  %% \And
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
 }
 
 \begin{document}
@@ -49,36 +27,40 @@
 
 \maketitle
 
-\begin{abstract}
-Family kin is an easy task for human. missing children, missing parent, silbling searching, share photos, kinship verification, DNA privacy. Face recoginition develop very well. A approach to find parents.
-\end{abstract}
+\section{Problem Description}
+Half of genetic informaiton is passed down from parents to children. If looking
+at family photos, human eyes could easily tell the simliarity faces. As
+computer vision performance developed, we could use deep learning to recognise
+the kinship. Possible applications could be missing-children and parents
+matching, personal photos sharing among families, socal networking apps,
+searching lost sibling/relatives, crime investigation.
 
-\section{Introduction}
-working on it.
+\section{Challenges}
+It might be hard to achieve higher accuracy since people without any family kinship would look simliar to each other.
 
-\section{Related work}
-working on it.
+\section{Dataset}
+We are going to use Families In The Wild (FIW) Database. FIW is the largest and
+most comprehensive database available for kinship recognition. It is made up of
+11,932 natural family photos of 1,000 families. It includes 656,954 image pairs
+divided into parent-child pair-wise types -- father-daughter (F-D), father-son
+(F-S), mother-daughter (M-D), mother-son (M-S) and siblings pairs types --
+brother-brother (B-B), sister-sister (S-S).
 
-\section{Dataset and Features}
-working on it.
+\includegraphics{facepairs}
+
+There are another smaller family dataset KinFaceW-I and KinFaceW-II, which
+includes 533 pairs of parent-child type images.
+
+We divided 95 of the images as training set, 5 percent as test set.
+
+\section{Models and Evaluation}
+we use classifier to indicate the kinship distance between two faces. The output layer could be softmax function of {p-c, sibling, no-relationship}.
 
 
-\section{ Methods }
-working on it.
-
-\section{Experiments/Results/Discussion}
-working on it.
-
-\section{Conclusion/Future Work }
-
-\section{Contributions}
 
 \section*{References}
 \medskip
 \small
-[1] Alexander, J.A.\ \& Mozer, M.C.\ (1995) Template-based algorithms
-for connectionist rule extraction. In G.\ Tesauro, D.S.\ Touretzky and
-T.K.\ Leen (eds.), {\it Advances in Neural Information Processing
-  Systems 7}, pp.\ 609--616. Cambridge, MA: MIT Press.
+[1] Robinson, J.P., Shao, M., Wu, Y.\ \& Fu, Y.\ (2017) Families in the Wild (FIW): Large-Scale Kinship Image Database and Benchmarks \ arXiv:1604.02182 [cs.CV]
 
 \end{document}
