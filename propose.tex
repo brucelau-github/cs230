@@ -9,6 +9,7 @@
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \title{Family kinship Recognition Using Deep Learning}
 
 \author{
@@ -47,13 +48,19 @@ size, we aren't able to collect this data. Otherwise the prediction would
 improve a lot.
 
 \section{Dataset}
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+\includegraphics[width=0.9\linewidth]{facepairs}
+\caption{FIW dataset}
+\label{fig:wrapfig}
+\end{wrapfigure}
+
 We are going to use Families In The Wild (FIW) Database[1]. FIW is the largest and
 most comprehensive database available for kinship recognition. It is made up of
 11,932 natural family photos of 1,000 families,including 656,954 image pairs
 divided into parent-child pair-wise types -- father-daughter (F-D), father-son
 (F-S), mother-daughter (M-D), mother-son (M-S) and siblings pairs types --
 brother-brother (B-B), sister-sister (S-S).
-\includegraphics[height=3cm]{facepairs}
 
 There are another smaller family dataset KinFaceW-I and KinFaceW-II, which
 includes 533 pairs of parent-child type images.
