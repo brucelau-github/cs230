@@ -39,13 +39,20 @@ family album organization, socal networking apps, lost sibling/relatives
 searching, crime investigation. In this paper, we propose a fine-tuned FaceNet
 model to identify the relationship between two faces -- parent-children, sibling-sibling, or none-kinship.
 
-\section{Challenges}
+\section{Related Works}
+
 It might be hard to achieve higher accuracy since people without any family
 kinship would look simliar to each other. There are other metrics that we could
 consider to determine if the kinship exists. Such information includes hands
 shape, nail types, foot toes, ears, hairs. Due to time limitation and team
 size, we aren't able to collect this data. Otherwise the prediction would
 improve a lot.
+
+Kin recognition work mainly focus on kinship verification, to decide whether
+two faces have kinship, family classification, classifing a face to a family,
+and family member regcontion, determining 2 faces siblings or parents. Over the
+past decades, many methods has been proposed on this research, including
+hand-crafted feature, face ecnodings, and metric learning[3].
 
 \section{Dataset}
 
@@ -81,5 +88,10 @@ Conference} - MM '16, 2016, doi:10.1145/2964284.2967219.
 [2] Schroff, F., Kalenichenko, D., \& Philbin, J. (2015). FaceNet: A unified
 embedding for face recognition and clustering. {\it 2015 IEEE Conference on
 Computer Vision and Pattern Recognition (CVPR)}. doi: 10.1109/cvpr.2015.7298682
+
+[3] Wang, S., Robinson, J. P., & Fu, Y. (2017, May). Kinship verification on
+families in the wild with marginalized denoising metric learning. In 2017 12th
+IEEE International Conference on Automatic Face & Gesture Recognition (FG 2017)
+(pp. 216-221). IEEE.
 
 \end{document}
