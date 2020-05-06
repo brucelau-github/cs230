@@ -217,10 +217,18 @@ def split_test_data(data, labels, ratio=0.05):
 def load_dataset():
     """ return train_x, train_y, test_x, test_y """
     data, labels = convert_numpy()
-    train_x, train_y, test_x, test_y = split_test_data(data, labels)
-    print(train_x.shape)
-    print(train_y.shape)
-    print(test_x.shape)
-    print(test_y.shape)
+    file_list = [
+        ["train_x.npy", "train_y.npy", "test_x.npy", "test_y.npy"],
+        []
+    ]
+    for idx in range(4):
+        if os.path.isfile(file_list[0][idx]):
+            file_list[1].append(np.load(file_list[0][idx]))
 
-load_dataset()
+    if len(file_list[1]) != 4:
+        data = split_test_data(data, labels)
+        for idx in range(4):
+            file_list[1].append(data[idx])
+            np.save(file_list[0][idx], data[idx])
+
+    return tuple(file_list[1])
