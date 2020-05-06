@@ -1,14 +1,16 @@
 """ preprocess image data """
 import os
 import itertools
+import math
 import random
 import sys
 import pickle
 import glob
 import cv2
 import pandas as pd
+import numpy as np
 
-def load_dataset(load_features=False):
+def load_old_dataset(load_features=False):
     """ load siblings data """
     datasets = [
         {
@@ -144,7 +146,6 @@ def sames_diff_faces():
         for pair in produ:
             face_pairs.append((pair[0], pair[1], 0))
 
-    print_sample(face_pairs)
     return face_pairs
 
 def print_sample(data):
@@ -155,10 +156,71 @@ def print_sample(data):
 
 def load_faces():
     """ load features """
-    face_pairs = parent_child_faces()
-    face_pairs.extend(sibling_faces())
-    face_pairs.extend(sames_diff_faces())
-    random.shuffle(face_pairs)
-    print_sample(face_pairs)
+    file_name = "face_pairs.pkl"
+    face_pairs = None
+    if os.path.isfile(file_name):
+        face_pairs = read_pickle(file_name)
+    if not face_pairs:
+        face_pairs = parent_child_faces()
+        face_pairs.extend(sibling_faces())
+        face_pairs.extend(sames_diff_faces())
+        random.shuffle(face_pairs)
+        save_pickle(face_pairs, file_name)
+    return face_pairs
 
-load_faces()
+def save_pickle(data, file_name="face_pairs.pkl"):
+    """ save data as pickle """
+    with open(file_name, 'wb') as handle:
+        pickle.dump(data, handle, protocol=2)
+
+def convert_numpy():
+    """ convert face pairs to numpy array """
+    file_name = "data_matrix.npy"
+    label_name = "label_matrix.npy"
+    data_matrix, label_matrix = None, None
+    if os.path.isfile(file_name):
+        data_matrix, label_matrix = np.load(file_name), np.load(label_name)
+    label_dict = {
+        0: [1, 0, 0, 0],
+        1: [0, 1, 0, 0],
+        2: [0, 0, 1, 0],
+        3: [0, 0, 0, 1]
+    }
+    if data_matrix is None:
+        face_pairs = load_faces()
+        labels = []
+        data = []
+        for pair in face_pairs:
+            file1, file2, label = pair
+            enc1 = read_pickle(file1)
+            enc2 = read_pickle(file2)
+            data.append(np.concatenate((enc1, enc2)))
+            labels.append(label_dict[label])
+        data_matrix = np.array(data).T
+        label_matrix = np.array(labels).T
+        np.save(file_name, data_matrix)
+        np.save(label_name, label_matrix)
+
+    return (data_matrix, label_matrix)
+
+def split_test_data(data, labels, ratio=0.05):
+    """ split and shuffle data """
+    para_m = data.shape[1]
+    shuffle = np.arange(para_m)
+    np.random.shuffle(shuffle)
+    shuffled_x = data[:, shuffle]
+    shuffled_y = labels[:, shuffle]
+    pivot = math.floor(para_m * (1 - ratio))
+    return (shuffled_x[:, :pivot], shuffled_y[:, :pivot],
+            shuffled_x[:, pivot:], shuffled_y[:, pivot:])
+
+def load_dataset():
+    """ return train_x, train_y, test_x, test_y """
+    data, labels = convert_numpy()
+    train_x, train_y, test_x, test_y = split_test_data(data, labels)
+    print(train_x.shape)
+    print(train_y.shape)
+    print(test_x.shape)
+    print(test_y.shape)
+
+load_dataset()
