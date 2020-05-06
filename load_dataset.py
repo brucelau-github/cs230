@@ -1,7 +1,10 @@
 """ preprocess image data """
 import os
+import itertools
+import random
 import sys
 import pickle
+import glob
 import cv2
 import pandas as pd
 
@@ -69,5 +72,47 @@ def read_feature(pickle_file):
         data = pickle.load(pkl_file)
     return data
 
-load_dataset(True)
-load_dataset()
+def sames_faces():
+    """list all same faces data set
+    return: [(f1, f2), (f1, f3) ....]
+    """
+    # walk folder path
+    base_dir = "fiwdata/FIDs-features"
+    same_faces = []
+    diff_faces = []
+    for fid in glob.glob(base_dir+"/F*"):
+        tmp = []
+        for mid in glob.glob(fid+"/MID*"):
+            mid_faces = glob.glob(mid+"/*.pkl")
+            same_faces.append(mid_faces)
+            tmp.extend(mid_faces)
+        diff_faces.append([tmp, glob.glob(fid+"/unrelated_and_nonfaces/*.pkl")])
+        if len(diff_faces) > 2:
+            break
+            # mid_dir = os.path.join(fid_dir, mid)
+            # if "unrelated" in mid:
+                # print(glob.glob(mid_dir+"/*.pkl"))
+            #     family_mid.append(os.listdir(mid))
+        #     else:
+        #         same_faces.append(os.listdir(mid))
+    same_face_pairs = []
+    for same_face in same_faces:
+        permu = itertools.permutations(same_face, 2)
+        for pair in permu:
+            same_face_pairs.append(pair)
+
+    diff_face_pairs = []
+    for diff_face in diff_faces:
+        produ = itertools.product(diff_face[0], diff_face[1])
+        for pair in produ:
+            diff_face_pairs.append(pair)
+
+    print_sample(random.sample(same_face_pairs, 5))
+    print_sample(random.sample(diff_face_pairs, 5))
+
+def print_sample(samples):
+    for i in samples:
+        print(i[0])
+        print(i[1])
+        print()
+sames_faces()
