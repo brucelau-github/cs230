@@ -5,15 +5,32 @@ import pickle
 import cv2
 import pandas as pd
 
-def load_parent_child(load_features=False):
-    """ load parent child data """
-    pickle_files = [
-        #"fiwdata/lists/pairs/pickles/fd-faces.pkl",
-        #"fiwdata/lists/pairs/pickles/fs-faces.pkl",
-        #"fiwdata/lists/pairs/pickles/md-faces.pkl",
-        "fiwdata/lists/pairs/pickles/ms-faces.pkl"
+def load_dataset(load_features=False):
+    """ load siblings data """
+    datasets = [
+        {
+            "pickle_files": [
+                #"fiwdata/lists/pairs/pickles/fd-faces.pkl",
+                #"fiwdata/lists/pairs/pickles/fs-faces.pkl",
+                #"fiwdata/lists/pairs/pickles/md-faces.pkl",
+                "fiwdata/lists/pairs/pickles/ms-faces.pkl"
+            ],
+            "label": 1
+        },
+        {
+            "pickle_files": ["fiwdata/lists/pairs/pickles/sibs-faces.pkl"],
+            "label": 2
+        }
     ]
+    data = []
+    for value in datasets:
+        print(value)
+        data.extend(load_data(load_features, value["pickle_files"], value["label"]))
+    print(len(data))
+    print(data[0])
 
+def load_data(load_features, pickle_files, label):
+    """ load parent child data """
     data = pd.DataFrame()
     for file_path in pickle_files:
         with open(file_path, "rb") as pkl_file:
@@ -35,11 +52,11 @@ def load_parent_child(load_features=False):
         if load_features:
             pkl1 = os.path.splitext(file1)[0] + ".pkl"
             pkl2 = os.path.splitext(file2)[0] + ".pkl"
-            raw_data.append((read_feature(pkl1), read_feature(pkl2)))
+            raw_data.append((read_feature(pkl1), read_feature(pkl2), label))
         else:
-            raw_data.append((read_image(file1), read_image(file2)))
+            raw_data.append((read_image(file1), read_image(file2), label))
 
-    print(len(raw_data))
+    return raw_data
 
 def read_image(file_path):
     """ read image files """
@@ -52,5 +69,5 @@ def read_feature(pickle_file):
         data = pickle.load(pkl_file)
     return data
 
-load_parent_child(True)
-load_parent_child()
+load_dataset(True)
+load_dataset()
