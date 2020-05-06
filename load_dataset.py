@@ -72,11 +72,56 @@ def read_feature(pickle_file):
         data = pickle.load(pkl_file)
     return data
 
-def sames_faces():
+def read_pickle(pickle_file):
+    """ read in pickle file """
+    data = None
+    with open(pickle_file, "rb") as pkl_file:
+        data = pickle.load(pkl_file)
+    return data
+
+def parent_child_faces():
+    """ list p-c pairs """
+    pickle_files = [
+        "fiwdata/lists/pairs/pickles/fd-faces.pkl",
+        "fiwdata/lists/pairs/pickles/fs-faces.pkl",
+        "fiwdata/lists/pairs/pickles/md-faces.pkl",
+        "fiwdata/lists/pairs/pickles/ms-faces.pkl"
+    ]
+
+
+    base_dir = "fiwdata/FIDs-features/"
+    face_pairs = []
+    for pkl_file in pickle_files:
+        data = read_pickle(pkl_file)
+        for row in data.itertuples():
+            _, file1, file2 = row
+            pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
+            pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
+            face_pairs.append((pkl1, pkl2, 2))
+    return face_pairs
+
+def sibling_faces():
+    """ list p-c pairs """
+    pickle_files = [
+        "fiwdata/lists/pairs/pickles/sibs-faces.pkl"
+    ]
+
+
+    base_dir = "fiwdata/FIDs-features/"
+    face_pairs = []
+    for pkl_file in pickle_files:
+        data = read_pickle(pkl_file)
+        for row in data.itertuples():
+            _, file1, file2 = row
+            pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
+            pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
+            face_pairs.append((pkl1, pkl2, 2))
+    return face_pairs
+
+def sames_diff_faces():
     """list all same faces data set
     return: [(f1, f2), (f1, f3) ....]
     """
-    # walk folder path
     base_dir = "fiwdata/FIDs-features"
     same_faces = []
     diff_faces = []
@@ -87,32 +132,33 @@ def sames_faces():
             same_faces.append(mid_faces)
             tmp.extend(mid_faces)
         diff_faces.append([tmp, glob.glob(fid+"/unrelated_and_nonfaces/*.pkl")])
-        if len(diff_faces) > 2:
-            break
-            # mid_dir = os.path.join(fid_dir, mid)
-            # if "unrelated" in mid:
-                # print(glob.glob(mid_dir+"/*.pkl"))
-            #     family_mid.append(os.listdir(mid))
-        #     else:
-        #         same_faces.append(os.listdir(mid))
-    same_face_pairs = []
+
+    face_pairs = []
     for same_face in same_faces:
         permu = itertools.permutations(same_face, 2)
         for pair in permu:
-            same_face_pairs.append(pair)
+            face_pairs.append((pair[0], pair[1], 3))
 
-    diff_face_pairs = []
     for diff_face in diff_faces:
         produ = itertools.product(diff_face[0], diff_face[1])
         for pair in produ:
-            diff_face_pairs.append(pair)
+            face_pairs.append((pair[0], pair[1], 0))
 
-    print_sample(random.sample(same_face_pairs, 5))
-    print_sample(random.sample(diff_face_pairs, 5))
+    print_sample(face_pairs)
+    return face_pairs
 
-def print_sample(samples):
+def print_sample(data):
+    samples = random.sample(data, 50)
     for i in samples:
-        print(i[0])
-        print(i[1])
-        print()
-sames_faces()
+        print(i)
+    print("contains: %d data"%len(data))
+
+def load_faces():
+    """ load features """
+    face_pairs = parent_child_faces()
+    face_pairs.extend(sibling_faces())
+    face_pairs.extend(sames_diff_faces())
+    random.shuffle(face_pairs)
+    print_sample(face_pairs)
+
+load_faces()
