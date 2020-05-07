@@ -1,7 +1,7 @@
 """ machine learning model """
 import numpy as np
 import matplotlib.pyplot as plt
-from load_dataset import load_dataset
+from load_dataset import load_dataset, load_small_testdata
 
 def model(X, Y, learning_rate=0.01, num_iterations=15000, print_cost=True,
           initialization="he", optimizer="adam"):
@@ -22,7 +22,7 @@ def model(X, Y, learning_rate=0.01, num_iterations=15000, print_cost=True,
 
     parameters = initilization_dict[initialization](layers_dims)
 
-    for i in num_iterations:
+    for i in range(num_iterations):
         A3, caches = forward_propagation(X, parameters)
         cost = cross_entropy(A3, Y)
 
@@ -30,7 +30,7 @@ def model(X, Y, learning_rate=0.01, num_iterations=15000, print_cost=True,
 
         parameters = optimizers[optimizer](parameters, grads, learning_rate)
 
-        if print_cost and i % 1000 == 0:
+        if print_cost and i % 100 == 0:
             print("Cost after iteration {}: {}".format(i, cost))
             costs.append(cost)
 
@@ -81,7 +81,7 @@ def forward_propagation(X, parameters):
     """ forward propagation
     3 LINEAR->RELU -> LINEAR->SOFTMAX
     """
-    caches = {"A0": X}
+    caches = {"A0": X, **parameters}
     L = 4
 
     for l in range(1, L):
@@ -122,7 +122,7 @@ def backward_propagation(X, Y, caches):
     grads["db4"] = np.sum(grads["dZ4"], axis=1, keepdims=True) / m
 
     for l in reversed(range(1, 4)):
-        grads["dA"+str(l)] = np.dot(caches["W"+str(l+1)].T, grads["Z"+str(l+1)])
+        grads["dA"+str(l)] = np.dot(caches["W"+str(l+1)].T, grads["dZ"+str(l+1)])
         grads["dZ"+str(l)] = grads["dA"+str(l)] * np.int64(caches["A"+str(l)] > 0)
         grads["dW"+str(l)] = np.dot(grads["dZ"+str(l)], caches["A"+str(l-1)].T) / m
         grads["db"+str(l)] = np.sum(grads["dZ"+str(l)], axis=1, keepdims=True) / m
@@ -149,8 +149,9 @@ def predict(parameters, X, Y):
 def train_model():
     """ train model """
     learning_rate = 0.005
-    train_X, train_Y, test_X, test_Y = load_dataset()
-    parameters, costs = model(train_X[:, :10000], train_Y[:, :100000], learning_rate)
+    train_X, train_Y, test_X, test_Y = load_small_testdata()
+    print("data loaded %d %d"%(train_X.shape[1], test_X.shape[1]))
+    parameters, costs = model(train_X[:, :100000], train_Y[:, :100000], learning_rate)
     #print("On the train set:")
     #predictions_train = predict(train_X, train_Y, parameters)
     #print("On the test set:")
