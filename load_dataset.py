@@ -170,3 +170,24 @@ def load_dataset():
             np.save(file_list[0][idx], data[idx])
 
     return tuple(file_list[1])
+
+def load_small_testdata():
+    """ load a small data """
+    data, labels = convert_numpy()
+    data = data[:, :20000]
+    labels = labels[:, :20000]
+    file_list = [
+        ["train_x_s.npy", "train_y_s.npy", "test_x_s.npy", "test_y_s.npy"],
+        []
+    ]
+    for idx in range(4):
+        if os.path.isfile(file_list[0][idx]):
+            file_list[1].append(np.load(file_list[0][idx]))
+
+    if len(file_list[1]) != 4:
+        data = split_test_data(data, labels)
+        for idx in range(4):
+            file_list[1].append(data[idx])
+            np.save(file_list[0][idx], data[idx])
+
+    return tuple(file_list[1])
