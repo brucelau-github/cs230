@@ -1,5 +1,9 @@
-pdf: clean propose.tex
+ms1: clean milestone1.tex
+	pdflatex milestone1.tex
+
+propose: clean propose.tex
 	pdflatex propose.tex
-	-rm *.log *.aux *.out
+
 clean:
-	-rm propose.pdf
+	-rm *.log *.aux *.out
+	-rm *.pdf
