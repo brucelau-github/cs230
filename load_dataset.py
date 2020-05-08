@@ -191,3 +191,37 @@ def load_small_testdata():
             np.save(file_list[0][idx], data[idx])
 
     return tuple(file_list[1])
+
+def to_pic_path(file_path):
+    file_path = os.path.splitext(file_path)[0] + ".jpg"
+    return file_path.replace("FIDs-features", "FIDs", 1)
+
+def load_image_pairs():
+    """ return image paths """
+    file_name = "image_pair_data.npz"
+    pic_list = None
+    if os.path.isfile(file_name):
+        pic_list = np.load(file_name)
+    label_dict = {
+        0: [1, 0, 0, 0],
+        1: [0, 1, 0, 0],
+        2: [0, 0, 1, 0],
+        3: [0, 0, 0, 1]
+    }
+    if pic_list is None:
+        face_pairs = load_faces()
+        labels = []
+        data = []
+        for pair in face_pairs:
+            file1, file2, label = pair
+            pic1 = to_pic_path(file1)
+            pic2 = to_pic_path(file2)
+            data.append([pic1, pic2])
+            labels.append(label_dict[label])
+        pic_list = {
+            "data_x": np.array(data).T,
+            "label_y": np.array(labels).T
+        }
+        np.savez(file_name, data_x=pic_list["data_x"], label_y=pic_list["label_y"])
+
+    return (pic_list["data_x"], pic_list["label_y"])
