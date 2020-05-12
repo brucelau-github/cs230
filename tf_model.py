@@ -55,12 +55,10 @@ class KinNet(tf.keras.Model):
 def train():
     train_set, test_set = prepare_train_data()
     ts = train_set.take(1)
-    checkpoint_dir = "checkpoints"
+    checkpoint = "checkpoint"
 
-    if os.path.exists(checkpoint_dir):
-        os.mkdir(checkpoint_dir)
     cp_callback = tf.keras.callbacks.ModelCheckpoint(
-        filepath=checkpoint_dir, save_weights_only=True, verbose=1,
+        filepath=checkpoint, save_weights_only=True, verbose=1,
         save_best_only=True)
 
     kinnet = KinNet()
