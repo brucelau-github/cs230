@@ -20,11 +20,10 @@ def process_data(row):
     """
     pic1, pic2, label = row[0], row[1], row[2]
     img1 = read_image(pic1)
-    img1 = tf.reshape(img1, [1, 299, 299, 3])
+    img1 = tf.reshape(img1, [299, 299, 3])
     img2 = read_image(pic2)
-    img2 = tf.reshape(img2, [1, 299, 299, 3])
+    img2 = tf.reshape(img2, [299, 299, 3])
     label = tf.keras.backend.one_hot(int(label), 4)
-    label = tf.reshape(label, [1, 4])
     return [[img1, img2], label]
 
 def prepare_train_data():
@@ -35,7 +34,8 @@ def prepare_train_data():
     dataset = dataset.map(process_data, num_parallel_calls=-1)
     test_set = dataset.take(test_size)
     test_set.cache()
-    dataset = dataset.cache().shuffle(buffer_size=1000)
+    dataset = dataset.cache("./cache").shuffle(buffer_size=1000)
+    dataset = dataset.batch(128)
     dataset = dataset.prefetch(-1)
 
     return dataset, test_set
@@ -53,8 +53,8 @@ class KinNet(tf.keras.Model):
         self.dense3 = tf.keras.layers.Dense(4)
 
     def call(self, inputs, training=None, mask=None):
-        enc1 = self.inresnet(inputs[0, :, :, :, :])
-        enc2 = self.inresnet(inputs[1, :, :, :, :])
+        enc1 = self.inresnet(inputs[:, 0, :, :, :])
+        enc2 = self.inresnet(inputs[:, 1, :, :, :])
         x = tf.keras.layers.Concatenate(axis=1, name='concat')([enc1, enc2])
         x = self.dense1(x)
         x = self.dense2(x)
@@ -64,6 +64,7 @@ class KinNet(tf.keras.Model):
 def train():
     """ train kinnet model """
     train_set, test_set = prepare_train_data()
+    validation_data = test_set.take(100)
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(
@@ -79,7 +80,8 @@ def train():
         optimizer="adam",
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
-    kinnet.fit(x=train_set, epochs=10, callbacks=callbacks)
+    kinnet.fit(x=train_set, batch_size=128, epochs=10,
+               callbacks=callbacks, validation_data=validation_data)
     kinnet.save_weights("kinnet_weight.h5", save_format="h5")
     #kinnet.load_weights("my_model.h5")
 
