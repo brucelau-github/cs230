@@ -1,16 +1,23 @@
 """"build a model to train kinship
 """
-import os
 import tensorflow as tf
 from load_dataset import load_image_pairs
 
 def read_image(file_path):
+    """ read image path in fiwdata
+    resize it with pad
+    """
     img = tf.io.read_file(file_path)
     img = tf.image.decode_jpeg(img, channels=3)
     img = tf.image.convert_image_dtype(img, tf.float32)
     return tf.image.resize_with_pad(img, 299, 299)
 
 def process_data(row):
+    """ dataset call back
+    read in image pair files
+    covert into perper shape (1, 299, 299, 3)
+    change labels to one hot encoding
+    """
     pic1, pic2, label = row[0], row[1], row[2]
     img1 = read_image(pic1)
     img1 = tf.reshape(img1, [1, 299, 299, 3])
@@ -21,6 +28,7 @@ def process_data(row):
     return [[img1, img2], label]
 
 def prepare_train_data():
+    """ split train set and test set """
     dataset = load_image_pairs()
     test_size = int(0.05*len(dataset))
     dataset = tf.data.Dataset.from_tensor_slices(dataset)
@@ -33,17 +41,18 @@ def prepare_train_data():
     return dataset, test_set
 
 class KinNet(tf.keras.Model):
+    """ inception resnet + 2 dense """
     def __init__(self):
         super(KinNet, self).__init__()
         self.inresnet = tf.keras.applications.InceptionResNetV2(
-            include_top=False, weights='imagenet', input_shape=(299,299,3),
+            include_top=False, weights='imagenet', input_shape=(299, 299, 3),
             pooling="avg")
         # output (1536, 1)
         self.dense1 = tf.keras.layers.Dense(1024, activation=tf.nn.relu)
         self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu)
         self.dense3 = tf.keras.layers.Dense(4)
 
-    def call(self, inputs):
+    def call(self, inputs, training=None, mask=None):
         enc1 = self.inresnet(inputs[0, :, :, :, :])
         enc2 = self.inresnet(inputs[1, :, :, :, :])
         x = tf.keras.layers.Concatenate(axis=1, name='concat')([enc1, enc2])
@@ -53,24 +62,29 @@ class KinNet(tf.keras.Model):
         return x
 
 def train():
+    """ train kinnet model """
     train_set, test_set = prepare_train_data()
-    ts = train_set.take(1)
-    checkpoint = "checkpoint"
 
-    model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-        filepath=checkpoint, save_weights_only=True,
-        monitor='val_acc', mode='max', save_best_only=True)
+    callbacks = [
+        tf.keras.callbacks.ModelCheckpoint(
+            filepath="./checkpoint", save_weights_only=True,
+            monitor="val_acc", mode="max", save_best_only=True),
+        tf.keras.callbacks.TensorBoard(log_dir="./logs")
+    ]
 
 
     kinnet = KinNet()
+
     kinnet.compile(
-       optimizer='adam',
-       loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
-       metrics=['accuracy'])
-    kinnet.fit(x=train_set, epochs=10, callbacks=[model_checkpoint_callback])
+        optimizer="adam",
+        loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
+        metrics=["accuracy"])
+    kinnet.fit(x=train_set, epochs=10, callbacks=callbacks)
+    kinnet.save_weights("kinnet_weight.h5", save_format="h5")
+    #kinnet.load_weights("my_model.h5")
 
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
-    print('\nTest accuracy:', test_acc)
-    print('\nTest lost:', test_loss)
+    print("\nTest accuracy:", test_acc)
+    print("\nTest lost:", test_loss)
 
 train()
