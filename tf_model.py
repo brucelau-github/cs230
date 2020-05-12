@@ -54,11 +54,19 @@ class KinNet(tf.keras.Model):
 def train():
     train_set, test_set = prepare_train_data()
     ts = train_set.take(1)
+    checkpoint_dir = "checkpoints"
+
+    if os.path.exists(checkpoint_dir):
+        os.mkdir(checkpoint_dir)
+    cp_callback = tf.keras.callbacks.ModelCheckpoint(
+        filepath=checkpoint_dir, save_weights_only=True, verbose=1,
+        save_best_only=True)
+
     kinnet = KinNet()
     kinnet.compile(
        optimizer='adam',
        loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
-       metrics=['accuracy'])
+       metrics=['accuracy'], callbacks=[cp_callback])
     kinnet.fit(x=train_set, epochs=10)
 
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
