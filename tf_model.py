@@ -1,5 +1,6 @@
 """"build a model to train kinship
 """
+import os
 import tensorflow as tf
 from load_dataset import load_image_pairs
 
