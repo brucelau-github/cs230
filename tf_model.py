@@ -35,7 +35,7 @@ def prepare_train_data():
     dataset = dataset.map(process_data, num_parallel_calls=-1)
     test_set = dataset.take(test_size)
     test_set.cache()
-    dataset = dataset.cache(filename=".cache").shuffle(buffer_size=1000)
+    dataset = dataset.cache().shuffle(buffer_size=1000)
     dataset = dataset.prefetch(-1)
 
     return dataset, test_set
