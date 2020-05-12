@@ -1,6 +1,5 @@
 """"build a model to train kinship
 """
-import matplotlib.pyplot as plt
 import tensorflow as tf
 from load_dataset import load_image_pairs
 
@@ -13,19 +12,24 @@ def read_image(file_path):
 def process_data(row):
     pic1, pic2, label = row[0], row[1], row[2]
     img1 = read_image(pic1)
+    img1 = tf.reshape(img1, [1, 299, 299, 3])
     img2 = read_image(pic2)
-    return img1, img2, label
+    img2 = tf.reshape(img2, [1, 299, 299, 3])
+    label = tf.keras.backend.one_hot(int(label), 4)
+    label = tf.reshape(label, [1, 4])
+    return [[img1, img2], label]
 
-
-def prepare_train():
+def prepare_train_data():
     dataset = load_image_pairs()
+    test_size = int(0.05*len(dataset))
     dataset = tf.data.Dataset.from_tensor_slices(dataset)
     dataset = dataset.map(process_data, num_parallel_calls=-1)
-    dataset = dataset.cache(filename=".cache")
-    dataset = dataset.shuffle(buffer_size=1000)
-    dataset = dataset.repeat()
-    dataset = dataset.batch(1000)
+    test_set = dataset.take(test_size)
+    test_set.cache()
+    dataset = dataset.cache(filename=".cache").shuffle(buffer_size=1000)
     dataset = dataset.prefetch(-1)
+
+    return dataset, test_set
 
 class KinNet(tf.keras.Model):
     def __init__(self):
@@ -34,29 +38,33 @@ class KinNet(tf.keras.Model):
             include_top=False, weights='imagenet', input_shape=(299,299,3),
             pooling="avg")
         # output (1536, 1)
-        self.dense1 = tf.keras.layers.Dense(4096, activation=tf.nn.relu)
-        self.dense2 = tf.keras.layers.Dense(4096, activation=tf.nn.relu)
+        self.dense1 = tf.keras.layers.Dense(1024, activation=tf.nn.relu)
+        self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu)
         self.dense3 = tf.keras.layers.Dense(4)
 
-    def call(self, inputs, training=False):
-        enc1 = self.inresnet(inputs[0])
-        enc2 = self.inresnet(inputs[1])
-        x = tf.layers.Concatenate(axis=1, name='concat')([enc1, enc2])
+    def call(self, inputs):
+        print(inputs)
+        enc1 = self.inresnet(inputs[0, :, :, :, :])
+        enc2 = self.inresnet(inputs[1, :, :, :, :])
+        x = tf.keras.layers.Concatenate(axis=1, name='concat')([enc1, enc2])
         x = self.dense1(x)
         x = self.dense2(x)
         x = self.dense3(x)
         return x
 
 def train():
+    train_set, test_set = prepare_train_data()
+    ts = train_set.take(1)
+    print(ts)
     kinnet = KinNet()
     kinnet.compile(
-        optimizer='adam',
-        loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-        metrics=['accuracy'])
-    kinnet.fit(train_images, train_labels, epochs=10)
+       optimizer='adam',
+       loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
+       metrics=['accuracy'])
+    kinnet.fit(x=train_set, epochs=10)
 
-    test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
+    test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
     print('\nTest accuracy:', test_acc)
+    print('\nTest lost:', test_loss)
 
-
-
+train()
