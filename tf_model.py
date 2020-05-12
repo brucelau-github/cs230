@@ -57,16 +57,17 @@ def train():
     ts = train_set.take(1)
     checkpoint = "checkpoint"
 
-    cp_callback = tf.keras.callbacks.ModelCheckpoint(
-        filepath=checkpoint, save_weights_only=True, verbose=1,
-        save_best_only=True)
+    model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+        filepath=checkpoint, save_weights_only=True,
+        monitor='val_acc', mode='max', save_best_only=True)
+
 
     kinnet = KinNet()
     kinnet.compile(
        optimizer='adam',
        loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
-       metrics=['accuracy'], callbacks=[cp_callback])
-    kinnet.fit(x=train_set, epochs=10)
+       metrics=['accuracy'])
+    kinnet.fit(x=train_set, epochs=10, callbacks=[model_checkpoint_callback])
 
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
     print('\nTest accuracy:', test_acc)
