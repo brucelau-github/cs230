@@ -43,7 +43,6 @@ class KinNet(tf.keras.Model):
         self.dense3 = tf.keras.layers.Dense(4)
 
     def call(self, inputs):
-        print(inputs)
         enc1 = self.inresnet(inputs[0, :, :, :, :])
         enc2 = self.inresnet(inputs[1, :, :, :, :])
         x = tf.keras.layers.Concatenate(axis=1, name='concat')([enc1, enc2])
@@ -55,7 +54,6 @@ class KinNet(tf.keras.Model):
 def train():
     train_set, test_set = prepare_train_data()
     ts = train_set.take(1)
-    print(ts)
     kinnet = KinNet()
     kinnet.compile(
        optimizer='adam',
