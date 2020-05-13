@@ -41,6 +41,7 @@ def prepare_train_data():
     test_set = test_set.batch(8)
     test_set = test_set.prefetch(-1)
 
+    valid_data = dataset.take(128)
     valid_data = valid_data.cache().shuffle(buffer_size=1000)
     valid_data = valid_data.batch(8)
     valid_data = valid_data.prefetch(-1)
