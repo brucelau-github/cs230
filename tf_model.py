@@ -1,5 +1,7 @@
 """"build a model to train kinship
 """
+import os
+import logging
 import tensorflow as tf
 from load_dataset import load_image_pairs
 
@@ -29,16 +31,27 @@ def process_data(row):
 def prepare_train_data():
     """ split train set and test set """
     dataset = load_image_pairs()
-    test_size = int(0.05*len(dataset))
+    data_size = len(dataset)
+    test_size = int(0.05*data_size)
     dataset = tf.data.Dataset.from_tensor_slices(dataset)
     dataset = dataset.map(process_data, num_parallel_calls=-1)
+
     test_set = dataset.take(test_size)
-    test_set.cache()
+    test_set = test_set.cache().shuffle(buffer_size=1000)
+    test_set = test_set.batch(8)
+    test_set = test_set.prefetch(-1)
+
+    valid_data = valid_data.cache().shuffle(buffer_size=1000)
+    valid_data = valid_data.batch(8)
+    valid_data = valid_data.prefetch(-1)
+
     dataset = dataset.cache().shuffle(buffer_size=1000)
     dataset = dataset.batch(8)
     dataset = dataset.prefetch(-1)
+    logging.info("contain %d data: %d train, %d test", data_size,
+                 data_size-test_size, test_size)
 
-    return dataset, test_set
+    return dataset, test_set, valid_data
 
 class KinNet(tf.keras.Model):
     """ inception resnet + 2 dense """
@@ -63,13 +76,23 @@ class KinNet(tf.keras.Model):
 
 def train():
     """ train kinnet model """
-    train_set, test_set = prepare_train_data()
-    validation_data = test_set.take(100)
+    checkpoint_path = "results/cp-{epoch:04d}.ckpt"
+    logging.info("checkpoint files path: %s", checkpoint_path)
+    result_dir = os.path.dirname(checkpoint_path)
+    if not os.path.exists(result_dir):
+        os.mkdir(result_dir)
+
+    logging.basicConfig(
+        filename="results/history_logs",
+        level=logging.DEBUG,
+        format="%(asctime)s - %(message)s")
+
+    train_set, test_set, validation_data = prepare_train_data()
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(
-            filepath="./checkpoint", save_weights_only=True,
-            monitor="val_acc", mode="max", save_best_only=True),
+            filepath=checkpoint_path, save_weights_only=True,
+            save_freq='epoch'),
         tf.keras.callbacks.TensorBoard(log_dir="./logs")
     ]
 
@@ -80,13 +103,16 @@ def train():
         optimizer="adam",
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
-    kinnet.fit(x=train_set, epochs=10,
-               callbacks=callbacks, validation_data=validation_data)
+    history = kinnet.fit(
+        x=train_set, epochs=1, callbacks=callbacks, validation_data=validation_data)
+
+    logging.info("history: %s", history.history)
+    logging.info("saving weights files: kinnet_weight.h5")
     kinnet.save_weights("kinnet_weight.h5", save_format="h5")
     #kinnet.load_weights("my_model.h5")
 
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
-    print("\nTest accuracy:", test_acc)
-    print("\nTest lost:", test_loss)
+    logging.info("test accuracy: %f", test_acc)
+    logging.info("test lost: %f", test_loss)
 
 train()
