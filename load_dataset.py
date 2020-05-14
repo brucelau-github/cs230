@@ -1,5 +1,6 @@
 """ preprocess image data """
 import os
+import logging
 import itertools
 import math
 import random
@@ -87,6 +88,7 @@ def sames_diff_faces():
     return face_pairs
 
 def print_sample(data):
+    """ print sample """
     samples = random.sample(data, 50)
     for i in samples:
         print(i)
@@ -104,6 +106,14 @@ def load_faces():
         face_pairs.extend(sames_diff_faces())
         random.shuffle(face_pairs)
         save_pickle(face_pairs, file_name)
+    return face_pairs
+
+
+def load_faces_n(num):
+    """ load features """
+    face_pairs = parent_child_faces()[:num]
+    face_pairs.extend(sibling_faces()[:num])
+    face_pairs.extend(sames_diff_faces()[:(2*num)])
     return face_pairs
 
 def save_pickle(data, file_name="face_pairs.pkl"):
@@ -193,22 +203,19 @@ def load_small_testdata():
     return tuple(file_list[1])
 
 def to_pic_path(file_path):
+    """ from pkl path to jpg path """
     file_path = os.path.splitext(file_path)[0] + ".jpg"
     return file_path.replace("FIDs-features", "FIDs", 1)
 
 def load_image_pairs():
     """ return image paths """
-    file_name = "image_pair_data.npz"
     data = []
-    if os.path.isfile(file_name):
-        data = np.load(file_name)["data"]
-    if len(data) == 0:
-        face_pairs = load_faces()
-        for pair in face_pairs:
-            file1, file2, label = pair
-            pic1 = to_pic_path(file1)
-            pic2 = to_pic_path(file2)
-            data.append([pic1, pic2, label])
-        np.savez(file_name, data=data)
+    face_pairs = load_faces_n(10000)
+    for pair in face_pairs:
+        file1, file2, label = pair
+        pic1 = to_pic_path(file1)
+        pic2 = to_pic_path(file2)
+        data.append([pic1, pic2, str(label)])
+    logging.warning("contains %d", len(data))
 
     return data

@@ -74,19 +74,34 @@ class KinNet(tf.keras.Model):
         x = self.dense2(x)
         x = self.dense3(x)
         return x
+def initialize_logger(output_dir):
+    """ init logger """
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    logformat = "%(asctime)s - %(levelname)s - %(message)s"
+
+    # create console handler and set level to info
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.INFO)
+    formatter = logging.Formatter(logformat)
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+    # create debug file handler and set level to debug
+    handler = logging.FileHandler(os.path.join(output_dir, "training.log"), "a")
+    handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(logformat)
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
 
 def train():
     """ train kinnet model """
     checkpoint_path = "results/cp-{epoch:04d}.ckpt"
-    logging.info("checkpoint files path: %s", checkpoint_path)
     result_dir = os.path.dirname(checkpoint_path)
     if not os.path.exists(result_dir):
         os.mkdir(result_dir)
 
-    logging.basicConfig(
-        filename="results/history_logs",
-        level=logging.DEBUG,
-        format="%(asctime)s - %(message)s")
+    initialize_logger(result_dir)
 
     train_set, test_set, validation_data = prepare_train_data()
 
