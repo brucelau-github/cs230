@@ -28,7 +28,7 @@ def process_data(row):
     label = tf.keras.backend.one_hot(int(label), 4)
     return [[img1, img2], label]
 
-def prepare_train_data():
+def prepare_train_data(batch_size):
     """ split train set and test set """
     dataset = load_image_pairs()
     data_size = len(dataset)
@@ -38,16 +38,16 @@ def prepare_train_data():
 
     test_set = dataset.take(test_size)
     test_set = test_set.cache().shuffle(buffer_size=1000)
-    test_set = test_set.batch(8)
+    test_set = test_set.batch(batch_size)
     test_set = test_set.prefetch(-1)
 
     valid_data = dataset.take(128)
     valid_data = valid_data.cache().shuffle(buffer_size=1000)
-    valid_data = valid_data.batch(8)
+    valid_data = valid_data.batch(batch_size)
     valid_data = valid_data.prefetch(-1)
 
     dataset = dataset.cache().shuffle(buffer_size=1000)
-    dataset = dataset.batch(8)
+    dataset = dataset.batch(batch_size)
     dataset = dataset.prefetch(-1)
     logging.info("contain %d data: %d train, %d test", data_size,
                  data_size-test_size, test_size)
@@ -103,7 +103,7 @@ def train():
 
     initialize_logger(result_dir)
 
-    train_set, test_set, validation_data = prepare_train_data()
+    train_set, test_set, validation_data = prepare_train_data(16)
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(
