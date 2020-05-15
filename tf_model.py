@@ -34,6 +34,7 @@ def prepare_train_data(batch_size):
     data_size = len(dataset)
     test_size = int(0.05*data_size)
     dataset = tf.data.Dataset.from_tensor_slices(dataset)
+    dataset = dataset.suffle(buffer_size=1000)
     dataset = dataset.map(process_data, num_parallel_calls=-1)
 
     test_set = dataset.take(test_size)
@@ -115,17 +116,17 @@ def train():
 
     kinnet = KinNet()
 
+    kinnet.load_weights("kinnet_weight.h5")
     kinnet.compile(
         optimizer="adam",
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
     history = kinnet.fit(
-        x=train_set, epochs=20, callbacks=callbacks, validation_data=validation_data)
+        x=train_set, epochs=1, callbacks=callbacks, validation_data=validation_data)
 
     logging.info("history: %s", history.history)
     logging.info("saving weights files: kinnet_weight.h5")
     kinnet.save_weights("kinnet_weight.h5", save_format="h5")
-    #kinnet.load_weights("my_model.h5")
 
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
     logging.info("test accuracy: %f", test_acc)
