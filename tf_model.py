@@ -112,12 +112,12 @@ class LossTracker(tf.keras.callbacks.Callback):
     """ log accuracy """
     def on_batch_end(self, batch, logs=None):
         if batch % 100 == 0:
-            logging.info("batch %f: loss: %f acc: %f",
-                         batch, logs['loss'], logs["acc"])
+            logging.info("batch %d: loss: %f acc: %f",
+                         batch, logs.get('loss'), logs.get("accuracy"))
 
     def on_epoch_end(self, epoch, logs=None):
-        logging.info("epoch %f: loss: %f acc: %f",
-                     epoch, logs['loss'], logs["acc"])
+        logging.info("epoch %f: loss: %f",
+                     epoch, logs['loss'])
 
 
 def train():
@@ -150,7 +150,7 @@ def train():
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
     history = kinnet.fit(
-        x=train_set, epochs=1, callbacks=callbacks, validation_data=validation_data)
+        x=train_set, epochs=5, callbacks=callbacks, validation_data=validation_data)
 
     logging.info("history: %s", history.history)
     logging.info("saving weights files: kinnet_weight.h5")
