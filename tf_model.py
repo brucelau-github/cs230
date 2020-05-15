@@ -63,9 +63,9 @@ class KinNet(tf.keras.Model):
             include_top=False, weights='imagenet', input_shape=(299, 299, 3),
             pooling="avg")
         # output (1536, 1)
-        self.dense1 = tf.keras.layers.Dense(1024, activation=tf.nn.relu)
-        self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu)
-        self.dense3 = tf.keras.layers.Dense(4)
+        self.dense1 = tf.keras.layers.Dense(1024, activation=tf.nn.relu, name="fc1")
+        self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu name="fc2")
+        self.dense3 = tf.keras.layers.Dense(4, name="logits")
 
     def call(self, inputs, training=None, mask=None):
         enc1 = self.inresnet(inputs[:, 0, :, :, :])
@@ -116,7 +116,7 @@ def train():
 
     kinnet = KinNet()
 
-    kinnet.load_weights("kinnet_weight.h5")
+    #kinnet.load_weights("kinnet_weight.h5")
     kinnet.compile(
         optimizer="adam",
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
