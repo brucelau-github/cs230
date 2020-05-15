@@ -2,6 +2,7 @@
 """
 import os
 import logging
+import datetime
 import random
 import tensorflow as tf
 import numpy as np
@@ -109,20 +110,20 @@ def initialize_logger(output_dir):
 
 def train():
     """ train kinnet model """
-    checkpoint_path = "results/cp-{epoch:04d}.ckpt"
-    result_dir = os.path.dirname(checkpoint_path)
-    if not os.path.exists(result_dir):
-        os.mkdir(result_dir)
+    log_dir = "logs_{}".format(
+        datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
+    if not os.path.exists(log_dir):
+        os.mkdir(log_dir)
 
-    initialize_logger(result_dir)
+    initialize_logger(log_dir)
 
     train_set, test_set, validation_data = prepare_train_data(16)
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(
-            filepath=checkpoint_path, save_weights_only=True,
+            filepath=log_dir+"/cp-{epoch:04d}.ckpt", save_weights_only=False,
             save_freq='epoch'),
-        tf.keras.callbacks.TensorBoard(log_dir="./logs")
+        tf.keras.callbacks.TensorBoard(log_dir=log_dir+"/tensorboard")
     ]
 
     opt = tf.keras.optimizers.Adam(learning_rate=0.01)
