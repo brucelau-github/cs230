@@ -52,11 +52,11 @@ def prepare_train_data(batch_size):
 
     test_set = tf.data.Dataset.from_tensor_slices(test_set)
     test_set = test_set.map(process_data, num_parallel_calls=-1)
+    valid_data = test_set.take(batch_size * 8)
     test_set = test_set.cache().shuffle(buffer_size=1000)
     test_set = test_set.batch(batch_size)
     test_set = test_set.prefetch(-1)
 
-    valid_data = dataset.take(128)
     valid_data = valid_data.cache().shuffle(buffer_size=1000)
     valid_data = valid_data.batch(batch_size)
     valid_data = valid_data.prefetch(-1)
