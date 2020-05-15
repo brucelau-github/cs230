@@ -37,7 +37,7 @@ def parent_child_faces():
             _, file1, file2 = row
             pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
             pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
-            face_pairs.append((pkl1, pkl2, 2))
+            face_pairs.append((pkl1, pkl2, 1))
     return face_pairs
 
 def sibling_faces():
@@ -141,7 +141,7 @@ def load_faces_n(num, start=0):
     """ load features """
     end = start + num
     if os.path.exists("face_pairs.npy"):
-        same, parent_child, sibling, diff = np.load("face_pairs.npy")
+        same, parent_child, sibling, diff = np.load("face_pairs.npy", allow_pickle=True)
     else:
         same, diff = sames_diff_faces_splitted()
         parent_child = parent_child_faces()
