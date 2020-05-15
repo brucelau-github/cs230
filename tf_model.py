@@ -2,7 +2,9 @@
 """
 import os
 import logging
+import random
 import tensorflow as tf
+import numpy as np
 from load_dataset import load_image_pairs
 
 def read_image(file_path):
@@ -28,16 +30,27 @@ def process_data(row):
     label = tf.keras.backend.one_hot(int(label), 4)
     return [[img1, img2], label]
 
+def logging_sample(data):
+    """ print logging data """
+    logging.info("data size: %d", len(data))
+    np.random.shuffle(data)
+    samples = random.sample(data, 10)
+    logging.info(samples)
+
 def prepare_train_data(batch_size):
     """ split train set and test set """
-    dataset = load_image_pairs()
-    data_size = len(dataset)
-    test_size = int(0.05*data_size)
-    dataset = tf.data.Dataset.from_tensor_slices(dataset)
+    train_set, test_set = load_image_pairs()
+    logging.info("train set")
+    logging_sample(train_set)
+    logging.info("test set")
+    logging_sample(test_set)
+
+    dataset = tf.data.Dataset.from_tensor_slices(train_set)
     dataset = dataset.shuffle(buffer_size=1000)
     dataset = dataset.map(process_data, num_parallel_calls=-1)
 
-    test_set = dataset.take(test_size)
+    test_set = tf.data.Dataset.from_tensor_slices(test_set)
+    test_set = test_set.map(process_data, num_parallel_calls=-1)
     test_set = test_set.cache().shuffle(buffer_size=1000)
     test_set = test_set.batch(batch_size)
     test_set = test_set.prefetch(-1)
@@ -50,8 +63,6 @@ def prepare_train_data(batch_size):
     dataset = dataset.cache().shuffle(buffer_size=1000)
     dataset = dataset.batch(batch_size)
     dataset = dataset.prefetch(-1)
-    logging.info("contain %d data: %d train, %d test", data_size,
-                 data_size-test_size, test_size)
 
     return dataset, test_set, valid_data
 

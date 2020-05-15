@@ -1,6 +1,5 @@
 """ preprocess image data """
 import os
-import logging
 import itertools
 import math
 import random
@@ -87,6 +86,35 @@ def sames_diff_faces():
 
     return face_pairs
 
+def sames_diff_faces_splitted():
+    """list all same faces data set
+    return: [(f1, f2), (f1, f3) ....]
+    """
+    base_dir = "fiwdata/FIDs-features"
+    same_faces = []
+    diff_faces = []
+    for fid in glob.glob(base_dir+"/F*"):
+        tmp = []
+        for mid in glob.glob(fid+"/MID*"):
+            mid_faces = glob.glob(mid+"/*.pkl")
+            same_faces.append(mid_faces)
+            tmp.extend(mid_faces)
+        diff_faces.append([tmp, glob.glob(fid+"/unrelated_and_nonfaces/*.pkl")])
+
+    same_face_pairs = []
+    diff_face_pairs = []
+    for same_face in same_faces:
+        permu = itertools.permutations(same_face, 2)
+        for pair in permu:
+            same_face_pairs.append((pair[0], pair[1], 3))
+
+    for diff_face in diff_faces:
+        produ = itertools.product(diff_face[0], diff_face[1])
+        for pair in produ:
+            diff_face_pairs.append((pair[0], pair[1], 0))
+
+    return same_face_pairs, diff_face_pairs
+
 def print_sample(data):
     """ print sample """
     samples = random.sample(data, 50)
@@ -109,11 +137,21 @@ def load_faces():
     return face_pairs
 
 
-def load_faces_n(num):
+def load_faces_n(num, start=0):
     """ load features """
-    face_pairs = parent_child_faces()[:num]
-    face_pairs.extend(sibling_faces()[:num])
-    face_pairs.extend(sames_diff_faces()[:(2*num)])
+    end = start + num
+    if os.path.exists("face_pairs.npy"):
+        same, parent_child, sibling, diff = np.load("face_pairs.npy")
+    else:
+        same, diff = sames_diff_faces_splitted()
+        parent_child = parent_child_faces()
+        sibling = sibling_faces()
+        np.save("face_pairs.npy", [same, parent_child, sibling, diff])
+
+    face_pairs = parent_child[start:end]
+    face_pairs.extend(sibling[start:end])
+    face_pairs.extend(same[start:end])
+    face_pairs.extend(diff[start:end])
     return face_pairs
 
 def save_pickle(data, file_name="face_pairs.pkl"):
@@ -209,13 +247,18 @@ def to_pic_path(file_path):
 
 def load_image_pairs():
     """ return image paths """
-    data = []
-    face_pairs = load_faces_n(1000)
-    for pair in face_pairs:
+    train_pairs = load_faces_n(200)
+    for pair in train_pairs:
         file1, file2, label = pair
         pic1 = to_pic_path(file1)
         pic2 = to_pic_path(file2)
-        data.append([pic1, pic2, str(label)])
-    logging.warning("contains %d", len(data))
+        train_pairs.append([pic1, pic2, str(label)])
 
-    return data
+    test_pairs = load_faces_n(5000, 200)
+    for pair in test_pairs:
+        file1, file2, label = pair
+        pic1 = to_pic_path(file1)
+        pic2 = to_pic_path(file2)
+        test_pairs.append([pic1, pic2, str(label)])
+
+    return train_pairs, test_pairs
