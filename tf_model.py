@@ -108,6 +108,18 @@ def initialize_logger(output_dir):
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
+class LossTracker(tf.keras.callbacks.Callback):
+    """ log accuracy """
+    def on_batch_end(self, batch, logs=None):
+        if batch % 100 == 0:
+            logging.info("batch %f: loss: %f acc: %f",
+                         batch, logs['loss'], logs["acc"])
+
+    def on_epoch_end(self, epoch, logs=None):
+        logging.info("epoch %f: loss: %f acc: %f",
+                     epoch, logs['loss'], logs["acc"])
+
+
 def train():
     """ train kinnet model """
     log_dir = "logs_{}".format(
@@ -123,7 +135,8 @@ def train():
         tf.keras.callbacks.ModelCheckpoint(
             filepath=log_dir+"/cp-{epoch:04d}.ckpt", save_weights_only=False,
             save_freq='epoch'),
-        tf.keras.callbacks.TensorBoard(log_dir=log_dir+"/tensorboard")
+        tf.keras.callbacks.TensorBoard(log_dir=log_dir+"/tensorboard"),
+        LossTracker()
     ]
 
     opt = tf.keras.optimizers.Adam(learning_rate=0.01)
