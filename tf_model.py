@@ -86,6 +86,7 @@ class KinNet(tf.keras.Model):
         x = self.dense2(x)
         x = self.dense3(x)
         return x
+
 def initialize_logger(output_dir):
     """ init logger """
     logger = logging.getLogger()
