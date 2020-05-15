@@ -115,11 +115,11 @@ class LossTracker(tf.keras.callbacks.Callback):
     def on_batch_end(self, batch, logs=None):
         if batch % 100 == 0:
             logging.info("batch %d: loss: %f acc: %f",
-                         batch, logs.get('loss'), logs.get("accuracy"))
+                         batch, logs.get('loss', -1.0), logs.get("accuracy", -1.0))
 
     def on_epoch_end(self, epoch, logs=None):
-        logging.info("epoch %f: loss: %f",
-                     epoch, logs['loss'])
+        logging.info("epoch %f: loss: %f, acc: %f",
+                     epoch, logs.get("loss", -1.0), logs.get("accuracy", -1.0))
 
 
 def train():
