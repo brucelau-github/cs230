@@ -34,7 +34,7 @@ def prepare_train_data(batch_size):
     data_size = len(dataset)
     test_size = int(0.05*data_size)
     dataset = tf.data.Dataset.from_tensor_slices(dataset)
-    dataset = dataset.suffle(buffer_size=1000)
+    dataset = dataset.shuffle(buffer_size=1000)
     dataset = dataset.map(process_data, num_parallel_calls=-1)
 
     test_set = dataset.take(test_size)
