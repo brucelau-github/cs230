@@ -64,7 +64,7 @@ class KinNet(tf.keras.Model):
             pooling="avg")
         # output (1536, 1)
         self.dense1 = tf.keras.layers.Dense(1024, activation=tf.nn.relu, name="fc1")
-        self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu name="fc2")
+        self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu, name="fc2")
         self.dense3 = tf.keras.layers.Dense(4, name="logits")
 
     def call(self, inputs, training=None, mask=None):
