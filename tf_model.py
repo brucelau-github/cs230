@@ -158,7 +158,7 @@ def train():
     logging.info("saving weights files: kinnet_weight.h5")
     kinnet.save_weights("kinnet_weight")
 
-    test_loss, test_acc = kinnet.evaluate(test_set, verbose=2)
+    test_loss, test_acc = kinnet.evaluate(test_set, verbose=2, callbacks=[LossTracker()])
     logging.info("test accuracy: %f", test_acc)
     logging.info("test lost: %f", test_loss)
 
