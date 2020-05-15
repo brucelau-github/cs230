@@ -113,12 +113,14 @@ def train():
         tf.keras.callbacks.TensorBoard(log_dir="./logs")
     ]
 
+    opt = tf.keras.optimizers.Adam(learning_rate=0.01)
 
     kinnet = KinNet()
 
-    #kinnet.load_weights("kinnet_weight.h5")
+    if os.path.exists("kinnet_weight"):
+       kinnet.load_weights("kinnet_weight")
     kinnet.compile(
-        optimizer="adam",
+        optimizer=opt,
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
     history = kinnet.fit(
