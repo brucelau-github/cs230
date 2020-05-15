@@ -210,7 +210,7 @@ def to_pic_path(file_path):
 def load_image_pairs():
     """ return image paths """
     data = []
-    face_pairs = load_faces_n(10000)
+    face_pairs = load_faces_n(1000)
     for pair in face_pairs:
         file1, file2, label = pair
         pic1 = to_pic_path(file1)
