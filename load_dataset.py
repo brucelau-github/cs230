@@ -248,7 +248,7 @@ def to_pic_path(file_path):
 def load_image_pairs():
     """ return image paths """
     train_pairs = []
-    for pair in load_faces_n(5000, 500):
+    for pair in load_faces_n(5000, 2500):
         file1, file2, label = pair
         pic1 = to_pic_path(file1)
         pic2 = to_pic_path(file2)

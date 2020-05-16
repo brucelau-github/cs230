@@ -141,7 +141,7 @@ def train():
         LossTracker()
     ]
 
-    opt = tf.keras.optimizers.Adam(learning_rate=0.01)
+    opt = tf.keras.optimizers.Adam(learning_rate=0.001)
 
     kinnet = KinNet()
 
@@ -152,7 +152,7 @@ def train():
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
     history = kinnet.fit(
-        x=train_set, epochs=5, callbacks=callbacks, validation_data=validation_data)
+        x=train_set, epochs=3, callbacks=callbacks, validation_data=validation_data)
 
     logging.info("history: %s", history.history)
     logging.info("saving weights files: kinnet_weight.h5")
