@@ -52,7 +52,7 @@ def prepare_train_data(batch_size):
 
     test_set = tf.data.Dataset.from_tensor_slices(test_set)
     test_set = test_set.shuffle(buffer_size=1000)
-    valid_data = test_set.take(batch_size * 8)
+    valid_data = test_set.take(batch_size * 16)
     test_set = test_set.map(process_data, num_parallel_calls=-1)
     test_set = test_set.cache().shuffle(buffer_size=1000)
     test_set = test_set.batch(batch_size)
@@ -73,20 +73,16 @@ class KinNet(tf.keras.Model):
     """ inception resnet + 2 dense """
     def __init__(self):
         super(KinNet, self).__init__()
+        # output (batch_size, 1536)
         self.inresnet = tf.keras.applications.InceptionResNetV2(
-            include_top=False, weights='imagenet', input_shape=(299, 299, 3),
-            pooling="avg")
-        # output (1536, 1)
-        self.dense1 = tf.keras.layers.Dense(1024, activation=tf.nn.relu, name="fc1")
-        self.dense2 = tf.keras.layers.Dense(128, activation=tf.nn.relu, name="fc2")
+            include_top=False, weights="imagenet", input_shape=(299, 299, 3),
+            pooling="max")
         self.dense3 = tf.keras.layers.Dense(4, name="logits")
 
     def call(self, inputs, training=None, mask=None):
         enc1 = self.inresnet(inputs[:, 0, :, :, :])
         enc2 = self.inresnet(inputs[:, 1, :, :, :])
         x = tf.keras.layers.Concatenate(axis=1, name='concat')([enc1, enc2])
-        x = self.dense1(x)
-        x = self.dense2(x)
         x = self.dense3(x)
         return x
 
@@ -141,21 +137,20 @@ def train():
         LossTracker()
     ]
 
-    opt = tf.keras.optimizers.Adam(learning_rate=0.001)
+    opt = tf.keras.optimizers.Adam(learning_rate=0.01)
 
     kinnet = KinNet()
 
     if os.path.exists("kinnet_weight.index"):
-        kinnet.load_weights("kinnet_weight")
+        kinnet.load_weights("kinnet_weight", by_name=True, skip_mismatch=True)
     kinnet.compile(
         optimizer=opt,
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
     history = kinnet.fit(
-        x=train_set, epochs=3, callbacks=callbacks, validation_data=validation_data)
+        x=train_set, epochs=5, callbacks=callbacks, validation_data=validation_data)
 
     logging.info("history: %s", history.history)
-    logging.info("saving weights files: kinnet_weight.h5")
     kinnet.save_weights("kinnet_weight")
 
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2, callbacks=[LossTracker()])

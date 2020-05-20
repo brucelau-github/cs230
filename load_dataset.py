@@ -248,14 +248,16 @@ def to_pic_path(file_path):
 def load_image_pairs():
     """ return image paths """
     train_pairs = []
-    for pair in load_faces_n(5000, 2500):
+    # 40K train samples
+    for pair in load_faces_n(10000, 1500):
         file1, file2, label = pair
         pic1 = to_pic_path(file1)
         pic2 = to_pic_path(file2)
         train_pairs.append([pic1, pic2, str(label)])
 
     test_pairs = []
-    for pair in load_faces_n(500):
+    # about 1500*4=6K test samples
+    for pair in load_faces_n(1500):
         file1, file2, label = pair
         pic1 = to_pic_path(file1)
         pic2 = to_pic_path(file2)
