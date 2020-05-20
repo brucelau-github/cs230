@@ -249,7 +249,7 @@ def load_image_pairs():
     """ return image paths """
     train_pairs = []
     # 40K train samples
-    for pair in load_faces_n(5000, 1500):
+    for pair in load_faces_n(5000, 6500):
         file1, file2, label = pair
         pic1 = to_pic_path(file1)
         pic2 = to_pic_path(file2)

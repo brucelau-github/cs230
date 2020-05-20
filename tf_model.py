@@ -142,7 +142,7 @@ def train():
     kinnet = KinNet()
 
     if os.path.exists("kinnet_weight.index"):
-        kinnet.load_weights("kinnet_weight", by_name=True, skip_mismatch=True)
+        kinnet.load_weights("kinnet_weight")
     kinnet.compile(
         optimizer=opt,
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
