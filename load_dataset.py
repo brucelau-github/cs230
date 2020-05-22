@@ -38,6 +38,8 @@ def parent_child_faces():
             pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
             pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
             face_pairs.append((pkl1, pkl2, 1))
+
+    random.shuffle(face_pairs)
     return face_pairs
 
 def sibling_faces():
@@ -56,6 +58,7 @@ def sibling_faces():
             pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
             pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
             face_pairs.append((pkl1, pkl2, 2))
+    random.shuffle(face_pairs)
     return face_pairs
 
 def sames_diff_faces():
@@ -113,6 +116,8 @@ def sames_diff_faces_splitted():
         for pair in produ:
             diff_face_pairs.append((pair[0], pair[1], 0))
 
+    random.shuffle(same_face_pairs)
+    random.shuffle(diff_face_pairs)
     return same_face_pairs, diff_face_pairs
 
 def print_sample(data):
@@ -247,20 +252,36 @@ def to_pic_path(file_path):
 
 def load_image_pairs():
     """ return image paths """
+    if os.path.exists("face_pairs.npy"):
+        same, parent_child, sibling, diff = np.load("face_pairs.npy", allow_pickle=True)
+    else:
+        same, diff = sames_diff_faces_splitted()
+        parent_child = parent_child_faces()
+        sibling = sibling_faces()
+        np.save("face_pairs.npy", [same, parent_child, sibling, diff])
     train_pairs = []
-    # 40K train samples
-    for pair in load_faces_n(5000, 6500):
-        file1, file2, label = pair
-        pic1 = to_pic_path(file1)
-        pic2 = to_pic_path(file2)
-        train_pairs.append([pic1, pic2, str(label)])
-
     test_pairs = []
-    # about 1500*4=6K test samples
-    for pair in load_faces_n(1500):
-        file1, file2, label = pair
-        pic1 = to_pic_path(file1)
-        pic2 = to_pic_path(file2)
-        test_pairs.append([pic1, pic2, str(label)])
+    if os.path.exists("face_pairs_train_test.npy"):
+        train_pairs, test_pairs = np.load("face_pairs_train_test.npy", allow_pickle=True)
+    else:
+        random.shuffle(same)
+        random.shuffle(diff)
+        random.shuffle(parent_child)
+        random.shuffle(sibling)
+        test_pairs.extend(same[:1500])
+        test_pairs.extend(parent_child[:1500])
+        test_pairs.extend(sibling[:1500])
+        test_pairs.extend(diff[:1500])
+        random.shuffle(test_pairs)
 
-    return train_pairs, test_pairs
+        train_pairs.extend(same[1500:50000])
+        train_pairs.extend(parent_child[1500:50000])
+        train_pairs.extend(sibling[1500:50000])
+        train_pairs.extend(diff[1500:50000])
+        random.shuffle(train_pairs)
+        np.save("face_pairs_train_test.npy", [train_pairs, test_pairs])
+
+    random.shuffle(train_pairs)
+    random.shuffle(test_pairs)
+
+    return train_pairs[:5000], test_pairs
