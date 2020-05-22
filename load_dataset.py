@@ -264,21 +264,33 @@ def load_image_pairs():
     if os.path.exists("face_pairs_train_test.npy"):
         train_pairs, test_pairs = np.load("face_pairs_train_test.npy", allow_pickle=True)
     else:
+        face_pairs = []
         random.shuffle(same)
         random.shuffle(diff)
         random.shuffle(parent_child)
         random.shuffle(sibling)
-        test_pairs.extend(same[:1500])
-        test_pairs.extend(parent_child[:1500])
-        test_pairs.extend(sibling[:1500])
-        test_pairs.extend(diff[:1500])
-        random.shuffle(test_pairs)
+        face_pairs.extend(same[:1500])
+        face_pairs.extend(parent_child[:1500])
+        face_pairs.extend(sibling[:1500])
+        face_pairs.extend(diff[:1500])
+        random.shuffle(face_pairs)
+        for face_pair in face_pairs:
+            pic1, pic2, label = face_pair
+            pic1 = to_pic_path(pic1)
+            pic2 = to_pic_path(pic2)
+            test_pairs.append([pic1, pic2, str(label)])
 
-        train_pairs.extend(same[1500:50000])
-        train_pairs.extend(parent_child[1500:50000])
-        train_pairs.extend(sibling[1500:50000])
-        train_pairs.extend(diff[1500:50000])
-        random.shuffle(train_pairs)
+        face_pairs = []
+        face_pairs.extend(same[1500:50000])
+        face_pairs.extend(parent_child[1500:50000])
+        face_pairs.extend(sibling[1500:50000])
+        face_pairs.extend(diff[1500:50000])
+        random.shuffle(face_pairs)
+        for face_pair in face_pairs:
+            pic1, pic2, label = face_pair
+            pic1 = to_pic_path(pic1)
+            pic2 = to_pic_path(pic2)
+            train_pairs.append([pic1, pic2, str(label)])
         np.save("face_pairs_train_test.npy", [train_pairs, test_pairs])
 
     random.shuffle(train_pairs)
