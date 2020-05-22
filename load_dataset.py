@@ -37,7 +37,7 @@ def parent_child_faces():
             _, file1, file2 = row
             pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
             pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
-            face_pairs.append((pkl1, pkl2, 1))
+            face_pairs.append((pkl1, pkl2, "1"))
 
     random.shuffle(face_pairs)
     return face_pairs
@@ -57,7 +57,7 @@ def sibling_faces():
             _, file1, file2 = row
             pkl1 = base_dir + os.path.splitext(file1)[0] + ".pkl"
             pkl2 = base_dir + os.path.splitext(file2)[0] + ".pkl"
-            face_pairs.append((pkl1, pkl2, 2))
+            face_pairs.append((pkl1, pkl2, "2"))
     random.shuffle(face_pairs)
     return face_pairs
 
@@ -80,12 +80,12 @@ def sames_diff_faces():
     for same_face in same_faces:
         permu = itertools.permutations(same_face, 2)
         for pair in permu:
-            face_pairs.append((pair[0], pair[1], 3))
+            face_pairs.append((pair[0], pair[1], "3"))
 
     for diff_face in diff_faces:
         produ = itertools.product(diff_face[0], diff_face[1])
         for pair in produ:
-            face_pairs.append((pair[0], pair[1], 0))
+            face_pairs.append((pair[0], pair[1], "0"))
 
     return face_pairs
 
@@ -109,12 +109,12 @@ def sames_diff_faces_splitted():
     for same_face in same_faces:
         permu = itertools.permutations(same_face, 2)
         for pair in permu:
-            same_face_pairs.append((pair[0], pair[1], 3))
+            same_face_pairs.append((pair[0], pair[1], "3"))
 
     for diff_face in diff_faces:
         produ = itertools.product(diff_face[0], diff_face[1])
         for pair in produ:
-            diff_face_pairs.append((pair[0], pair[1], 0))
+            diff_face_pairs.append((pair[0], pair[1], "0"))
 
     random.shuffle(same_face_pairs)
     random.shuffle(diff_face_pairs)
