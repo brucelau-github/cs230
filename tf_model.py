@@ -148,7 +148,7 @@ def train():
         loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
         metrics=["accuracy"])
     history = kinnet.fit(
-        x=train_set, epochs=3, callbacks=callbacks, validation_data=validation_data)
+        x=train_set, epochs=2, callbacks=callbacks, validation_data=validation_data)
 
     logging.info("history: %s", history.history)
     kinnet.save_weights("kinnet_weight")
