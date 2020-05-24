@@ -296,4 +296,4 @@ def load_image_pairs():
     random.shuffle(train_pairs)
     random.shuffle(test_pairs)
 
-    return train_pairs[:10000], test_pairs
+    return train_pairs[:20000], test_pairs
