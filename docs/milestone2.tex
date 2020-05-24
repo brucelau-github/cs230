@@ -53,7 +53,7 @@ this data. Otherwise the prediction would improve a lot.
 
 Even thought many researcher have tried traditional approach to on image
 recogintion tasks, Deep learning shows state-of-art achievement out-perform
-other method by two order in computer image tasks. One of well-known image
+other method by two orders in computer image tasks. One of well-known image
 recognition tasks is ImageNet[5] classification, which contains 14
 million images labeled to roughly 22,000 catergories, and is widely used in
 literacy as a large visual database for visual object recognition.
@@ -131,6 +131,7 @@ model little bits to create new model to classify image pairs.
 \begin{figure}[h]
 	\caption{Our modified model}
 	\includegraphics[width=1\textwidth]{img/model_pic1}
+	\centering
 \end{figure}
 
 One of the best facenet implementation models is InceptionResNetv2[11], which
@@ -156,19 +157,20 @@ into dense layers to produce 4 output. Table 2 show detail architecture.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ | l | c | c | c | c |}
-		layer&size-in&size-out&param&FLPS\\
+		\hline
+		\textbf{layers}&\textbf{size-in}&\textbf{size-out}&\textbf{param}&\textbf{FLPS}\\
 		\hline
 			Input1 & 299x299x3 & & 0 & \\
 			Input2 & 299x299x3 & & 0 & \\
-			InceptionResNetV2 & 299x299x3 & 1x1536 & & \\
-			InceptionResNetV2 & 299x299x3 & 1x1536 & & \\
+			InceptionResNetV2 & 299x299x3 & 1x1536 & 75M & 75M \\
+			InceptionResNetV2 & 299x299x3 & 1x1536 & 75M & 75M \\
 			concat & 2x1536 & 1x3072 & & 0 \\
 			fc1 & 1x3072 & 1x1024 & 3M & 3M \\
 			fc2 & 1x1024 & 1x128 & 131K & 131K \\
 			softmax & 1x1024 & 1x4 & 4100 & 4100 \\
 		\hline
 	\end{tabular}
-	\caption{KinNet Layers}
+	\caption{KinNet Layers Model I}
 	\label{table:2}
 \end{table}
 
@@ -198,12 +200,13 @@ lower learning rate the model resumes to its performance on test set.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ | l | c | c | c | c |}
-		layer&size-in&size-out&param&FLPS\\
+		\hline
+		\textbf{layers}&\textbf{size-in}&\textbf{size-out}&\textbf{param}&\textbf{FLPS}\\
 		\hline
 			Input1 & 299x299x3 & & 0 & \\
 			Input2 & 299x299x3 & & 0 & \\
-			InceptionResNetV2 & 299x299x3 & 1x1536 & & \\
-			InceptionResNetV2 & 299x299x3 & 1x1536 & & \\
+			InceptionResNetV2 & 299x299x3 & 1x1536 & 75M & 75M \\
+			InceptionResNetV2 & 299x299x3 & 1x1536 & 75M & 75M \\
 			concat & 2x1536 & 1x3072 & & 0 \\
 			softmax & 1x1024 & 1x4 & 4100 & 4100 \\
 		\hline
@@ -212,6 +215,7 @@ lower learning rate the model resumes to its performance on test set.
 	\label{table:3}
 \end{table}
 
+In the next training session, I would further reduce learing rate to 0.0001 feeding more data into the model. It hopefully reach 75\%, human performance accuracy.
 
 github repository: https://github.com/brucelau-github/cs230
 
