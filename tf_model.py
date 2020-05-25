@@ -137,7 +137,7 @@ def train():
         LossTracker()
     ]
 
-    opt = tf.keras.optimizers.Adam(learning_rate=0.00001)
+    opt = tf.keras.optimizers.Adam(learning_rate=0.000001)
 
     kinnet = KinNet()
 
