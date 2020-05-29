@@ -1,0 +1,915 @@
+2020-05-16 12:17:36,747 - INFO - train set
+2020-05-16 12:17:36,747 - INFO - data size: 20000
+2020-05-16 12:17:36,749 - INFO - [['fiwdata/FIDs/F0244/MID1/P02579_face1.jpg', 'fiwdata/FIDs/F0244/MID1/P02581_face0.jpg', '3'], ['fiwdata/FIDs/F0581/MID1/P06109_face1.jpg', 'fiwdata/FIDs/F0581/MID1/P06111_face3.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P11742_face0.jpg', 'fiwdata/FIDs/F0009/MID2/P10588_face2.jpg', '2'], ['fiwdata/FIDs/F0763/MID7/P12197_face1.jpg', 'fiwdata/FIDs/F0763/unrelated_and_nonfaces/P12197_face4.jpg', '0'], ['fiwdata/FIDs/F0009/MID3/P11729_face1.jpg', 'fiwdata/FIDs/F0009/MID6/P11723_face1.jpg', '2'], ['fiwdata/FIDs/F0009/MID2/P11754_face1.jpg', 'fiwdata/FIDs/F0009/MID6/P10574_face1.jpg', '2'], ['fiwdata/FIDs/F0083/MID1/P00861_face6.jpg', 'fiwdata/FIDs/F0083/MID4/P00853_face3.jpg', '1'], ['fiwdata/FIDs/F0080/MID1/P00828_face3.jpg', 'fiwdata/FIDs/F0080/MID6/P00825_face1.jpg', '1'], ['fiwdata/FIDs/F0141/MID2/P01492_face2.jpg', 'fiwdata/FIDs/F0141/MID6/P01486_face3.jpg', '1'], ['fiwdata/FIDs/F0009/MID3/P11729_face1.jpg', 'fiwdata/FIDs/F0009/MID6/P11756_face1.jpg', '2']]
+2020-05-16 12:17:36,749 - INFO - test set
+2020-05-16 12:17:36,749 - INFO - data size: 2000
+2020-05-16 12:17:36,750 - INFO - [['fiwdata/FIDs/F0618/MID2/P06481_face0.jpg', 'fiwdata/FIDs/F0618/unrelated_and_nonfaces/P06482_face2.jpg', '0'], ['fiwdata/FIDs/F0007/MID7/P00079_face0.jpg', 'fiwdata/FIDs/F0007/MID1/P00075_face0.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P00089_face4.jpg', 'fiwdata/FIDs/F0009/MID6/P11727_face1.jpg', '2'], ['fiwdata/FIDs/F0345/MID1/P03664_face0.jpg', 'fiwdata/FIDs/F0345/MID1/P03668_face0.jpg', '3'], ['fiwdata/FIDs/F0836/MID1/P08832_face3.jpg', 'fiwdata/FIDs/F0836/MID1/P08840_face1.jpg', '3'], ['fiwdata/FIDs/F0009/MID7/P10576_face2.jpg', 'fiwdata/FIDs/F0009/MID6/P11756_face1.jpg', '1'], ['fiwdata/FIDs/F0006/MID4/P00068_face1.jpg', 'fiwdata/FIDs/F0006/MID4/P00069_face1.jpg', '3'], ['fiwdata/FIDs/F0007/MID1/P00075_face0.jpg', 'fiwdata/FIDs/F0007/MID8/P11276_face0.jpg', '2'], ['fiwdata/FIDs/F0001/MID2/P00008_face7.jpg', 'fiwdata/FIDs/F0001/MID4/P00006_face1.jpg', '1'], ['fiwdata/FIDs/F0006/MID3/P00064_face0.jpg', 'fiwdata/FIDs/F0006/MID4/P00069_face1.jpg', '2']]
+2020-05-16 12:19:26,807 - INFO - batch 0: loss: 0.138001 acc: 0.937500
+2020-05-16 12:23:37,993 - INFO - batch 100: loss: 0.495886 acc: 0.826114
+2020-05-16 12:27:50,681 - INFO - batch 200: loss: 0.418720 acc: 0.845149
+2020-05-16 12:32:03,165 - INFO - batch 300: loss: 0.385613 acc: 0.857973
+2020-05-16 12:36:15,560 - INFO - batch 400: loss: 0.365811 acc: 0.866584
+2020-05-16 12:40:28,057 - INFO - batch 500: loss: 0.338914 acc: 0.876996
+2020-05-16 12:44:41,034 - INFO - batch 600: loss: 0.339602 acc: 0.878848
+2020-05-16 12:48:54,135 - INFO - batch 700: loss: 0.329430 acc: 0.881241
+2020-05-16 12:53:07,164 - INFO - batch 800: loss: 0.355843 acc: 0.873283
+2020-05-16 12:57:19,732 - INFO - batch 900: loss: 0.370889 acc: 0.867716
+2020-05-16 13:01:32,336 - INFO - batch 1000: loss: 0.375203 acc: 0.865010
+2020-05-16 13:05:45,198 - INFO - batch 1100: loss: 0.368697 acc: 0.867393
+2020-05-16 13:09:57,735 - INFO - batch 1200: loss: 0.359390 acc: 0.870837
+2020-05-16 13:12:17,036 - INFO - epoch 0.000000: loss: 0.351978, acc: 0.873650
+2020-05-16 13:12:19,644 - INFO - batch 0: loss: 0.004439 acc: 1.000000
+2020-05-16 13:16:31,625 - INFO - batch 100: loss: 0.229144 acc: 0.927599
+2020-05-16 13:20:43,860 - INFO - batch 200: loss: 0.195292 acc: 0.934702
+2020-05-16 13:24:55,868 - INFO - batch 300: loss: 0.176149 acc: 0.938538
+2020-05-16 13:29:07,899 - INFO - batch 400: loss: 0.173489 acc: 0.940150
+2020-05-16 13:33:19,957 - INFO - batch 500: loss: 0.179573 acc: 0.938373
+2020-05-16 13:37:32,019 - INFO - batch 600: loss: 0.169756 acc: 0.941660
+2020-05-16 13:41:44,016 - INFO - batch 700: loss: 0.158823 acc: 0.945346
+2020-05-16 13:45:55,965 - INFO - batch 800: loss: 0.158447 acc: 0.945303
+2020-05-16 13:50:07,892 - INFO - batch 900: loss: 0.157323 acc: 0.945477
+2020-05-16 13:54:19,254 - INFO - batch 1000: loss: 0.151776 acc: 0.947178
+2020-05-16 13:58:30,893 - INFO - batch 1100: loss: 0.151989 acc: 0.947150
+2020-05-16 14:02:42,424 - INFO - batch 1200: loss: 0.154533 acc: 0.946555
+2020-05-16 14:04:53,521 - INFO - epoch 1.000000: loss: 0.154801, acc: 0.947100
+2020-05-16 14:04:56,127 - INFO - batch 0: loss: 0.229762 acc: 0.812500
+2020-05-16 14:09:07,718 - INFO - batch 100: loss: 0.142959 acc: 0.952352
+2020-05-16 14:13:19,415 - INFO - batch 200: loss: 0.127162 acc: 0.957090
+2020-05-16 14:17:31,105 - INFO - batch 300: loss: 0.152062 acc: 0.949128
+2020-05-16 14:21:42,738 - INFO - batch 400: loss: 0.140849 acc: 0.952618
+2020-05-16 14:25:54,268 - INFO - batch 500: loss: 0.137502 acc: 0.953343
+2020-05-16 14:30:05,842 - INFO - batch 600: loss: 0.138995 acc: 0.953099
+2020-05-16 14:34:17,436 - INFO - batch 700: loss: 0.138665 acc: 0.953103
+2020-05-16 14:38:29,142 - INFO - batch 800: loss: 0.135099 acc: 0.954042
+2020-05-16 14:42:40,784 - INFO - batch 900: loss: 0.133366 acc: 0.955119
+2020-05-16 14:46:52,393 - INFO - batch 1000: loss: 0.129784 acc: 0.955981
+2020-05-16 14:51:03,859 - INFO - batch 1100: loss: 0.127608 acc: 0.956403
+2020-05-16 14:55:15,449 - INFO - batch 1200: loss: 0.125623 acc: 0.957119
+2020-05-16 14:57:26,471 - INFO - epoch 2.000000: loss: 0.123319, acc: 0.957950
+2020-05-16 14:57:26,473 - INFO - history: {'loss': [0.35197821259498596, 0.15480118989944458, 0.12331902980804443], 'accuracy': [0.8736500144004822, 0.9470999836921692, 0.9579499959945679], 'val_loss': [1.0435422658920288, 1.6728651523590088, 1.2551467418670654], 'val_accuracy': [0.6953125, 0.7109375, 0.734375]}
+2020-05-16 14:57:26,473 - INFO - saving weights files: kinnet_weight.h5
+2020-05-16 14:59:12,118 - INFO - test accuracy: 0.677000
+2020-05-16 14:59:12,119 - INFO - test lost: 1.580017
+2020-05-20 13:02:38,423 - INFO - train set
+2020-05-20 13:02:38,424 - INFO - data size: 20000
+2020-05-20 13:02:38,425 - INFO - [['fiwdata/FIDs/F0311/MID1/P03309_face1.jpg', 'fiwdata/FIDs/F0311/unrelated_and_nonfaces/P03313_face0.jpg', '0'], ['fiwdata/FIDs/F0009/MID1/P11719_face0.jpg', 'fiwdata/FIDs/F0009/MID6/P11733_face4.jpg', '2'], ['fiwdata/FIDs/F0009/MID2/P10588_face2.jpg', 'fiwdata/FIDs/F0009/MID3/P11727_face0.jpg', '2'], ['fiwdata/FIDs/F0009/MID1/P11743_face1.jpg', 'fiwdata/FIDs/F0009/MID6/P11732_face1.jpg', '2'], ['fiwdata/FIDs/F0002/MID1/P00014_face0.jpg', 'fiwdata/FIDs/F0002/MID1/P00015_face1.jpg', '3'], ['fiwdata/FIDs/F0015/MID4/P00158_face7.jpg', 'fiwdata/FIDs/F0015/unrelated_and_nonfaces/P00158_face6.jpg', '0'], ['fiwdata/FIDs/F0311/MID2/P03312_face3.jpg', 'fiwdata/FIDs/F0311/unrelated_and_nonfaces/P03314_face0.jpg', '0'], ['fiwdata/FIDs/F0009/MID3/P10570_face5.jpg', 'fiwdata/FIDs/F0009/MID4/P11741_face0.jpg', '2'], ['fiwdata/FIDs/F0089/MID1/P00923_face1.jpg', 'fiwdata/FIDs/F0089/MID1/P00922_face2.jpg', '3'], ['fiwdata/FIDs/F0763/MID1/P12203_face1.jpg', 'fiwdata/FIDs/F0763/MID1/P12191_face5.jpg', '3']]
+2020-05-20 13:02:38,426 - INFO - test set
+2020-05-20 13:02:38,426 - INFO - data size: 6000
+2020-05-20 13:02:38,426 - INFO - [['fiwdata/FIDs/F0009/MID7/P11745_face4.jpg', 'fiwdata/FIDs/F0009/MID1/P10571_face17.jpg', '1'], ['fiwdata/FIDs/F0311/MID3/P03307_face0.jpg', 'fiwdata/FIDs/F0311/MID3/P03308_face3.jpg', '3'], ['fiwdata/FIDs/F0009/MID7/P11739_face0.jpg', 'fiwdata/FIDs/F0009/MID4/P10574_face4.jpg', '1'], ['fiwdata/FIDs/F0007/MID2/P00074_face0.jpg', 'fiwdata/FIDs/F0007/MID3/P00078_face4.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P10573_face1.jpg', 'fiwdata/FIDs/F0009/MID3/P10570_face5.jpg', '2'], ['fiwdata/FIDs/F0009/MID7/P10576_face2.jpg', 'fiwdata/FIDs/F0009/MID1/P11755_face0.jpg', '1'], ['fiwdata/FIDs/F0937/MID1/P09882_face0.jpg', 'fiwdata/FIDs/F0937/MID1/P09878_face1.jpg', '3'], ['fiwdata/FIDs/F0311/MID1/P03307_face2.jpg', 'fiwdata/FIDs/F0311/MID1/P03313_face2.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P10570_face4.jpg', 'fiwdata/FIDs/F0009/MID6/P11713_face0.jpg', '2'], ['fiwdata/FIDs/F0010/MID2/P00107_face0.jpg', 'fiwdata/FIDs/F0010/MID3/P00104_face1.jpg', '1']]
+2020-05-20 13:03:59,135 - INFO - batch 0: loss: 3.916804 acc: 0.250000
+2020-05-20 13:08:15,459 - INFO - batch 100: loss: 8.989024 acc: 0.282797
+2020-05-20 13:12:34,916 - INFO - batch 200: loss: 6.292514 acc: 0.267724
+2020-05-20 13:16:53,948 - INFO - batch 300: loss: 5.272192 acc: 0.275955
+2020-05-20 13:21:12,489 - INFO - batch 400: loss: 4.709939 acc: 0.276029
+2020-05-20 13:25:30,159 - INFO - batch 500: loss: 4.224852 acc: 0.275324
+2020-05-20 13:29:47,780 - INFO - batch 600: loss: 3.820628 acc: 0.280470
+2020-05-20 13:34:05,312 - INFO - batch 700: loss: 3.509193 acc: 0.292529
+2020-05-20 13:38:23,309 - INFO - batch 800: loss: 3.261172 acc: 0.301108
+2020-05-20 13:42:41,207 - INFO - batch 900: loss: 3.071581 acc: 0.308338
+2020-05-20 13:46:59,292 - INFO - batch 1000: loss: 2.902830 acc: 0.316996
+2020-05-20 13:51:17,028 - INFO - batch 1100: loss: 2.782801 acc: 0.320277
+2020-05-20 13:55:34,678 - INFO - batch 1200: loss: 2.663199 acc: 0.324729
+2020-05-20 13:58:02,986 - INFO - epoch 0.000000: loss: 2.611243, acc: 0.327000
+2020-05-20 13:58:05,652 - INFO - batch 0: loss: 1.224109 acc: 0.312500
+2020-05-20 14:02:23,006 - INFO - batch 100: loss: 1.310963 acc: 0.409653
+2020-05-20 14:06:40,712 - INFO - batch 200: loss: 1.294118 acc: 0.411692
+2020-05-20 14:10:58,173 - INFO - batch 300: loss: 1.278569 acc: 0.415905
+2020-05-20 14:15:15,523 - INFO - batch 400: loss: 1.265235 acc: 0.427525
+2020-05-20 14:19:32,845 - INFO - batch 500: loss: 1.255196 acc: 0.430888
+2020-05-20 14:23:50,294 - INFO - batch 600: loss: 1.254395 acc: 0.428973
+2020-05-20 14:28:07,782 - INFO - batch 700: loss: 1.246246 acc: 0.434379
+2020-05-20 14:32:25,304 - INFO - batch 800: loss: 1.243166 acc: 0.438280
+2020-05-20 14:36:42,867 - INFO - batch 900: loss: 1.240427 acc: 0.440691
+2020-05-20 14:41:00,835 - INFO - batch 1000: loss: 1.235961 acc: 0.443994
+2020-05-20 14:45:18,590 - INFO - batch 1100: loss: 1.232136 acc: 0.447150
+2020-05-20 14:49:36,501 - INFO - batch 1200: loss: 1.226267 acc: 0.450978
+2020-05-20 14:51:56,909 - INFO - epoch 1.000000: loss: 1.222430, acc: 0.452900
+2020-05-20 14:51:59,575 - INFO - batch 0: loss: 0.843318 acc: 0.687500
+2020-05-20 14:56:17,440 - INFO - batch 100: loss: 1.102488 acc: 0.512995
+2020-05-20 15:00:35,478 - INFO - batch 200: loss: 1.099646 acc: 0.518657
+2020-05-20 15:04:53,582 - INFO - batch 300: loss: 1.096035 acc: 0.518065
+2020-05-20 15:09:11,602 - INFO - batch 400: loss: 1.084387 acc: 0.518703
+2020-05-20 15:13:29,506 - INFO - batch 500: loss: 1.068596 acc: 0.530564
+2020-05-20 15:17:47,487 - INFO - batch 600: loss: 1.050706 acc: 0.540661
+2020-05-20 15:22:05,690 - INFO - batch 700: loss: 1.028744 acc: 0.553228
+2020-05-20 15:26:24,041 - INFO - batch 800: loss: 1.013377 acc: 0.562344
+2020-05-20 15:30:42,415 - INFO - batch 900: loss: 0.999539 acc: 0.569437
+2020-05-20 15:35:00,749 - INFO - batch 1000: loss: 0.987566 acc: 0.574363
+2020-05-20 15:39:19,076 - INFO - batch 1100: loss: 0.976889 acc: 0.581347
+2020-05-20 15:43:37,571 - INFO - batch 1200: loss: 0.964811 acc: 0.587739
+2020-05-20 15:45:58,823 - INFO - epoch 2.000000: loss: 0.961475, acc: 0.589950
+2020-05-20 15:46:01,500 - INFO - batch 0: loss: 0.782370 acc: 0.687500
+2020-05-20 15:50:19,856 - INFO - batch 100: loss: 0.846373 acc: 0.656559
+2020-05-20 15:54:38,320 - INFO - batch 200: loss: 0.814492 acc: 0.665734
+2020-05-20 15:58:56,834 - INFO - batch 300: loss: 0.800259 acc: 0.672965
+2020-05-20 16:03:15,342 - INFO - batch 400: loss: 0.796704 acc: 0.670979
+2020-05-20 16:07:33,785 - INFO - batch 500: loss: 0.793141 acc: 0.673777
+2020-05-20 16:11:52,442 - INFO - batch 600: loss: 0.781726 acc: 0.677413
+2020-05-20 16:16:10,955 - INFO - batch 700: loss: 0.771500 acc: 0.680724
+2020-05-20 16:20:29,530 - INFO - batch 800: loss: 0.760496 acc: 0.685705
+2020-05-20 16:24:48,255 - INFO - batch 900: loss: 0.753058 acc: 0.691038
+2020-05-20 16:29:06,955 - INFO - batch 1000: loss: 0.743896 acc: 0.693681
+2020-05-20 16:33:25,654 - INFO - batch 1100: loss: 0.728649 acc: 0.700670
+2020-05-20 16:37:44,248 - INFO - batch 1200: loss: 0.721337 acc: 0.702748
+2020-05-20 16:40:05,051 - INFO - epoch 3.000000: loss: 0.719800, acc: 0.703800
+2020-05-20 16:40:07,729 - INFO - batch 0: loss: 0.618219 acc: 0.750000
+2020-05-20 16:44:26,333 - INFO - batch 100: loss: 0.601808 acc: 0.751238
+2020-05-20 16:48:45,271 - INFO - batch 200: loss: 0.618420 acc: 0.749689
+2020-05-20 16:53:03,931 - INFO - batch 300: loss: 0.601853 acc: 0.756437
+2020-05-20 16:57:22,647 - INFO - batch 400: loss: 0.591224 acc: 0.760131
+2020-05-20 17:01:41,529 - INFO - batch 500: loss: 0.579948 acc: 0.764097
+2020-05-20 17:06:00,422 - INFO - batch 600: loss: 0.567369 acc: 0.769343
+2020-05-20 17:10:19,268 - INFO - batch 700: loss: 0.556157 acc: 0.774340
+2020-05-20 17:14:38,193 - INFO - batch 800: loss: 0.551633 acc: 0.776607
+2020-05-20 17:18:57,233 - INFO - batch 900: loss: 0.548972 acc: 0.777539
+2020-05-20 17:23:16,414 - INFO - batch 1000: loss: 0.540917 acc: 0.781094
+2020-05-20 17:27:35,497 - INFO - batch 1100: loss: 0.530536 acc: 0.785195
+2020-05-20 17:31:54,535 - INFO - batch 1200: loss: 0.523857 acc: 0.788301
+2020-05-20 17:34:15,588 - INFO - epoch 4.000000: loss: 0.524548, acc: 0.787800
+2020-05-20 17:34:15,590 - INFO - history: {'loss': [2.61124324798584, 1.2224299907684326, 0.9614753127098083, 0.7197998762130737, 0.5245484113693237], 'accuracy': [0.3269999921321869, 0.4528999924659729, 0.5899500250816345, 0.7038000226020813, 0.7878000140190125], 'val_loss': [1.468273639678955, 1.2229245901107788, 1.3536449670791626, 2.1886956691741943, 11.666971206665039], 'val_accuracy': [0.3203125, 0.40625, 0.4453125, 0.5546875, 0.515625]}
+2020-05-20 17:39:15,473 - INFO - test accuracy: 0.504500
+2020-05-20 17:39:15,475 - INFO - test lost: 13.738237
+2020-05-20 19:36:10,133 - INFO - train set
+2020-05-20 19:36:10,133 - INFO - data size: 20000
+2020-05-20 19:36:10,135 - INFO - [['fiwdata/FIDs/F0111/MID1/P01153_face0.jpg', 'fiwdata/FIDs/F0111/unrelated_and_nonfaces/P01151_face4.jpg', '0'], ['fiwdata/FIDs/F0064/MID4/P00640_face1.jpg', 'fiwdata/FIDs/F0064/MID5/P00640_face4.jpg', '2'], ['fiwdata/FIDs/F0048/MID1/P00478_face1.jpg', 'fiwdata/FIDs/F0048/MID2/P00477_face3.jpg', '2'], ['fiwdata/FIDs/F0111/MID1/P01157_face2.jpg', 'fiwdata/FIDs/F0111/unrelated_and_nonfaces/P01157_face4.jpg', '0'], ['fiwdata/FIDs/F0722/MID1/P07587_face1.jpg', 'fiwdata/FIDs/F0722/MID1/P07583_face1.jpg', '3'], ['fiwdata/FIDs/F0134/MID1/P01403_face0.jpg', 'fiwdata/FIDs/F0134/MID1/P01406_face2.jpg', '3'], ['fiwdata/FIDs/F0581/MID2/P06107_face11.jpg', 'fiwdata/FIDs/F0581/unrelated_and_nonfaces/P06101_face7.jpg', '0'], ['fiwdata/FIDs/F0009/MID4/P11737_face3.jpg', 'fiwdata/FIDs/F0009/MID6/P10577_face2.jpg', '2'], ['fiwdata/FIDs/F0198/MID1/P02125_face2.jpg', 'fiwdata/FIDs/F0198/MID4/P02127_face0.jpg', '1'], ['fiwdata/FIDs/F0030/MID1/P00300_face2.jpg', 'fiwdata/FIDs/F0030/MID4/P00310_face1.jpg', '2']]
+2020-05-20 19:36:10,135 - INFO - test set
+2020-05-20 19:36:10,135 - INFO - data size: 6000
+2020-05-20 19:36:10,136 - INFO - [['fiwdata/FIDs/F0006/MID2/P00067_face4.jpg', 'fiwdata/FIDs/F0006/unrelated_and_nonfaces/P00071_face0.jpg', '0'], ['fiwdata/FIDs/F0006/MID1/P00063_face2.jpg', 'fiwdata/FIDs/F0006/MID1/P00068_face0.jpg', '3'], ['fiwdata/FIDs/F0324/MID1/P03442_face1.jpg', 'fiwdata/FIDs/F0324/MID1/P03432_face1.jpg', '3'], ['fiwdata/FIDs/F0324/MID1/P03429_face0.jpg', 'fiwdata/FIDs/F0324/MID1/P03438_face1.jpg', '3'], ['fiwdata/FIDs/F0836/MID2/P08835_face0.jpg', 'fiwdata/FIDs/F0836/unrelated_and_nonfaces/P08832_face4.jpg', '0'], ['fiwdata/FIDs/F0345/MID1/P03664_face0.jpg', 'fiwdata/FIDs/F0345/unrelated_and_nonfaces/P03665_face1.jpg', '0'], ['fiwdata/FIDs/F0009/MID1/P10570_face4.jpg', 'fiwdata/FIDs/F0009/MID2/P11717_face0.jpg', '2'], ['fiwdata/FIDs/F0345/MID4/P03667_face3.jpg', 'fiwdata/FIDs/F0345/unrelated_and_nonfaces/P03667_face1.jpg', '0'], ['fiwdata/FIDs/F0798/MID1/P08444_face2.jpg', 'fiwdata/FIDs/F0798/MID1/P08446_face0.jpg', '3'], ['fiwdata/FIDs/F0345/MID2/P03662_face1.jpg', 'fiwdata/FIDs/F0345/unrelated_and_nonfaces/P03669_face4.jpg', '0']]
+2020-05-20 19:37:51,561 - INFO - batch 0: loss: 1.349022 acc: 0.437500
+2020-05-20 19:42:10,060 - INFO - batch 100: loss: 1.290560 acc: 0.436881
+2020-05-20 19:46:29,638 - INFO - batch 200: loss: 1.212558 acc: 0.459888
+2020-05-20 19:50:48,924 - INFO - batch 300: loss: 1.176818 acc: 0.474460
+2020-05-20 19:55:08,116 - INFO - batch 400: loss: 1.157370 acc: 0.482855
+2020-05-20 19:59:27,413 - INFO - batch 500: loss: 1.129256 acc: 0.498877
+2020-05-20 20:03:46,618 - INFO - batch 600: loss: 1.111750 acc: 0.509047
+2020-05-20 20:08:05,595 - INFO - batch 700: loss: 1.114909 acc: 0.507578
+2020-05-20 20:12:24,533 - INFO - batch 800: loss: 1.104613 acc: 0.511392
+2020-05-20 20:16:43,179 - INFO - batch 900: loss: 1.093458 acc: 0.517272
+2020-05-20 20:21:01,618 - INFO - batch 1000: loss: 1.088520 acc: 0.519793
+2020-05-20 20:25:20,232 - INFO - batch 1100: loss: 1.078958 acc: 0.523899
+2020-05-20 20:29:38,887 - INFO - batch 1200: loss: 1.070151 acc: 0.528518
+2020-05-20 20:32:08,534 - INFO - epoch 0.000000: loss: 1.065603, acc: 0.530100
+2020-05-20 20:32:11,211 - INFO - batch 0: loss: 0.754526 acc: 0.687500
+2020-05-20 20:36:29,010 - INFO - batch 100: loss: 0.915756 acc: 0.619431
+2020-05-20 20:40:46,911 - INFO - batch 200: loss: 0.911447 acc: 0.622202
+2020-05-20 20:45:04,646 - INFO - batch 300: loss: 0.895492 acc: 0.623962
+2020-05-20 20:49:22,629 - INFO - batch 400: loss: 0.891136 acc: 0.627026
+2020-05-20 20:53:40,776 - INFO - batch 500: loss: 0.894542 acc: 0.626871
+2020-05-20 20:57:59,178 - INFO - batch 600: loss: 0.895779 acc: 0.621672
+2020-05-20 21:02:17,802 - INFO - batch 700: loss: 0.886357 acc: 0.626872
+2020-05-20 21:06:36,158 - INFO - batch 800: loss: 0.872468 acc: 0.633583
+2020-05-20 21:10:54,263 - INFO - batch 900: loss: 0.861613 acc: 0.637209
+2020-05-20 21:15:12,521 - INFO - batch 1000: loss: 0.850966 acc: 0.640984
+2020-05-20 21:19:30,850 - INFO - batch 1100: loss: 0.839503 acc: 0.646401
+2020-05-20 21:23:49,208 - INFO - batch 1200: loss: 0.829045 acc: 0.652633
+2020-05-20 21:26:09,805 - INFO - epoch 1.000000: loss: 0.824987, acc: 0.653950
+2020-05-20 21:26:12,480 - INFO - batch 0: loss: 0.613087 acc: 0.750000
+2020-05-20 21:30:29,510 - INFO - batch 100: loss: 0.742356 acc: 0.696782
+2020-05-20 21:34:46,068 - INFO - batch 200: loss: 0.705273 acc: 0.715796
+2020-05-20 21:39:02,706 - INFO - batch 300: loss: 0.693930 acc: 0.719684
+2020-05-20 21:43:19,174 - INFO - batch 400: loss: 0.674804 acc: 0.726465
+2020-05-20 21:47:35,919 - INFO - batch 500: loss: 0.664616 acc: 0.731163
+2020-05-20 21:51:52,615 - INFO - batch 600: loss: 0.650424 acc: 0.736377
+2020-05-20 21:56:09,519 - INFO - batch 700: loss: 0.643773 acc: 0.741619
+2020-05-20 22:00:26,344 - INFO - batch 800: loss: 0.636738 acc: 0.744616
+2020-05-20 22:04:43,162 - INFO - batch 900: loss: 0.621420 acc: 0.751595
+2020-05-20 22:08:59,953 - INFO - batch 1000: loss: 0.614759 acc: 0.753247
+2020-05-20 22:13:16,836 - INFO - batch 1100: loss: 0.604315 acc: 0.757380
+2020-05-20 22:17:33,521 - INFO - batch 1200: loss: 0.598783 acc: 0.761084
+2020-05-20 22:19:53,240 - INFO - epoch 2.000000: loss: 0.594697, acc: 0.762850
+2020-05-20 22:19:55,913 - INFO - batch 0: loss: 0.315331 acc: 0.937500
+2020-05-20 22:24:12,628 - INFO - batch 100: loss: 0.445720 acc: 0.827352
+2020-05-20 22:28:29,058 - INFO - batch 200: loss: 0.424034 acc: 0.837376
+2020-05-20 22:32:45,481 - INFO - batch 300: loss: 0.429165 acc: 0.833887
+2020-05-20 22:37:02,425 - INFO - batch 400: loss: 0.433682 acc: 0.831671
+2020-05-20 22:41:19,552 - INFO - batch 500: loss: 0.434802 acc: 0.832834
+2020-05-20 22:45:37,023 - INFO - batch 600: loss: 0.426077 acc: 0.836106
+2020-05-20 22:49:54,874 - INFO - batch 700: loss: 0.418994 acc: 0.838980
+2020-05-20 22:54:12,788 - INFO - batch 800: loss: 0.411661 acc: 0.841916
+2020-05-20 22:58:30,181 - INFO - batch 900: loss: 0.410477 acc: 0.843160
+2020-05-20 23:02:48,020 - INFO - batch 1000: loss: 0.409254 acc: 0.843469
+2020-05-20 23:07:06,141 - INFO - batch 1100: loss: 0.408666 acc: 0.843154
+2020-05-20 23:11:24,025 - INFO - batch 1200: loss: 0.404901 acc: 0.844661
+2020-05-20 23:13:44,387 - INFO - epoch 3.000000: loss: 0.401971, acc: 0.845550
+2020-05-20 23:13:47,536 - INFO - batch 0: loss: 0.291373 acc: 0.937500
+2020-05-20 23:18:05,359 - INFO - batch 100: loss: 0.326608 acc: 0.880569
+2020-05-20 23:22:23,166 - INFO - batch 200: loss: 0.291587 acc: 0.894279
+2020-05-20 23:26:40,963 - INFO - batch 300: loss: 0.354444 acc: 0.870640
+2020-05-20 23:30:58,609 - INFO - batch 400: loss: 0.364093 acc: 0.866895
+2020-05-20 23:35:16,437 - INFO - batch 500: loss: 0.402767 acc: 0.851173
+2020-05-20 23:39:34,176 - INFO - batch 600: loss: 0.436019 acc: 0.836314
+2020-05-20 23:43:51,763 - INFO - batch 700: loss: 0.425833 acc: 0.838980
+2020-05-20 23:48:09,406 - INFO - batch 800: loss: 0.417161 acc: 0.841994
+2020-05-20 23:52:27,063 - INFO - batch 900: loss: 0.401229 acc: 0.848224
+2020-05-20 23:56:44,627 - INFO - batch 1000: loss: 0.388911 acc: 0.853334
+2020-05-21 00:01:02,056 - INFO - batch 1100: loss: 0.381729 acc: 0.856948
+2020-05-21 00:05:20,103 - INFO - batch 1200: loss: 0.370079 acc: 0.861157
+2020-05-21 00:07:40,566 - INFO - epoch 4.000000: loss: 0.367286, acc: 0.862600
+2020-05-21 00:07:40,568 - INFO - history: {'loss': [1.0656033754348755, 0.8249872326850891, 0.594697117805481, 0.4019710421562195, 0.36728614568710327], 'accuracy': [0.5300999879837036, 0.6539499759674072, 0.7628499865531921, 0.845550000667572, 0.8626000285148621], 'val_loss': [1.6572345495224, 2.551535129547119, 71.5704116821289, 84.45245361328125, 148.58729553222656], 'val_accuracy': [0.4765625, 0.38671875, 0.46484375, 0.45703125, 0.4296875]}
+2020-05-21 00:12:45,249 - INFO - test accuracy: 0.463000
+2020-05-21 00:12:45,250 - INFO - test lost: 123.992043
+2020-05-21 00:22:50,574 - INFO - train set
+2020-05-21 00:22:50,574 - INFO - data size: 20000
+2020-05-21 00:22:50,576 - INFO - [['fiwdata/FIDs/F0197/MID4/P02118_face1.jpg', 'fiwdata/FIDs/F0197/MID5/P02118_face0.jpg', '2'], ['fiwdata/FIDs/F0198/MID3/P02127_face4.jpg', 'fiwdata/FIDs/F0198/MID4/P02130_face0.jpg', '2'], ['fiwdata/FIDs/F0800/MID1/P08469_face1.jpg', 'fiwdata/FIDs/F0800/MID1/P08467_face0.jpg', '3'], ['fiwdata/FIDs/F0548/MID1/P11353_face0.jpg', 'fiwdata/FIDs/F0548/unrelated_and_nonfaces/P11352_face37.jpg', '0'], ['fiwdata/FIDs/F0340/MID3/P03605_face1.jpg', 'fiwdata/FIDs/F0340/MID3/P03604_face1.jpg', '3'], ['fiwdata/FIDs/F0173/MID5/P01865_face1.jpg', 'fiwdata/FIDs/F0173/MID7/P01857_face0.jpg', '2'], ['fiwdata/FIDs/F0759/MID2/P08009_face5.jpg', 'fiwdata/FIDs/F0759/unrelated_and_nonfaces/P08008_face1.jpg', '0'], ['fiwdata/FIDs/F0794/MID1/P08404_face1.jpg', 'fiwdata/FIDs/F0794/MID1/P08409_face0.jpg', '3'], ['fiwdata/FIDs/F0370/MID4/P03926_face1.jpg', 'fiwdata/FIDs/F0370/MID1/P03927_face0.jpg', '1'], ['fiwdata/FIDs/F0358/MID2/P10935_face3.jpg', 'fiwdata/FIDs/F0358/MID4/P10930_face0.jpg', '1']]
+2020-05-21 00:22:50,576 - INFO - test set
+2020-05-21 00:22:50,576 - INFO - data size: 6000
+2020-05-21 00:22:50,576 - INFO - [['fiwdata/FIDs/F0009/MID1/P10569_face1.jpg', 'fiwdata/FIDs/F0009/MID3/P11744_face3.jpg', '2'], ['fiwdata/FIDs/F0009/MID1/P10572_face0.jpg', 'fiwdata/FIDs/F0009/MID4/P11737_face3.jpg', '2'], ['fiwdata/FIDs/F0836/MID1/P08840_face1.jpg', 'fiwdata/FIDs/F0836/MID1/P08835_face1.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P10588_face1.jpg', 'fiwdata/FIDs/F0009/MID3/P11726_face4.jpg', '2'], ['fiwdata/FIDs/F0029/MID2/P00296_face1.jpg', 'fiwdata/FIDs/F0029/MID4/P00296_face0.jpg', '1'], ['fiwdata/FIDs/F0009/MID7/P11743_face3.jpg', 'fiwdata/FIDs/F0009/MID2/P10570_face1.jpg', '1'], ['fiwdata/FIDs/F0627/MID2/P06579_face0.jpg', 'fiwdata/FIDs/F0627/MID2/P06584_face0.jpg', '3'], ['fiwdata/FIDs/F0798/MID2/P08451_face1.jpg', 'fiwdata/FIDs/F0798/unrelated_and_nonfaces/P08451_face5.jpg', '0'], ['fiwdata/FIDs/F0009/MID7/P10576_face2.jpg', 'fiwdata/FIDs/F0009/MID2/P11743_face5.jpg', '1'], ['fiwdata/FIDs/F0627/MID2/P06579_face0.jpg', 'fiwdata/FIDs/F0627/unrelated_and_nonfaces/P06582_face2.jpg', '0']]
+2020-05-21 00:24:30,812 - INFO - batch 0: loss: 2.537505 acc: 0.375000
+2020-05-21 00:28:48,725 - INFO - batch 100: loss: 1.194304 acc: 0.524134
+2020-05-21 00:33:08,118 - INFO - batch 200: loss: 1.038042 acc: 0.581468
+2020-05-21 00:37:27,854 - INFO - batch 300: loss: 0.931475 acc: 0.630606
+2020-05-21 00:41:47,639 - INFO - batch 400: loss: 0.850565 acc: 0.666459
+2020-05-21 00:46:07,335 - INFO - batch 500: loss: 0.792639 acc: 0.689870
+2020-05-21 00:50:27,169 - INFO - batch 600: loss: 0.744602 acc: 0.708923
+2020-05-21 00:54:46,246 - INFO - batch 700: loss: 0.706520 acc: 0.725036
+2020-05-21 00:59:04,997 - INFO - batch 800: loss: 0.712402 acc: 0.723783
+2020-05-21 01:03:24,603 - INFO - batch 900: loss: 0.687551 acc: 0.734046
+2020-05-21 01:07:44,325 - INFO - batch 1000: loss: 0.661373 acc: 0.744131
+2020-05-21 01:12:03,512 - INFO - batch 1100: loss: 0.639847 acc: 0.752838
+2020-05-21 01:16:22,765 - INFO - batch 1200: loss: 0.614691 acc: 0.762542
+2020-05-21 01:18:52,675 - INFO - epoch 0.000000: loss: 0.603025, acc: 0.767050
+2020-05-21 01:18:55,346 - INFO - batch 0: loss: 0.521719 acc: 0.750000
+2020-05-21 01:23:13,604 - INFO - batch 100: loss: 0.321487 acc: 0.887376
+2020-05-21 01:27:31,948 - INFO - batch 200: loss: 0.296295 acc: 0.894590
+2020-05-21 01:31:50,562 - INFO - batch 300: loss: 0.267929 acc: 0.904485
+2020-05-21 01:36:09,553 - INFO - batch 400: loss: 0.261554 acc: 0.906484
+2020-05-21 01:40:28,629 - INFO - batch 500: loss: 0.259730 acc: 0.907310
+2020-05-21 01:44:47,694 - INFO - batch 600: loss: 0.245124 acc: 0.913374
+2020-05-21 01:49:06,465 - INFO - batch 700: loss: 0.239502 acc: 0.915389
+2020-05-21 01:53:25,232 - INFO - batch 800: loss: 0.229152 acc: 0.918851
+2020-05-21 01:57:43,797 - INFO - batch 900: loss: 0.228217 acc: 0.918355
+2020-05-21 02:02:02,383 - INFO - batch 1000: loss: 0.221853 acc: 0.920080
+2020-05-21 02:06:21,027 - INFO - batch 1100: loss: 0.214518 acc: 0.923138
+2020-05-21 02:10:40,036 - INFO - batch 1200: loss: 0.205432 acc: 0.926832
+2020-05-21 02:13:00,913 - INFO - epoch 1.000000: loss: 0.204549, acc: 0.927150
+2020-05-21 02:13:03,602 - INFO - batch 0: loss: 0.096481 acc: 0.937500
+2020-05-21 02:17:22,239 - INFO - batch 100: loss: 0.151722 acc: 0.943688
+2020-05-21 02:21:40,508 - INFO - batch 200: loss: 0.125826 acc: 0.956157
+2020-05-21 02:25:58,141 - INFO - batch 300: loss: 0.116947 acc: 0.959510
+2020-05-21 02:30:15,695 - INFO - batch 400: loss: 0.114192 acc: 0.959165
+2020-05-21 02:34:33,409 - INFO - batch 500: loss: 0.110785 acc: 0.960080
+2020-05-21 02:38:52,599 - INFO - batch 600: loss: 0.113157 acc: 0.960690
+2020-05-21 02:43:11,966 - INFO - batch 700: loss: 0.113238 acc: 0.961484
+2020-05-21 02:47:31,475 - INFO - batch 800: loss: 0.114634 acc: 0.959972
+2020-05-21 02:51:51,001 - INFO - batch 900: loss: 0.113905 acc: 0.959906
+2020-05-21 02:56:10,610 - INFO - batch 1000: loss: 0.115452 acc: 0.959291
+2020-05-21 03:00:30,095 - INFO - batch 1100: loss: 0.115860 acc: 0.959639
+2020-05-21 03:04:49,875 - INFO - batch 1200: loss: 0.116118 acc: 0.959825
+2020-05-21 03:07:11,229 - INFO - epoch 2.000000: loss: 0.116113, acc: 0.960150
+2020-05-21 03:07:13,914 - INFO - batch 0: loss: 0.059257 acc: 0.937500
+2020-05-21 03:11:33,404 - INFO - batch 100: loss: 0.118800 acc: 0.956064
+2020-05-21 03:15:53,249 - INFO - batch 200: loss: 0.106041 acc: 0.961132
+2020-05-21 03:20:13,025 - INFO - batch 300: loss: 0.090238 acc: 0.966985
+2020-05-21 03:24:32,631 - INFO - batch 400: loss: 0.084240 acc: 0.969296
+2020-05-21 03:28:52,176 - INFO - batch 500: loss: 0.090806 acc: 0.967814
+2020-05-21 03:33:11,738 - INFO - batch 600: loss: 0.096313 acc: 0.966514
+2020-05-21 03:37:31,419 - INFO - batch 700: loss: 0.092703 acc: 0.967725
+2020-05-21 03:41:51,031 - INFO - batch 800: loss: 0.091408 acc: 0.968243
+2020-05-21 03:46:10,576 - INFO - batch 900: loss: 0.087855 acc: 0.969686
+2020-05-21 03:50:30,142 - INFO - batch 1000: loss: 0.085716 acc: 0.970654
+2020-05-21 03:54:49,522 - INFO - batch 1100: loss: 0.086266 acc: 0.970481
+2020-05-21 03:59:08,920 - INFO - batch 1200: loss: 0.087019 acc: 0.970545
+2020-05-21 04:01:30,215 - INFO - epoch 3.000000: loss: 0.085166, acc: 0.971250
+2020-05-21 04:01:33,330 - INFO - batch 0: loss: 0.052269 acc: 0.937500
+2020-05-21 04:05:52,782 - INFO - batch 100: loss: 0.095263 acc: 0.971535
+2020-05-21 04:10:12,232 - INFO - batch 200: loss: 0.109134 acc: 0.966418
+2020-05-21 04:14:31,659 - INFO - batch 300: loss: 0.100802 acc: 0.968231
+2020-05-21 04:18:51,183 - INFO - batch 400: loss: 0.093897 acc: 0.971010
+2020-05-21 04:23:10,724 - INFO - batch 500: loss: 0.087744 acc: 0.972680
+2020-05-21 04:27:30,153 - INFO - batch 600: loss: 0.086198 acc: 0.972546
+2020-05-21 04:31:49,669 - INFO - batch 700: loss: 0.083566 acc: 0.973252
+2020-05-21 04:36:09,070 - INFO - batch 800: loss: 0.083188 acc: 0.973002
+2020-05-21 04:40:28,409 - INFO - batch 900: loss: 0.082767 acc: 0.972461
+2020-05-21 04:44:47,997 - INFO - batch 1000: loss: 0.080816 acc: 0.973526
+2020-05-21 04:49:07,501 - INFO - batch 1100: loss: 0.081431 acc: 0.973547
+2020-05-21 04:53:26,894 - INFO - batch 1200: loss: 0.079896 acc: 0.973772
+2020-05-21 04:55:48,152 - INFO - epoch 4.000000: loss: 0.079806, acc: 0.973850
+2020-05-21 04:55:48,154 - INFO - history: {'loss': [0.603025496006012, 0.20454856753349304, 0.11611317098140717, 0.08516588062047958, 0.0798061266541481], 'accuracy': [0.76705002784729, 0.9271500110626221, 0.9601500034332275, 0.9712499976158142, 0.9738500118255615], 'val_loss': [5.55950927734375, 7.386451244354248, 3.0743062496185303, 13.890252113342285, 16.80556869506836], 'val_accuracy': [0.39453125, 0.53515625, 0.51171875, 0.51171875, 0.48046875]}
+2020-05-21 05:00:54,473 - INFO - test accuracy: 0.468833
+2020-05-21 05:00:54,473 - INFO - test lost: 16.819206
+2020-05-21 13:21:09,717 - INFO - train set
+2020-05-21 13:21:09,718 - INFO - data size: 20000
+2020-05-21 13:21:09,720 - INFO - [['fiwdata/FIDs/F0528/MID2/P10968_face3.jpg', 'fiwdata/FIDs/F0528/MID3/P10980_face1.jpg', '1'], ['fiwdata/FIDs/F0073/MID5/P00744_face2.jpg', 'fiwdata/FIDs/F0073/unrelated_and_nonfaces/P00741_face4.jpg', '0'], ['fiwdata/FIDs/F0479/MID7/P05047_face1.jpg', 'fiwdata/FIDs/F0479/MID1/P05046_face1.jpg', '1'], ['fiwdata/FIDs/F0432/MID6/P04561_face0.jpg', 'fiwdata/FIDs/F0432/MID1/P04553_face1.jpg', '1'], ['fiwdata/FIDs/F0545/MID5/P11081_face0.jpg', 'fiwdata/FIDs/F0545/MID1/P05716_face2.jpg', '1'], ['fiwdata/FIDs/F0425/MID2/P11475_face1.jpg', 'fiwdata/FIDs/F0425/MID2/P11488_face3.jpg', '3'], ['fiwdata/FIDs/F0164/MID4/P01760_face5.jpg', 'fiwdata/FIDs/F0164/MID4/P01758_face2.jpg', '3'], ['fiwdata/FIDs/F0488/MID1/P05133_face1.jpg', 'fiwdata/FIDs/F0488/MID3/P05136_face4.jpg', '1'], ['fiwdata/FIDs/F0425/MID1/P04481_face1.jpg', 'fiwdata/FIDs/F0425/MID1/P11490_face0.jpg', '3'], ['fiwdata/FIDs/F0282/MID1/P02999_face6.jpg', 'fiwdata/FIDs/F0282/MID2/P03017_face6.jpg', '2']]
+2020-05-21 13:21:09,720 - INFO - test set
+2020-05-21 13:21:09,720 - INFO - data size: 6000
+2020-05-21 13:21:09,720 - INFO - [['fiwdata/FIDs/F0034/MID1/P00352_face1.jpg', 'fiwdata/FIDs/F0034/MID3/P00353_face0.jpg', '1'], ['fiwdata/FIDs/F0618/MID1/P06482_face1.jpg', 'fiwdata/FIDs/F0618/unrelated_and_nonfaces/P06488_face3.jpg', '0'], ['fiwdata/FIDs/F0627/MID1/P06586_face0.jpg', 'fiwdata/FIDs/F0627/MID1/P06580_face0.jpg', '3'], ['fiwdata/FIDs/F0311/MID4/P03311_face2.jpg', 'fiwdata/FIDs/F0311/MID4/P03307_face3.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P10576_face1.jpg', 'fiwdata/FIDs/F0009/MID2/P10570_face1.jpg', '2'], ['fiwdata/FIDs/F0009/MID7/P11743_face3.jpg', 'fiwdata/FIDs/F0009/MID1/P11732_face0.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P10576_face1.jpg', 'fiwdata/FIDs/F0009/MID4/P10588_face0.jpg', '2'], ['fiwdata/FIDs/F0836/MID10/P08838_face0.jpg', 'fiwdata/FIDs/F0836/unrelated_and_nonfaces/P08837_face2.jpg', '0'], ['fiwdata/FIDs/F0345/MID1/P03662_face0.jpg', 'fiwdata/FIDs/F0345/unrelated_and_nonfaces/P03669_face5.jpg', '0'], ['fiwdata/FIDs/F0576/MID4/P06056_face4.jpg', 'fiwdata/FIDs/F0576/MID4/P06064_face1.jpg', '3']]
+2020-05-21 13:22:49,216 - INFO - batch 0: loss: 2.383552 acc: 0.562500
+2020-05-21 13:27:06,262 - INFO - batch 100: loss: 1.099222 acc: 0.621906
+2020-05-21 13:31:24,790 - INFO - batch 200: loss: 0.847340 acc: 0.699938
+2020-05-21 13:35:44,047 - INFO - batch 300: loss: 0.701695 acc: 0.749169
+2020-05-21 13:40:02,795 - INFO - batch 400: loss: 0.612983 acc: 0.778211
+2020-05-21 13:44:21,378 - INFO - batch 500: loss: 0.543581 acc: 0.803019
+2020-05-21 13:48:40,414 - INFO - batch 600: loss: 0.490664 acc: 0.823627
+2020-05-21 13:52:59,352 - INFO - batch 700: loss: 0.451675 acc: 0.837821
+2020-05-21 13:57:19,044 - INFO - batch 800: loss: 0.414888 acc: 0.851358
+2020-05-21 14:01:38,946 - INFO - batch 900: loss: 0.383298 acc: 0.862791
+2020-05-21 14:05:58,688 - INFO - batch 1000: loss: 0.358301 acc: 0.872128
+2020-05-21 14:10:18,654 - INFO - batch 1100: loss: 0.336184 acc: 0.880279
+2020-05-21 14:14:38,537 - INFO - batch 1200: loss: 0.327905 acc: 0.883587
+2020-05-21 14:17:08,341 - INFO - epoch 0.000000: loss: 0.323538, acc: 0.884800
+2020-05-21 14:17:11,029 - INFO - batch 0: loss: 0.232014 acc: 0.937500
+2020-05-21 14:21:30,157 - INFO - batch 100: loss: 0.092551 acc: 0.966584
+2020-05-21 14:25:49,417 - INFO - batch 200: loss: 0.082222 acc: 0.972326
+2020-05-21 14:30:08,802 - INFO - batch 300: loss: 0.077106 acc: 0.973837
+2020-05-21 14:34:28,278 - INFO - batch 400: loss: 0.078677 acc: 0.971789
+2020-05-21 14:38:47,824 - INFO - batch 500: loss: 0.079171 acc: 0.972056
+2020-05-21 14:43:07,403 - INFO - batch 600: loss: 0.081324 acc: 0.969738
+2020-05-21 14:47:26,826 - INFO - batch 700: loss: 0.080904 acc: 0.970399
+2020-05-21 14:51:46,297 - INFO - batch 800: loss: 0.077268 acc: 0.971754
+2020-05-21 14:56:05,776 - INFO - batch 900: loss: 0.074367 acc: 0.973085
+2020-05-21 15:00:25,314 - INFO - batch 1000: loss: 0.072916 acc: 0.974213
+2020-05-21 15:04:44,805 - INFO - batch 1100: loss: 0.069875 acc: 0.975363
+2020-05-21 15:09:04,374 - INFO - batch 1200: loss: 0.067909 acc: 0.976374
+2020-05-21 15:11:25,688 - INFO - epoch 1.000000: loss: 0.067087, acc: 0.976500
+2020-05-21 15:11:28,378 - INFO - batch 0: loss: 0.096768 acc: 0.937500
+2020-05-21 15:15:48,025 - INFO - batch 100: loss: 0.080906 acc: 0.975248
+2020-05-21 15:20:07,703 - INFO - batch 200: loss: 0.066641 acc: 0.978545
+2020-05-21 15:24:27,483 - INFO - batch 300: loss: 0.062017 acc: 0.979859
+2020-05-21 15:28:47,383 - INFO - batch 400: loss: 0.052711 acc: 0.982544
+2020-05-21 15:33:07,223 - INFO - batch 500: loss: 0.057169 acc: 0.980040
+2020-05-21 15:37:27,024 - INFO - batch 600: loss: 0.070328 acc: 0.975874
+2020-05-21 15:41:46,938 - INFO - batch 700: loss: 0.065883 acc: 0.976908
+2020-05-21 15:46:06,835 - INFO - batch 800: loss: 0.068168 acc: 0.976358
+2020-05-21 15:50:26,817 - INFO - batch 900: loss: 0.068697 acc: 0.976484
+2020-05-21 15:54:46,686 - INFO - batch 1000: loss: 0.065156 acc: 0.977710
+2020-05-21 15:59:06,696 - INFO - batch 1100: loss: 0.063888 acc: 0.978145
+2020-05-21 16:03:26,577 - INFO - batch 1200: loss: 0.061480 acc: 0.979080
+2020-05-21 16:05:48,070 - INFO - epoch 2.000000: loss: 0.061722, acc: 0.979100
+2020-05-21 16:05:50,752 - INFO - batch 0: loss: 0.001862 acc: 1.000000
+2020-05-21 16:10:10,281 - INFO - batch 100: loss: 0.032227 acc: 0.990099
+2020-05-21 16:14:29,906 - INFO - batch 200: loss: 0.025097 acc: 0.992226
+2020-05-21 16:18:49,625 - INFO - batch 300: loss: 0.020829 acc: 0.993355
+2020-05-21 16:23:09,320 - INFO - batch 400: loss: 0.036055 acc: 0.987999
+2020-05-21 16:27:29,096 - INFO - batch 500: loss: 0.040610 acc: 0.986028
+2020-05-21 16:31:48,572 - INFO - batch 600: loss: 0.041150 acc: 0.986377
+2020-05-21 16:36:08,005 - INFO - batch 700: loss: 0.044510 acc: 0.985735
+2020-05-21 16:40:27,523 - INFO - batch 800: loss: 0.047082 acc: 0.984238
+2020-05-21 16:44:47,133 - INFO - batch 900: loss: 0.050895 acc: 0.983213
+2020-05-21 16:49:06,705 - INFO - batch 1000: loss: 0.054143 acc: 0.982455
+2020-05-21 16:53:26,230 - INFO - batch 1100: loss: 0.054629 acc: 0.982062
+2020-05-21 16:57:45,957 - INFO - batch 1200: loss: 0.055545 acc: 0.981734
+2020-05-21 17:00:07,440 - INFO - epoch 3.000000: loss: 0.055074, acc: 0.982050
+2020-05-21 17:00:10,549 - INFO - batch 0: loss: 0.070924 acc: 0.937500
+2020-05-21 17:04:30,540 - INFO - batch 100: loss: 0.046130 acc: 0.982054
+2020-05-21 17:08:50,367 - INFO - batch 200: loss: 0.036660 acc: 0.986007
+2020-05-21 17:13:09,852 - INFO - batch 300: loss: 0.033742 acc: 0.987542
+2020-05-21 17:17:29,365 - INFO - batch 400: loss: 0.031133 acc: 0.988466
+2020-05-21 17:21:48,902 - INFO - batch 500: loss: 0.027644 acc: 0.989770
+2020-05-21 17:26:08,215 - INFO - batch 600: loss: 0.027632 acc: 0.990433
+2020-05-21 17:30:27,027 - INFO - batch 700: loss: 0.027227 acc: 0.990460
+2020-05-21 17:34:46,768 - INFO - batch 800: loss: 0.026250 acc: 0.990871
+2020-05-21 17:39:06,450 - INFO - batch 900: loss: 0.025257 acc: 0.991260
+2020-05-21 17:43:26,037 - INFO - batch 1000: loss: 0.026740 acc: 0.990759
+2020-05-21 17:47:45,645 - INFO - batch 1100: loss: 0.029636 acc: 0.989725
+2020-05-21 17:52:05,286 - INFO - batch 1200: loss: 0.033153 acc: 0.988343
+2020-05-21 17:54:26,557 - INFO - epoch 4.000000: loss: 0.033952, acc: 0.988000
+2020-05-21 17:54:26,559 - INFO - history: {'loss': [0.3235381245613098, 0.06708738952875137, 0.06172245368361473, 0.05507371202111244, 0.0339517779648304], 'accuracy': [0.8848000168800354, 0.9764999747276306, 0.9790999889373779, 0.9820500016212463, 0.9879999756813049], 'val_loss': [24.04804039001465, 12.400507926940918, 4.169732570648193, 2.8156254291534424, 8.30533218383789], 'val_accuracy': [0.48828125, 0.375, 0.4453125, 0.48828125, 0.4765625]}
+2020-05-21 17:59:38,575 - INFO - test accuracy: 0.480167
+2020-05-21 17:59:38,575 - INFO - test lost: 9.442448
+2020-05-22 11:26:35,076 - INFO - train set
+2020-05-22 11:26:35,076 - INFO - data size: 8000
+2020-05-22 11:26:35,077 - INFO - [['fiwdata/FIDs/F0163/MID6/P01743_face5.jpg', 'fiwdata/FIDs/F0163/MID7/P01750_face14.jpg', '2'], ['fiwdata/FIDs/F0355/MID1/P03772_face2.jpg', 'fiwdata/FIDs/F0355/MID3/P03764_face6.jpg', '2'], ['fiwdata/FIDs/F0601/MID18/P06345_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11926_face1.jpg', '0'], ['fiwdata/FIDs/F0694/MID2/P07237_face1.jpg', 'fiwdata/FIDs/F0694/MID2/P07232_face2.jpg', '3'], ['fiwdata/FIDs/F0601/MID7/P11914_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06278_face4.jpg', '0'], ['fiwdata/FIDs/F0496/MID2/P05246_face1.jpg', 'fiwdata/FIDs/F0496/unrelated_and_nonfaces/P05246_face0.jpg', '0'], ['fiwdata/FIDs/F0790/MID5/P11140_face0.jpg', 'fiwdata/FIDs/F0790/MID1/P11140_face1.jpg', '1'], ['fiwdata/FIDs/F0584/MID1/P06147_face1.jpg', 'fiwdata/FIDs/F0584/MID2/P06146_face1.jpg', '1'], ['fiwdata/FIDs/F0273/MID2/P02923_face1.jpg', 'fiwdata/FIDs/F0273/MID4/P02924_face1.jpg', '1'], ['fiwdata/FIDs/F0661/MID3/P06917_face1.jpg', 'fiwdata/FIDs/F0661/unrelated_and_nonfaces/P06921_face9.jpg', '0']]
+2020-05-22 11:26:35,077 - INFO - test set
+2020-05-22 11:26:35,078 - INFO - data size: 6000
+2020-05-22 11:26:35,078 - INFO - [['fiwdata/FIDs/F0358/MID3/P10929_face6.jpg', 'fiwdata/FIDs/F0358/MID5/P10942_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID2/P06306_face3.jpg', 'fiwdata/FIDs/F0601/MID2/P11969_face3.jpg', '3'], ['fiwdata/FIDs/F0282/MID7/P03016_face9.jpg', 'fiwdata/FIDs/F0282/MID10/P03015_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID33/P11958_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P05238_face0.jpg', '0'], ['fiwdata/FIDs/F0601/MID24/P06254_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12052_face0.jpg', '0'], ['fiwdata/FIDs/F0131/MID1/P01375_face1.jpg', 'fiwdata/FIDs/F0131/MID1/P01371_face0.jpg', '3'], ['fiwdata/FIDs/F0601/MID4/P12054_face8.jpg', 'fiwdata/FIDs/F0601/MID2/P11898_face0.jpg', '1'], ['fiwdata/FIDs/F0128/MID5/P01336_face4.jpg', 'fiwdata/FIDs/F0128/MID6/P01334_face2.jpg', '2'], ['fiwdata/FIDs/F0435/MID1/P04583_face6.jpg', 'fiwdata/FIDs/F0435/MID5/P04583_face2.jpg', '2'], ['fiwdata/FIDs/F0932/MID1/P09830_face1.jpg', 'fiwdata/FIDs/F0932/MID2/P09826_face0.jpg', '1']]
+2020-05-22 11:28:16,796 - INFO - batch 0: loss: 4.040099 acc: 0.562500
+2020-05-22 11:32:34,216 - INFO - batch 100: loss: 1.583987 acc: 0.404703
+2020-05-22 11:36:51,449 - INFO - batch 200: loss: 1.404402 acc: 0.406405
+2020-05-22 11:41:08,943 - INFO - batch 300: loss: 1.322637 acc: 0.426703
+2020-05-22 11:45:26,238 - INFO - batch 400: loss: 1.269171 acc: 0.446540
+2020-05-22 11:50:03,605 - INFO - epoch 0.000000: loss: 1.230838, acc: 0.459500
+2020-05-22 11:50:06,295 - INFO - batch 0: loss: 1.090091 acc: 0.312500
+2020-05-22 11:54:24,160 - INFO - batch 100: loss: 1.077011 acc: 0.503713
+2020-05-22 11:58:41,487 - INFO - batch 200: loss: 1.060162 acc: 0.513371
+2020-05-22 12:02:58,855 - INFO - batch 300: loss: 1.044692 acc: 0.526993
+2020-05-22 12:07:16,477 - INFO - batch 400: loss: 1.021770 acc: 0.541303
+2020-05-22 12:11:45,461 - INFO - epoch 1.000000: loss: 1.018025, acc: 0.539875
+2020-05-22 12:11:48,126 - INFO - batch 0: loss: 1.316145 acc: 0.312500
+2020-05-22 12:16:05,158 - INFO - batch 100: loss: 0.934674 acc: 0.587871
+2020-05-22 12:20:22,461 - INFO - batch 200: loss: 0.926915 acc: 0.596082
+2020-05-22 12:24:39,625 - INFO - batch 300: loss: 0.901759 acc: 0.610257
+2020-05-22 12:28:57,084 - INFO - batch 400: loss: 0.889542 acc: 0.620168
+2020-05-22 12:33:26,143 - INFO - epoch 2.000000: loss: 0.873610, acc: 0.628375
+2020-05-22 12:33:26,146 - INFO - history: {'loss': [1.2308379411697388, 1.0180248022079468, 0.8736095428466797], 'accuracy': [0.4595000147819519, 0.5398749709129333, 0.6283749938011169], 'val_loss': [1.1513497829437256, 1.1704413890838623, 1.1411608457565308], 'val_accuracy': [0.4453125, 0.515625, 0.51953125]}
+2020-05-22 12:38:30,022 - INFO - test accuracy: 0.577500
+2020-05-22 12:38:30,023 - INFO - test lost: 1.019677
+2020-05-22 14:36:56,817 - INFO - train set
+2020-05-22 14:36:56,818 - INFO - data size: 8000
+2020-05-22 14:36:56,818 - INFO - [['fiwdata/FIDs/F0105/MID6/P01080_face3.jpg', 'fiwdata/FIDs/F0105/MID6/P01082_face2.jpg', '3'], ['fiwdata/FIDs/F0790/MID2/P11139_face2.jpg', 'fiwdata/FIDs/F0790/MID2/P11145_face0.jpg', '3'], ['fiwdata/FIDs/F0545/MID1/P11093_face0.jpg', 'fiwdata/FIDs/F0545/MID1/P05719_face1.jpg', '3'], ['fiwdata/FIDs/F0282/MID1/P02999_face6.jpg', 'fiwdata/FIDs/F0282/MID10/P03005_face2.jpg', '2'], ['fiwdata/FIDs/F0255/MID2/P02705_face1.jpg', 'fiwdata/FIDs/F0255/MID1/P02702_face2.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P11726_face3.jpg', 'fiwdata/FIDs/F0009/MID1/P11721_face1.jpg', '3'], ['fiwdata/FIDs/F0995/MID1/P11694_face1.jpg', 'fiwdata/FIDs/F0995/MID10/P11648_face1.jpg', '2'], ['fiwdata/FIDs/F0854/MID1/P09030_face1.jpg', 'fiwdata/FIDs/F0854/MID1/P09022_face1.jpg', '3'], ['fiwdata/FIDs/F0377/MID4/P04002_face3.jpg', 'fiwdata/FIDs/F0377/MID4/P04004_face0.jpg', '3'], ['fiwdata/FIDs/F0212/MID3/P02254_face1.jpg', 'fiwdata/FIDs/F0212/MID2/P02259_face1.jpg', '1']]
+2020-05-22 14:36:56,819 - INFO - test set
+2020-05-22 14:36:56,819 - INFO - data size: 6000
+2020-05-22 14:36:56,819 - INFO - [['fiwdata/FIDs/F0995/MID12/P11672_face5.jpg', 'fiwdata/FIDs/F0995/MID12/P11679_face5.jpg', '3'], ['fiwdata/FIDs/F0560/MID5/P05888_face1.jpg', 'fiwdata/FIDs/F0560/unrelated_and_nonfaces/P05882_face11.jpg', '0'], ['fiwdata/FIDs/F0009/MID1/P10575_face2.jpg', 'fiwdata/FIDs/F0009/MID4/P10574_face4.jpg', '2'], ['fiwdata/FIDs/F0380/MID2/P04026_face0.jpg', 'fiwdata/FIDs/F0380/MID2/P04037_face1.jpg', '3'], ['fiwdata/FIDs/F0325/MID4/P03451_face0.jpg', 'fiwdata/FIDs/F0325/MID6/P03452_face1.jpg', '1'], ['fiwdata/FIDs/F0427/MID3/P04490_face1.jpg', 'fiwdata/FIDs/F0427/MID3/P04493_face4.jpg', '3'], ['fiwdata/FIDs/F0754/MID2/P07930_face0.jpg', 'fiwdata/FIDs/F0754/MID4/P07942_face0.jpg', '2'], ['fiwdata/FIDs/F0127/MID1/P01317_face4.jpg', 'fiwdata/FIDs/F0127/MID1/P01320_face1.jpg', '3'], ['fiwdata/FIDs/F0083/MID3/P00853_face0.jpg', 'fiwdata/FIDs/F0083/MID4/P00860_face2.jpg', '2'], ['fiwdata/FIDs/F0857/MID2/P09061_face0.jpg', 'fiwdata/FIDs/F0857/MID3/P09061_face2.jpg', '2']]
+2020-05-22 14:38:35,184 - INFO - batch 0: loss: 1.238234 acc: 0.500000
+2020-05-22 14:42:52,937 - INFO - batch 100: loss: 0.970980 acc: 0.589109
+2020-05-22 14:47:10,381 - INFO - batch 200: loss: 0.951418 acc: 0.598259
+2020-05-22 14:51:27,702 - INFO - batch 300: loss: 0.935358 acc: 0.606728
+2020-05-22 14:55:46,192 - INFO - batch 400: loss: 0.931740 acc: 0.606608
+2020-05-22 15:00:23,498 - INFO - epoch 0.000000: loss: 0.928813, acc: 0.610125
+2020-05-22 15:00:26,182 - INFO - batch 0: loss: 0.692150 acc: 0.750000
+2020-05-22 15:04:43,771 - INFO - batch 100: loss: 0.748846 acc: 0.695545
+2020-05-22 15:09:01,309 - INFO - batch 200: loss: 0.749350 acc: 0.697450
+2020-05-22 15:13:18,406 - INFO - batch 300: loss: 0.743480 acc: 0.701620
+2020-05-22 15:17:35,626 - INFO - batch 400: loss: 0.744708 acc: 0.699813
+2020-05-22 15:22:04,122 - INFO - epoch 1.000000: loss: 0.749189, acc: 0.698000
+2020-05-22 15:22:06,778 - INFO - batch 0: loss: 0.760548 acc: 0.625000
+2020-05-22 15:26:24,100 - INFO - batch 100: loss: 0.623385 acc: 0.747525
+2020-05-22 15:30:41,432 - INFO - batch 200: loss: 0.611803 acc: 0.757152
+2020-05-22 15:34:58,511 - INFO - batch 300: loss: 0.607585 acc: 0.759136
+2020-05-22 15:39:15,759 - INFO - batch 400: loss: 0.610122 acc: 0.757170
+2020-05-22 15:43:45,042 - INFO - epoch 2.000000: loss: 0.610484, acc: 0.755375
+2020-05-22 15:43:45,045 - INFO - history: {'loss': [0.9288131594657898, 0.7491892576217651, 0.610483705997467], 'accuracy': [0.6101250052452087, 0.6980000138282776, 0.7553750276565552], 'val_loss': [1.019455075263977, 1.2978307008743286, 1.2610080242156982], 'val_accuracy': [0.578125, 0.6171875, 0.625]}
+2020-05-22 15:48:48,602 - INFO - test accuracy: 0.628333
+2020-05-22 15:48:48,603 - INFO - test lost: 1.752460
+2020-05-22 16:03:59,452 - INFO - train set
+2020-05-22 16:03:59,452 - INFO - data size: 8000
+2020-05-22 16:03:59,453 - INFO - [['fiwdata/FIDs/F0601/MID7/P12024_face6.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06260_face1.jpg', '0'], ['fiwdata/FIDs/F0696/MID2/P07247_face0.jpg', 'fiwdata/FIDs/F0696/MID3/P07257_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID12/P12041_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06259_face2.jpg', '0'], ['fiwdata/FIDs/F0995/MID1/P11657_face0.jpg', 'fiwdata/FIDs/F0995/MID8/P11682_face4.jpg', '2'], ['fiwdata/FIDs/F0679/MID2/P07088_face3.jpg', 'fiwdata/FIDs/F0679/unrelated_and_nonfaces/P07082_face3.jpg', '0'], ['fiwdata/FIDs/F0665/MID1/P06959_face2.jpg', 'fiwdata/FIDs/F0665/MID5/P06952_face4.jpg', '1'], ['fiwdata/FIDs/F0601/MID8/P06300_face28.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11885_face2.jpg', '0'], ['fiwdata/FIDs/F0240/MID1/P02545_face1.jpg', 'fiwdata/FIDs/F0240/MID4/P02542_face1.jpg', '1'], ['fiwdata/FIDs/F0995/MID1/P11654_face0.jpg', 'fiwdata/FIDs/F0995/MID10/P11665_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID8/P06346_face0.jpg', 'fiwdata/FIDs/F0601/MID8/P06344_face0.jpg', '3']]
+2020-05-22 16:03:59,453 - INFO - test set
+2020-05-22 16:03:59,453 - INFO - data size: 6000
+2020-05-22 16:03:59,454 - INFO - [['fiwdata/FIDs/F0088/MID5/P00913_face1.jpg', 'fiwdata/FIDs/F0088/MID6/P00905_face1.jpg', '2'], ['fiwdata/FIDs/F0995/MID9/P11672_face3.jpg', 'fiwdata/FIDs/F0995/MID10/P11648_face1.jpg', '2'], ['fiwdata/FIDs/F0255/MID1/P02705_face2.jpg', 'fiwdata/FIDs/F0255/MID3/P02708_face2.jpg', '2'], ['fiwdata/FIDs/F0439/MID1/P10654_face0.jpg', 'fiwdata/FIDs/F0439/MID1/P10655_face2.jpg', '3'], ['fiwdata/FIDs/F0118/MID1/P10876_face1.jpg', 'fiwdata/FIDs/F0118/MID1/P10868_face2.jpg', '3'], ['fiwdata/FIDs/F0601/MID3/P06300_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06393_face9.jpg', '0'], ['fiwdata/FIDs/F0601/MID19/P12005_face0.jpg', 'fiwdata/FIDs/F0601/MID6/P04417_face2.jpg', '1'], ['fiwdata/FIDs/F0025/MID1/P00253_face1.jpg', 'fiwdata/FIDs/F0025/unrelated_and_nonfaces/P00250_face4.jpg', '0'], ['fiwdata/FIDs/F0752/MID1/P07908_face1.jpg', 'fiwdata/FIDs/F0752/MID3/P07887_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID20/P05229_face2.jpg', 'fiwdata/FIDs/F0601/MID21/P06313_face4.jpg', '1']]
+2020-05-22 16:05:37,153 - INFO - batch 0: loss: 0.891897 acc: 0.562500
+2020-05-22 16:09:55,499 - INFO - batch 100: loss: 0.947511 acc: 0.613861
+2020-05-22 16:14:12,936 - INFO - batch 200: loss: 0.891929 acc: 0.629042
+2020-05-22 16:18:30,351 - INFO - batch 300: loss: 0.878827 acc: 0.639535
+2020-05-22 16:22:47,881 - INFO - batch 400: loss: 0.882584 acc: 0.637469
+2020-05-22 16:27:24,698 - INFO - epoch 0.000000: loss: 0.880050, acc: 0.635375
+2020-05-22 16:27:27,346 - INFO - batch 0: loss: 0.948197 acc: 0.625000
+2020-05-22 16:31:44,274 - INFO - batch 100: loss: 0.697701 acc: 0.708540
+2020-05-22 16:36:01,403 - INFO - batch 200: loss: 0.682566 acc: 0.713619
+2020-05-22 16:40:18,633 - INFO - batch 300: loss: 0.679212 acc: 0.717193
+2020-05-22 16:44:35,988 - INFO - batch 400: loss: 0.696642 acc: 0.708385
+2020-05-22 16:49:04,812 - INFO - epoch 1.000000: loss: 0.694358, acc: 0.712500
+2020-05-22 16:49:07,454 - INFO - batch 0: loss: 0.634027 acc: 0.750000
+2020-05-22 16:53:24,718 - INFO - batch 100: loss: 0.571727 acc: 0.764233
+2020-05-22 16:57:41,884 - INFO - batch 200: loss: 0.571012 acc: 0.763993
+2020-05-22 17:01:59,425 - INFO - batch 300: loss: 0.564876 acc: 0.768688
+2020-05-22 17:06:16,809 - INFO - batch 400: loss: 0.579714 acc: 0.764027
+2020-05-22 17:10:46,157 - INFO - epoch 2.000000: loss: 0.587156, acc: 0.759250
+2020-05-22 17:10:46,159 - INFO - history: {'loss': [0.8800499439239502, 0.6943581700325012, 0.5871558785438538], 'accuracy': [0.6353750228881836, 0.7124999761581421, 0.7592499852180481], 'val_loss': [5.095117568969727, 0.9820600748062134, 1.5859122276306152], 'val_accuracy': [0.48046875, 0.60546875, 0.56640625]}
+2020-05-22 17:15:49,113 - INFO - test accuracy: 0.630667
+2020-05-22 17:15:49,114 - INFO - test lost: 1.207828
+2020-05-22 17:35:43,416 - INFO - train set
+2020-05-22 17:35:43,416 - INFO - data size: 8000
+2020-05-22 17:35:43,417 - INFO - [['fiwdata/FIDs/F0601/MID5/P11969_face8.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06250_face0.jpg', '0'], ['fiwdata/FIDs/F0220/MID1/P02333_face1.jpg', 'fiwdata/FIDs/F0220/MID1/P02330_face0.jpg', '3'], ['fiwdata/FIDs/F0376/MID8/P10639_face5.jpg', 'fiwdata/FIDs/F0376/MID6/P10626_face17.jpg', '1'], ['fiwdata/FIDs/F0949/MID1/P10000_face1.jpg', 'fiwdata/FIDs/F0949/MID3/P10003_face2.jpg', '1'], ['fiwdata/FIDs/F0995/MID9/P11648_face8.jpg', 'fiwdata/FIDs/F0995/MID10/P11674_face2.jpg', '2'], ['fiwdata/FIDs/F0691/MID1/P07207_face0.jpg', 'fiwdata/FIDs/F0691/MID2/P07208_face0.jpg', '2'], ['fiwdata/FIDs/F0995/MID2/P11709_face1.jpg', 'fiwdata/FIDs/F0995/MID5/P11707_face3.jpg', '2'], ['fiwdata/FIDs/F0601/MID22/P06245_face2.jpg', 'fiwdata/FIDs/F0601/MID12/P12043_face2.jpg', '1'], ['fiwdata/FIDs/F0995/MID9/P11681_face1.jpg', 'fiwdata/FIDs/F0995/MID10/P11671_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID12/P06242_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11923_face1.jpg', '0']]
+2020-05-22 17:35:43,417 - INFO - test set
+2020-05-22 17:35:43,417 - INFO - data size: 6000
+2020-05-22 17:35:43,418 - INFO - [['fiwdata/FIDs/F0379/MID1/P04015_face2.jpg', 'fiwdata/FIDs/F0379/MID2/P04017_face0.jpg', '2'], ['fiwdata/FIDs/F0601/MID11/P12035_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11904_face7.jpg', '0'], ['fiwdata/FIDs/F0771/MID3/P08146_face1.jpg', 'fiwdata/FIDs/F0771/MID6/P08144_face3.jpg', '2'], ['fiwdata/FIDs/F0375/MID2/P03987_face0.jpg', 'fiwdata/FIDs/F0375/MID3/P03976_face0.jpg', '2'], ['fiwdata/FIDs/F0601/MID19/P11975_face1.jpg', 'fiwdata/FIDs/F0601/MID19/P11991_face3.jpg', '3'], ['fiwdata/FIDs/F0987/MID4/P10404_face8.jpg', 'fiwdata/FIDs/F0987/unrelated_and_nonfaces/P10399_face17.jpg', '0'], ['fiwdata/FIDs/F0088/MID5/P00913_face1.jpg', 'fiwdata/FIDs/F0088/MID6/P00905_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID19/P12009_face0.jpg', 'fiwdata/FIDs/F0601/MID6/P06322_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID21/P11916_face4.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06399_face9.jpg', '0'], ['fiwdata/FIDs/F0450/MID1/P04759_face4.jpg', 'fiwdata/FIDs/F0450/MID1/P04761_face4.jpg', '3']]
+2020-05-22 17:37:21,107 - INFO - batch 0: loss: 1.278600 acc: 0.687500
+2020-05-22 17:41:38,536 - INFO - batch 100: loss: 0.887060 acc: 0.632426
+2020-05-22 17:45:55,821 - INFO - batch 200: loss: 0.862449 acc: 0.645833
+2020-05-22 17:50:13,286 - INFO - batch 300: loss: 0.831385 acc: 0.657600
+2020-05-22 17:54:30,685 - INFO - batch 400: loss: 0.845699 acc: 0.650249
+2020-05-22 17:59:07,842 - INFO - epoch 0.000000: loss: 0.836249, acc: 0.652500
+2020-05-22 17:59:10,505 - INFO - batch 0: loss: 0.626541 acc: 0.750000
+2020-05-22 18:03:28,520 - INFO - batch 100: loss: 0.642989 acc: 0.743812
+2020-05-22 18:07:45,721 - INFO - batch 200: loss: 0.640831 acc: 0.751866
+2020-05-22 18:12:02,894 - INFO - batch 300: loss: 0.622154 acc: 0.757475
+2020-05-22 18:16:20,073 - INFO - batch 400: loss: 0.627351 acc: 0.752182
+2020-05-22 18:20:48,776 - INFO - epoch 1.000000: loss: 0.625494, acc: 0.753625
+2020-05-22 18:20:51,432 - INFO - batch 0: loss: 0.369119 acc: 0.937500
+2020-05-22 18:25:08,940 - INFO - batch 100: loss: 0.519583 acc: 0.792698
+2020-05-22 18:29:26,282 - INFO - batch 200: loss: 0.498924 acc: 0.800062
+2020-05-22 18:33:43,980 - INFO - batch 300: loss: 0.484123 acc: 0.806894
+2020-05-22 18:38:01,336 - INFO - batch 400: loss: 0.484596 acc: 0.805954
+2020-05-22 18:42:30,557 - INFO - epoch 2.000000: loss: 0.483024, acc: 0.807000
+2020-05-22 18:42:30,559 - INFO - history: {'loss': [0.8362494111061096, 0.6254937052726746, 0.4830241799354553], 'accuracy': [0.6524999737739563, 0.7536249756813049, 0.8069999814033508], 'val_loss': [2.4211440086364746, 0.9282384514808655, 19.139774322509766], 'val_accuracy': [0.6640625, 0.640625, 0.609375]}
+2020-05-22 18:47:34,051 - INFO - test accuracy: 0.607000
+2020-05-22 18:47:34,052 - INFO - test lost: 35.388199
+2020-05-22 19:31:42,187 - INFO - train set
+2020-05-22 19:31:42,187 - INFO - data size: 8000
+2020-05-22 19:31:42,188 - INFO - [['fiwdata/FIDs/F0009/MID1/P11732_face0.jpg', 'fiwdata/FIDs/F0009/MID3/P11729_face1.jpg', '2'], ['fiwdata/FIDs/F0794/MID1/P08400_face2.jpg', 'fiwdata/FIDs/F0794/MID2/P08378_face1.jpg', '1'], ['fiwdata/FIDs/F0117/MID2/P01221_face0.jpg', 'fiwdata/FIDs/F0117/MID2/P01223_face4.jpg', '3'], ['fiwdata/FIDs/F0601/MID19/P11972_face1.jpg', 'fiwdata/FIDs/F0601/MID6/P06321_face3.jpg', '1'], ['fiwdata/FIDs/F0601/MID20/P06321_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P05233_face2.jpg', '0'], ['fiwdata/FIDs/F1013/MID1/P13131_face3.jpg', 'fiwdata/FIDs/F1013/MID3/P13133_face0.jpg', '1'], ['fiwdata/FIDs/F0853/MID1/P09019_face2.jpg', 'fiwdata/FIDs/F0853/MID1/P09016_face1.jpg', '3'], ['fiwdata/FIDs/F0423/MID2/P04469_face5.jpg', 'fiwdata/FIDs/F0423/unrelated_and_nonfaces/P04469_face6.jpg', '0'], ['fiwdata/FIDs/F1005/MID2/P13049_face2.jpg', 'fiwdata/FIDs/F1005/MID4/P13049_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID2/P06261_face1.jpg', 'fiwdata/FIDs/F0601/MID5/P11968_face4.jpg', '1']]
+2020-05-22 19:31:42,188 - INFO - test set
+2020-05-22 19:31:42,188 - INFO - data size: 6000
+2020-05-22 19:31:42,189 - INFO - [['fiwdata/FIDs/F0302/MID2/P03227_face1.jpg', 'fiwdata/FIDs/F0302/MID2/P03218_face2.jpg', '3'], ['fiwdata/FIDs/F0097/MID1/P01007_face1.jpg', 'fiwdata/FIDs/F0097/unrelated_and_nonfaces/P01003_face2.jpg', '0'], ['fiwdata/FIDs/F0601/MID22/P06399_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12056_face1.jpg', '0'], ['fiwdata/FIDs/F0601/MID19/P06320_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06393_face22.jpg', '0'], ['fiwdata/FIDs/F1018/MID1/P13183_face2.jpg', 'fiwdata/FIDs/F1018/MID3/P13183_face6.jpg', '1'], ['fiwdata/FIDs/F0826/MID2/P08740_face9.jpg', 'fiwdata/FIDs/F0826/MID4/P08740_face1.jpg', '1'], ['fiwdata/FIDs/F0077/MID1/P00786_face0.jpg', 'fiwdata/FIDs/F0077/MID6/P00789_face0.jpg', '1'], ['fiwdata/FIDs/F0029/MID1/P00294_face6.jpg', 'fiwdata/FIDs/F0029/MID3/P00294_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID2/P11893_face0.jpg', 'fiwdata/FIDs/F0601/MID5/P11972_face2.jpg', '1'], ['fiwdata/FIDs/F0483/MID1/P05086_face0.jpg', 'fiwdata/FIDs/F0483/MID1/P05094_face1.jpg', '3']]
+2020-05-22 19:33:20,595 - INFO - batch 0: loss: 1.466243 acc: 0.625000
+2020-05-22 19:37:38,391 - INFO - batch 100: loss: 0.782827 acc: 0.680074
+2020-05-22 19:41:55,619 - INFO - batch 200: loss: 0.771967 acc: 0.690920
+2020-05-22 19:46:13,105 - INFO - batch 300: loss: 0.773170 acc: 0.688746
+2020-05-22 19:50:30,378 - INFO - batch 400: loss: 0.767093 acc: 0.690461
+2020-05-22 19:55:07,209 - INFO - epoch 0.000000: loss: 0.761195, acc: 0.693000
+2020-05-22 19:55:09,852 - INFO - batch 0: loss: 0.318862 acc: 0.937500
+2020-05-22 19:59:26,712 - INFO - batch 100: loss: 0.496753 acc: 0.808168
+2020-05-22 20:03:44,016 - INFO - batch 200: loss: 0.493349 acc: 0.810634
+2020-05-22 20:08:01,199 - INFO - batch 300: loss: 0.512376 acc: 0.803156
+2020-05-22 20:12:18,358 - INFO - batch 400: loss: 0.520572 acc: 0.798473
+2020-05-22 20:16:46,881 - INFO - epoch 1.000000: loss: 0.530135, acc: 0.793750
+2020-05-22 20:16:49,530 - INFO - batch 0: loss: 0.390225 acc: 0.875000
+2020-05-22 20:21:07,118 - INFO - batch 100: loss: 0.396769 acc: 0.847772
+2020-05-22 20:25:24,315 - INFO - batch 200: loss: 0.410230 acc: 0.842351
+2020-05-22 20:29:41,778 - INFO - batch 300: loss: 0.417461 acc: 0.841570
+2020-05-22 20:33:59,183 - INFO - batch 400: loss: 0.416120 acc: 0.840555
+2020-05-22 20:38:27,877 - INFO - epoch 2.000000: loss: 0.409667, acc: 0.842250
+2020-05-22 20:38:27,880 - INFO - history: {'loss': [0.7611952424049377, 0.5301349759101868, 0.40966686606407166], 'accuracy': [0.6930000185966492, 0.793749988079071, 0.8422499895095825], 'val_loss': [0.7931973338127136, 2.8661160469055176, 1.858574390411377], 'val_accuracy': [0.6875, 0.6796875, 0.62890625]}
+2020-05-22 20:43:30,259 - INFO - test accuracy: 0.606500
+2020-05-22 20:43:30,260 - INFO - test lost: 1.943478
+2020-05-22 21:15:55,932 - INFO - train set
+2020-05-22 21:15:55,932 - INFO - data size: 8000
+2020-05-22 21:15:55,933 - INFO - [['fiwdata/FIDs/F0601/MID19/P11978_face1.jpg', 'fiwdata/FIDs/F0601/MID6/P11942_face0.jpg', '1'], ['fiwdata/FIDs/F0995/MID1/P11663_face0.jpg', 'fiwdata/FIDs/F0995/unrelated_and_nonfaces/P11696_face0.jpg', '0'], ['fiwdata/FIDs/F0601/MID22/P06241_face2.jpg', 'fiwdata/FIDs/F0601/MID12/P12026_face0.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P11750_face0.jpg', 'fiwdata/FIDs/F0009/MID2/P11754_face1.jpg', '2'], ['fiwdata/FIDs/F0486/MID3/P05115_face1.jpg', 'fiwdata/FIDs/F0486/MID1/P05106_face0.jpg', '1'], ['fiwdata/FIDs/F0015/MID2/P00142_face1.jpg', 'fiwdata/FIDs/F0015/MID2/P00157_face3.jpg', '3'], ['fiwdata/FIDs/F0939/MID1/P09896_face0.jpg', 'fiwdata/FIDs/F0939/MID3/P09903_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID20/P06310_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11947_face3.jpg', '0'], ['fiwdata/FIDs/F0073/MID4/P00742_face1.jpg', 'fiwdata/FIDs/F0073/unrelated_and_nonfaces/P00755_face1.jpg', '0'], ['fiwdata/FIDs/F0165/MID5/P01772_face0.jpg', 'fiwdata/FIDs/F0165/MID3/P01775_face1.jpg', '1']]
+2020-05-22 21:15:55,933 - INFO - test set
+2020-05-22 21:15:55,933 - INFO - data size: 6000
+2020-05-22 21:15:55,934 - INFO - [['fiwdata/FIDs/F0600/MID1/P10746_face4.jpg', 'fiwdata/FIDs/F0600/MID3/P10745_face3.jpg', '1'], ['fiwdata/FIDs/F0009/MID4/P11724_face4.jpg', 'fiwdata/FIDs/F0009/unrelated_and_nonfaces/P11725_face1.jpg', '0'], ['fiwdata/FIDs/F0262/MID2/P02788_face4.jpg', 'fiwdata/FIDs/F0262/MID3/P02793_face4.jpg', '1'], ['fiwdata/FIDs/F0563/MID2/P05924_face3.jpg', 'fiwdata/FIDs/F0563/MID4/P05915_face3.jpg', '2'], ['fiwdata/FIDs/F0774/MID1/P08176_face3.jpg', 'fiwdata/FIDs/F0774/MID1/P08175_face2.jpg', '3'], ['fiwdata/FIDs/F0909/MID1/P09600_face0.jpg', 'fiwdata/FIDs/F0909/MID1/P09602_face1.jpg', '3'], ['fiwdata/FIDs/F0832/MID4/P08794_face2.jpg', 'fiwdata/FIDs/F0832/MID4/P08798_face2.jpg', '3'], ['fiwdata/FIDs/F0601/MID1/P06274_face5.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06278_face3.jpg', '0'], ['fiwdata/FIDs/F0601/MID2/P06392_face3.jpg', 'fiwdata/FIDs/F0601/MID5/P11986_face5.jpg', '1'], ['fiwdata/FIDs/F0872/MID1/P09207_face0.jpg', 'fiwdata/FIDs/F0872/unrelated_and_nonfaces/P09213_face3.jpg', '0']]
+2020-05-22 21:17:33,644 - INFO - batch 0: loss: 0.931158 acc: 0.562500
+2020-05-22 21:21:51,772 - INFO - batch 100: loss: 0.798835 acc: 0.693069
+2020-05-22 21:26:09,041 - INFO - batch 200: loss: 0.774266 acc: 0.696828
+2020-05-22 21:30:26,323 - INFO - batch 300: loss: 0.752637 acc: 0.694767
+2020-05-22 21:34:43,713 - INFO - batch 400: loss: 0.738482 acc: 0.702151
+2020-05-22 21:39:20,751 - INFO - epoch 0.000000: loss: 0.723385, acc: 0.705250
+2020-05-22 21:39:23,421 - INFO - batch 0: loss: 0.763811 acc: 0.750000
+2020-05-22 21:43:40,214 - INFO - batch 100: loss: 0.479323 acc: 0.824257
+2020-05-22 21:47:57,516 - INFO - batch 200: loss: 0.473047 acc: 0.819963
+2020-05-22 21:52:14,993 - INFO - batch 300: loss: 0.468241 acc: 0.820806
+2020-05-22 21:56:32,217 - INFO - batch 400: loss: 0.470127 acc: 0.817488
+2020-05-22 22:01:00,980 - INFO - epoch 1.000000: loss: 0.466743, acc: 0.819875
+2020-05-22 22:01:03,628 - INFO - batch 0: loss: 0.292627 acc: 0.937500
+2020-05-22 22:05:21,098 - INFO - batch 100: loss: 0.373769 acc: 0.871287
+2020-05-22 22:09:38,580 - INFO - batch 200: loss: 0.342532 acc: 0.873756
+2020-05-22 22:13:55,761 - INFO - batch 300: loss: 0.350085 acc: 0.871470
+2020-05-22 22:18:13,408 - INFO - batch 400: loss: 0.352835 acc: 0.869545
+2020-05-22 22:22:42,420 - INFO - epoch 2.000000: loss: 0.353218, acc: 0.867000
+2020-05-22 22:22:42,422 - INFO - history: {'loss': [0.7233850955963135, 0.466742604970932, 0.3532180190086365], 'accuracy': [0.7052500247955322, 0.8198750019073486, 0.8669999837875366], 'val_loss': [0.9524372220039368, 0.9044828414916992, 1.510669469833374], 'val_accuracy': [0.65625, 0.65625, 0.6875]}
+2020-05-22 22:27:45,859 - INFO - test accuracy: 0.656000
+2020-05-22 22:27:45,860 - INFO - test lost: 1.933679
+2020-05-22 23:19:08,797 - INFO - train set
+2020-05-22 23:19:08,797 - INFO - data size: 20000
+2020-05-22 23:19:08,799 - INFO - [['fiwdata/FIDs/F0601/MID2/P06281_face1.jpg', 'fiwdata/FIDs/F0601/MID2/P11952_face2.jpg', '3'], ['fiwdata/FIDs/F0522/MID2/P05493_face1.jpg', 'fiwdata/FIDs/F0522/unrelated_and_nonfaces/P05495_face1.jpg', '0'], ['fiwdata/FIDs/F0009/MID3/P11744_face3.jpg', 'fiwdata/FIDs/F0009/MID3/P11724_face0.jpg', '3'], ['fiwdata/FIDs/F0601/MID20/P11944_face0.jpg', 'fiwdata/FIDs/F0601/MID21/P06312_face0.jpg', '1'], ['fiwdata/FIDs/F0355/MID2/P03757_face0.jpg', 'fiwdata/FIDs/F0355/MID3/P03770_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID20/P12042_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11888_face1.jpg', '0'], ['fiwdata/FIDs/F0601/MID28/P06296_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11882_face0.jpg', '0'], ['fiwdata/FIDs/F0754/MID3/P07920_face1.jpg', 'fiwdata/FIDs/F0754/MID4/P07930_face2.jpg', '2'], ['fiwdata/FIDs/F0432/MID1/P04558_face2.jpg', 'fiwdata/FIDs/F0432/MID2/P04548_face2.jpg', '2'], ['fiwdata/FIDs/F0601/MID12/P06235_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12035_face6.jpg', '0']]
+2020-05-22 23:19:08,799 - INFO - test set
+2020-05-22 23:19:08,799 - INFO - data size: 6000
+2020-05-22 23:19:08,800 - INFO - [['fiwdata/FIDs/F0600/MID6/P10748_face5.jpg', 'fiwdata/FIDs/F0600/MID6/P10753_face3.jpg', '3'], ['fiwdata/FIDs/F0790/MID5/P11147_face5.jpg', 'fiwdata/FIDs/F0790/MID1/P11156_face4.jpg', '1'], ['fiwdata/FIDs/F0601/MID2/P06303_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11947_face2.jpg', '0'], ['fiwdata/FIDs/F0342/MID4/P03642_face4.jpg', 'fiwdata/FIDs/F0342/MID1/P03644_face0.jpg', '1'], ['fiwdata/FIDs/F0358/MID3/P10946_face1.jpg', 'fiwdata/FIDs/F0358/MID4/P10947_face0.jpg', '2'], ['fiwdata/FIDs/F0250/MID2/P02659_face1.jpg', 'fiwdata/FIDs/F0250/MID2/P02651_face0.jpg', '3'], ['fiwdata/FIDs/F0593/MID1/P11000_face3.jpg', 'fiwdata/FIDs/F0593/MID5/P10998_face3.jpg', '1'], ['fiwdata/FIDs/F0601/MID6/P06322_face1.jpg', 'fiwdata/FIDs/F0601/MID6/P11918_face1.jpg', '3'], ['fiwdata/FIDs/F0886/MID7/P09346_face2.jpg', 'fiwdata/FIDs/F0886/unrelated_and_nonfaces/P09354_face1.jpg', '0'], ['fiwdata/FIDs/F0771/MID3/P08150_face0.jpg', 'fiwdata/FIDs/F0771/MID6/P08145_face5.jpg', '2']]
+2020-05-22 23:20:50,210 - INFO - batch 0: loss: 0.498478 acc: 0.812500
+2020-05-22 23:25:08,259 - INFO - batch 100: loss: 0.799353 acc: 0.684406
+2020-05-22 23:29:26,219 - INFO - batch 200: loss: 0.758389 acc: 0.699627
+2020-05-22 23:33:43,971 - INFO - batch 300: loss: 0.735790 acc: 0.706188
+2020-05-22 23:38:01,773 - INFO - batch 400: loss: 0.715360 acc: 0.718049
+2020-05-22 23:42:19,352 - INFO - batch 500: loss: 0.706079 acc: 0.721183
+2020-05-22 23:46:37,151 - INFO - batch 600: loss: 0.699307 acc: 0.723898
+2020-05-22 23:50:54,718 - INFO - batch 700: loss: 0.695630 acc: 0.723787
+2020-05-22 23:55:12,247 - INFO - batch 800: loss: 0.691800 acc: 0.725968
+2020-05-22 23:59:29,833 - INFO - batch 900: loss: 0.687959 acc: 0.727664
+2020-05-23 00:03:47,667 - INFO - batch 1000: loss: 0.687131 acc: 0.727148
+2020-05-23 00:08:05,359 - INFO - batch 1100: loss: 0.684412 acc: 0.729337
+2020-05-23 00:12:23,204 - INFO - batch 1200: loss: 0.683073 acc: 0.729809
+2020-05-23 00:14:51,783 - INFO - epoch 0.000000: loss: 0.681323, acc: 0.730500
+2020-05-23 00:14:54,446 - INFO - batch 0: loss: 0.330921 acc: 0.937500
+2020-05-23 00:19:12,732 - INFO - batch 100: loss: 0.497049 acc: 0.806312
+2020-05-23 00:23:30,445 - INFO - batch 200: loss: 0.502003 acc: 0.804726
+2020-05-23 00:27:48,248 - INFO - batch 300: loss: 0.494686 acc: 0.807101
+2020-05-23 00:32:05,836 - INFO - batch 400: loss: 0.499946 acc: 0.807824
+2020-05-23 00:36:23,661 - INFO - batch 500: loss: 0.496514 acc: 0.807011
+2020-05-23 00:40:41,298 - INFO - batch 600: loss: 0.500876 acc: 0.804493
+2020-05-23 00:44:59,151 - INFO - batch 700: loss: 0.501383 acc: 0.801890
+2020-05-23 00:49:16,269 - INFO - batch 800: loss: 0.503579 acc: 0.802122
+2020-05-23 00:53:33,902 - INFO - batch 900: loss: 0.504442 acc: 0.801887
+2020-05-23 00:57:51,280 - INFO - batch 1000: loss: 0.506113 acc: 0.801199
+2020-05-23 01:02:08,027 - INFO - batch 1100: loss: 0.508926 acc: 0.800522
+2020-05-23 01:06:25,725 - INFO - batch 1200: loss: 0.509001 acc: 0.801259
+2020-05-23 01:08:46,124 - INFO - epoch 1.000000: loss: 0.508410, acc: 0.801000
+2020-05-23 01:08:48,787 - INFO - batch 0: loss: 0.360067 acc: 0.875000
+2020-05-23 01:13:06,133 - INFO - batch 100: loss: 0.403299 acc: 0.842822
+2020-05-23 01:17:23,516 - INFO - batch 200: loss: 0.404132 acc: 0.843905
+2020-05-23 01:21:40,408 - INFO - batch 300: loss: 0.394741 acc: 0.844892
+2020-05-23 01:25:57,883 - INFO - batch 400: loss: 0.381129 acc: 0.852868
+2020-05-23 01:30:15,644 - INFO - batch 500: loss: 0.382356 acc: 0.851796
+2020-05-23 01:34:33,172 - INFO - batch 600: loss: 0.384295 acc: 0.851498
+2020-05-23 01:38:50,496 - INFO - batch 700: loss: 0.381824 acc: 0.852443
+2020-05-23 01:43:08,031 - INFO - batch 800: loss: 0.388106 acc: 0.849953
+2020-05-23 01:47:25,706 - INFO - batch 900: loss: 0.390858 acc: 0.848640
+2020-05-23 01:51:43,295 - INFO - batch 1000: loss: 0.392164 acc: 0.848776
+2020-05-23 01:56:00,781 - INFO - batch 1100: loss: 0.389402 acc: 0.850420
+2020-05-23 02:00:18,106 - INFO - batch 1200: loss: 0.391712 acc: 0.849448
+2020-05-23 02:02:37,803 - INFO - epoch 2.000000: loss: 0.391199, acc: 0.850200
+2020-05-23 02:02:37,805 - INFO - history: {'loss': [0.6813229322433472, 0.5084100365638733, 0.3911992013454437], 'accuracy': [0.7304999828338623, 0.8009999990463257, 0.8501999974250793], 'val_loss': [36.225852966308594, 8.96183967590332, 5.508117198944092], 'val_accuracy': [0.671875, 0.66796875, 0.73046875]}
+2020-05-23 02:07:40,679 - INFO - test accuracy: 0.717833
+2020-05-23 02:07:40,679 - INFO - test lost: 3.497083
+2020-05-24 16:23:06,903 - INFO - train set
+2020-05-24 16:23:06,903 - INFO - data size: 10000
+2020-05-24 16:23:06,904 - INFO - [['fiwdata/FIDs/F0995/MID1/P11678_face5.jpg', 'fiwdata/FIDs/F0995/MID8/P11687_face10.jpg', '2'], ['fiwdata/FIDs/F0583/MID6/P06139_face1.jpg', 'fiwdata/FIDs/F0583/MID1/P06122_face1.jpg', '1'], ['fiwdata/FIDs/F0422/MID12/P04450_face0.jpg', 'fiwdata/FIDs/F0422/unrelated_and_nonfaces/P09343_face1.jpg', '0'], ['fiwdata/FIDs/F0236/MID1/P02498_face2.jpg', 'fiwdata/FIDs/F0236/MID1/P02500_face3.jpg', '3'], ['fiwdata/FIDs/F0176/MID1/P01898_face2.jpg', 'fiwdata/FIDs/F0176/unrelated_and_nonfaces/P01891_face6.jpg', '0'], ['fiwdata/FIDs/F0601/MID6/P11966_face2.jpg', 'fiwdata/FIDs/F0601/MID6/P06310_face1.jpg', '3'], ['fiwdata/FIDs/F0282/MID3/P03003_face3.jpg', 'fiwdata/FIDs/F0282/MID6/P02999_face2.jpg', '2'], ['fiwdata/FIDs/F0407/MID1/P04284_face1.jpg', 'fiwdata/FIDs/F0407/MID2/P04290_face1.jpg', '1'], ['fiwdata/FIDs/F0048/MID3/P00480_face0.jpg', 'fiwdata/FIDs/F0048/MID3/P00479_face3.jpg', '3'], ['fiwdata/FIDs/F0754/MID2/P07954_face3.jpg', 'fiwdata/FIDs/F0754/MID4/P07920_face2.jpg', '2']]
+2020-05-24 16:23:06,904 - INFO - test set
+2020-05-24 16:23:06,904 - INFO - data size: 6000
+2020-05-24 16:23:06,905 - INFO - [['fiwdata/FIDs/F0995/MID6/P11692_face10.jpg', 'fiwdata/FIDs/F0995/MID12/P11687_face12.jpg', '2'], ['fiwdata/FIDs/F0955/MID2/P10069_face2.jpg', 'fiwdata/FIDs/F0955/MID4/P10064_face1.jpg', '1'], ['fiwdata/FIDs/F0283/MID1/P03021_face0.jpg', 'fiwdata/FIDs/F0283/MID5/P03019_face1.jpg', '2'], ['fiwdata/FIDs/F0483/MID2/P05093_face1.jpg', 'fiwdata/FIDs/F0483/unrelated_and_nonfaces/P05092_face5.jpg', '0'], ['fiwdata/FIDs/F0995/MID1/P11650_face4.jpg', 'fiwdata/FIDs/F0995/MID8/P11681_face4.jpg', '2'], ['fiwdata/FIDs/F0062/MID2/P00619_face3.jpg', 'fiwdata/FIDs/F0062/MID3/P00621_face0.jpg', '2'], ['fiwdata/FIDs/F0966/MID1/P10179_face1.jpg', 'fiwdata/FIDs/F0966/MID3/P10174_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID19/P11952_face6.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11991_face6.jpg', '0'], ['fiwdata/FIDs/F0566/MID3/P05956_face2.jpg', 'fiwdata/FIDs/F0566/MID3/P05952_face2.jpg', '3'], ['fiwdata/FIDs/F0601/MID19/P11975_face1.jpg', 'fiwdata/FIDs/F0601/MID6/P11967_face0.jpg', '1']]
+2020-05-24 16:24:51,390 - INFO - batch 0: loss: 0.900988 acc: 0.562500
+2020-05-24 16:29:13,704 - INFO - batch 100: loss: 0.648312 acc: 0.761139
+2020-05-24 16:33:36,770 - INFO - batch 200: loss: 0.615066 acc: 0.768657
+2020-05-24 16:37:59,849 - INFO - batch 300: loss: 0.612098 acc: 0.767650
+2020-05-24 16:42:22,940 - INFO - batch 400: loss: 0.602861 acc: 0.770418
+2020-05-24 16:46:45,918 - INFO - batch 500: loss: 0.603807 acc: 0.767590
+2020-05-24 16:51:08,728 - INFO - batch 600: loss: 0.601204 acc: 0.769863
+2020-05-24 16:52:34,368 - INFO - epoch 0.000000: loss: 0.603397, acc: 0.769800
+2020-05-24 16:52:37,084 - INFO - batch 0: loss: 0.533495 acc: 0.687500
+2020-05-24 16:56:59,444 - INFO - batch 100: loss: 0.370388 acc: 0.857673
+2020-05-24 17:01:22,014 - INFO - batch 200: loss: 0.357149 acc: 0.863806
+2020-05-24 17:05:44,597 - INFO - batch 300: loss: 0.352758 acc: 0.866694
+2020-05-24 17:10:07,447 - INFO - batch 400: loss: 0.355810 acc: 0.866116
+2020-05-24 17:14:30,564 - INFO - batch 500: loss: 0.357567 acc: 0.865394
+2020-05-24 17:18:53,262 - INFO - batch 600: loss: 0.366331 acc: 0.863041
+2020-05-24 17:20:11,059 - INFO - epoch 1.000000: loss: 0.368984, acc: 0.862200
+2020-05-24 17:20:11,061 - INFO - history: {'loss': [0.6033966541290283, 0.368984192609787], 'accuracy': [0.7698000073432922, 0.8622000217437744], 'val_loss': [0.9475478529930115, 0.8921597599983215], 'val_accuracy': [0.7109375, 0.671875]}
+2020-05-24 17:25:21,923 - INFO - test accuracy: 0.737833
+2020-05-24 17:25:21,924 - INFO - test lost: 1.030139
+2020-05-24 18:37:45,899 - INFO - train set
+2020-05-24 18:37:45,900 - INFO - data size: 10000
+2020-05-24 18:37:45,901 - INFO - [['fiwdata/FIDs/F0009/MID1/P11728_face0.jpg', 'fiwdata/FIDs/F0009/MID3/P11723_face4.jpg', '2'], ['fiwdata/FIDs/F0575/MID1/P06052_face1.jpg', 'fiwdata/FIDs/F0575/MID2/P06051_face1.jpg', '2'], ['fiwdata/FIDs/F0068/MID2/P00696_face0.jpg', 'fiwdata/FIDs/F0068/MID5/P00704_face3.jpg', '1'], ['fiwdata/FIDs/F0009/MID3/P11746_face0.jpg', 'fiwdata/FIDs/F0009/MID3/P11744_face3.jpg', '3'], ['fiwdata/FIDs/F0661/MID2/P06929_face0.jpg', 'fiwdata/FIDs/F0661/MID2/P06921_face6.jpg', '3'], ['fiwdata/FIDs/F0190/MID2/P02035_face0.jpg', 'fiwdata/FIDs/F0190/MID2/P02046_face1.jpg', '3'], ['fiwdata/FIDs/F0073/MID3/P00742_face0.jpg', 'fiwdata/FIDs/F0073/unrelated_and_nonfaces/P00755_face6.jpg', '0'], ['fiwdata/FIDs/F0517/MID3/P05450_face9.jpg', 'fiwdata/FIDs/F0517/unrelated_and_nonfaces/P05450_face7.jpg', '0'], ['fiwdata/FIDs/F0147/MID4/P01583_face3.jpg', 'fiwdata/FIDs/F0147/MID4/P01587_face0.jpg', '3'], ['fiwdata/FIDs/F0995/MID10/P11675_face8.jpg', 'fiwdata/FIDs/F0995/MID11/P11701_face7.jpg', '2']]
+2020-05-24 18:37:45,901 - INFO - test set
+2020-05-24 18:37:45,901 - INFO - data size: 6000
+2020-05-24 18:37:45,901 - INFO - [['fiwdata/FIDs/F0373/MID2/P03952_face0.jpg', 'fiwdata/FIDs/F0373/unrelated_and_nonfaces/P03961_face2.jpg', '0'], ['fiwdata/FIDs/F0936/MID1/P09873_face7.jpg', 'fiwdata/FIDs/F0936/unrelated_and_nonfaces/P09868_face4.jpg', '0'], ['fiwdata/FIDs/F0314/MID4/P03331_face3.jpg', 'fiwdata/FIDs/F0314/MID5/P03331_face2.jpg', '2'], ['fiwdata/FIDs/F0567/MID2/P05967_face5.jpg', 'fiwdata/FIDs/F0567/MID2/P05966_face1.jpg', '3'], ['fiwdata/FIDs/F0340/MID1/P03611_face1.jpg', 'fiwdata/FIDs/F0340/MID3/P03610_face1.jpg', '2'], ['fiwdata/FIDs/F0009/MID2/P00089_face2.jpg', 'fiwdata/FIDs/F0009/MID6/P10574_face1.jpg', '2'], ['fiwdata/FIDs/F0358/MID4/P10948_face1.jpg', 'fiwdata/FIDs/F0358/MID5/P10932_face5.jpg', '2'], ['fiwdata/FIDs/F0615/MID2/P06456_face0.jpg', 'fiwdata/FIDs/F0615/unrelated_and_nonfaces/P06453_face0.jpg', '0'], ['fiwdata/FIDs/F0672/MID1/P07018_face3.jpg', 'fiwdata/FIDs/F0672/MID1/P07016_face1.jpg', '3'], ['fiwdata/FIDs/F0579/MID4/P06085_face4.jpg', 'fiwdata/FIDs/F0579/MID7/P06084_face0.jpg', '2']]
+2020-05-24 18:39:26,721 - INFO - batch 0: loss: 0.561325 acc: 0.750000
+2020-05-24 18:43:48,455 - INFO - batch 100: loss: 0.656111 acc: 0.743193
+2020-05-24 18:48:11,078 - INFO - batch 200: loss: 0.619830 acc: 0.760261
+2020-05-24 18:52:33,822 - INFO - batch 300: loss: 0.617063 acc: 0.768065
+2020-05-24 18:56:56,466 - INFO - batch 400: loss: 0.599307 acc: 0.776496
+2020-05-24 19:01:19,235 - INFO - batch 500: loss: 0.595386 acc: 0.777819
+2020-05-24 19:05:41,764 - INFO - batch 600: loss: 0.591198 acc: 0.777766
+2020-05-24 19:07:07,474 - INFO - epoch 0.000000: loss: 0.590649, acc: 0.777700
+2020-05-24 19:07:10,185 - INFO - batch 0: loss: 0.442370 acc: 0.812500
+2020-05-24 19:11:31,915 - INFO - batch 100: loss: 0.302793 acc: 0.892946
+2020-05-24 19:15:53,735 - INFO - batch 200: loss: 0.317687 acc: 0.879353
+2020-05-24 19:20:15,714 - INFO - batch 300: loss: 0.316027 acc: 0.882683
+2020-05-24 19:24:37,668 - INFO - batch 400: loss: 0.320689 acc: 0.880767
+2020-05-24 19:28:59,645 - INFO - batch 500: loss: 0.318731 acc: 0.880863
+2020-05-24 19:33:21,659 - INFO - batch 600: loss: 0.325792 acc: 0.878328
+2020-05-24 19:34:39,259 - INFO - epoch 1.000000: loss: 0.326144, acc: 0.878300
+2020-05-24 19:34:39,261 - INFO - history: {'loss': [0.5906487107276917, 0.32614412903785706], 'accuracy': [0.7777000069618225, 0.8783000111579895], 'val_loss': [0.5716913342475891, 0.8520676493644714], 'val_accuracy': [0.78125, 0.72265625]}
+2020-05-24 19:39:49,831 - INFO - test accuracy: 0.729167
+2020-05-24 19:39:49,832 - INFO - test lost: 0.873565
+2020-05-24 20:39:24,047 - INFO - train set
+2020-05-24 20:39:24,047 - INFO - data size: 10000
+2020-05-24 20:39:24,048 - INFO - [['fiwdata/FIDs/F0601/MID19/P12014_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06256_face0.jpg', '0'], ['fiwdata/FIDs/F0601/MID33/P11958_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11952_face0.jpg', '0'], ['fiwdata/FIDs/F0601/MID20/P11951_face11.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11914_face5.jpg', '0'], ['fiwdata/FIDs/F0601/MID5/P11977_face0.jpg', 'fiwdata/FIDs/F0601/MID5/P06257_face7.jpg', '3'], ['fiwdata/FIDs/F0995/MID5/P10493_face1.jpg', 'fiwdata/FIDs/F0995/unrelated_and_nonfaces/P11669_face0.jpg', '0'], ['fiwdata/FIDs/F0127/MID2/P01319_face0.jpg', 'fiwdata/FIDs/F0127/unrelated_and_nonfaces/P01321_face2.jpg', '0'], ['fiwdata/FIDs/F0629/MID2/P06599_face0.jpg', 'fiwdata/FIDs/F0629/MID2/P06598_face1.jpg', '3'], ['fiwdata/FIDs/F0601/MID3/P06322_face0.jpg', 'fiwdata/FIDs/F0601/MID2/P06257_face3.jpg', '1'], ['fiwdata/FIDs/F0580/MID3/P06098_face1.jpg', 'fiwdata/FIDs/F0580/MID3/P06099_face0.jpg', '3'], ['fiwdata/FIDs/F0523/MID1/P05499_face6.jpg', 'fiwdata/FIDs/F0523/MID3/P05499_face1.jpg', '1']]
+2020-05-24 20:39:24,048 - INFO - test set
+2020-05-24 20:39:24,048 - INFO - data size: 6000
+2020-05-24 20:39:24,049 - INFO - [['fiwdata/FIDs/F0928/MID3/P09792_face1.jpg', 'fiwdata/FIDs/F0928/MID3/P09787_face1.jpg', '3'], ['fiwdata/FIDs/F0448/MID2/P04739_face1.jpg', 'fiwdata/FIDs/F0448/MID2/P04738_face0.jpg', '3'], ['fiwdata/FIDs/F0104/MID2/P01070_face0.jpg', 'fiwdata/FIDs/F0104/MID2/P01073_face1.jpg', '3'], ['fiwdata/FIDs/F1003/MID2/P13029_face3.jpg', 'fiwdata/FIDs/F1003/MID2/P13025_face3.jpg', '3'], ['fiwdata/FIDs/F0431/MID2/P04539_face2.jpg', 'fiwdata/FIDs/F0431/unrelated_and_nonfaces/P04533_face2.jpg', '0'], ['fiwdata/FIDs/F0837/MID1/P08846_face2.jpg', 'fiwdata/FIDs/F0837/unrelated_and_nonfaces/P08847_face6.jpg', '0'], ['fiwdata/FIDs/F0101/MID2/P01045_face3.jpg', 'fiwdata/FIDs/F0101/MID6/P01041_face2.jpg', '1'], ['fiwdata/FIDs/F0282/MID9/P03001_face3.jpg', 'fiwdata/FIDs/F0282/MID3/P03016_face3.jpg', '1'], ['fiwdata/FIDs/F0948/MID1/P09992_face0.jpg', 'fiwdata/FIDs/F0948/MID3/P09990_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID6/P11966_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06399_face13.jpg', '0']]
+2020-05-24 20:41:03,873 - INFO - batch 0: loss: 0.550456 acc: 0.750000
+2020-05-24 20:45:25,926 - INFO - batch 100: loss: 0.533019 acc: 0.800743
+2020-05-24 20:49:49,025 - INFO - batch 200: loss: 0.546254 acc: 0.789490
+2020-05-24 20:54:12,183 - INFO - batch 300: loss: 0.562803 acc: 0.781977
+2020-05-24 20:58:35,300 - INFO - batch 400: loss: 0.562799 acc: 0.782419
+2020-05-24 21:02:58,417 - INFO - batch 500: loss: 0.577495 acc: 0.780065
+2020-05-24 21:07:21,259 - INFO - batch 600: loss: 0.570285 acc: 0.782758
+2020-05-24 21:08:47,091 - INFO - epoch 0.000000: loss: 0.568664, acc: 0.783300
+2020-05-24 21:08:49,800 - INFO - batch 0: loss: 0.383242 acc: 0.875000
+2020-05-24 21:13:12,419 - INFO - batch 100: loss: 0.293409 acc: 0.894183
+2020-05-24 21:17:35,722 - INFO - batch 200: loss: 0.275997 acc: 0.899565
+2020-05-24 21:21:58,889 - INFO - batch 300: loss: 0.286121 acc: 0.892650
+2020-05-24 21:26:22,014 - INFO - batch 400: loss: 0.313977 acc: 0.882014
+2020-05-24 21:30:45,178 - INFO - batch 500: loss: 0.326764 acc: 0.875125
+2020-05-24 21:35:08,274 - INFO - batch 600: loss: 0.332259 acc: 0.873128
+2020-05-24 21:36:26,077 - INFO - epoch 1.000000: loss: 0.334087, acc: 0.872400
+2020-05-24 21:36:26,079 - INFO - history: {'loss': [0.5686644911766052, 0.33408746123313904], 'accuracy': [0.78329998254776, 0.8723999857902527], 'val_loss': [0.8047006726264954, 0.7519148588180542], 'val_accuracy': [0.7578125, 0.7265625]}
+2020-05-24 21:41:37,336 - INFO - test accuracy: 0.709667
+2020-05-24 21:41:37,337 - INFO - test lost: 0.927610
+2020-05-24 22:45:07,173 - INFO - train set
+2020-05-24 22:45:07,174 - INFO - data size: 20000
+2020-05-24 22:45:07,175 - INFO - [['fiwdata/FIDs/F0357/MID9/P03789_face2.jpg', 'fiwdata/FIDs/F0357/MID9/P03800_face1.jpg', '3'], ['fiwdata/FIDs/F0601/MID6/P12051_face7.jpg', 'fiwdata/FIDs/F0601/MID6/P11969_face2.jpg', '3'], ['fiwdata/FIDs/F0995/MID1/P11653_face0.jpg', 'fiwdata/FIDs/F0995/MID1/P11658_face1.jpg', '3'], ['fiwdata/FIDs/F0435/MID4/P04584_face2.jpg', 'fiwdata/FIDs/F0435/MID5/P04589_face5.jpg', '2'], ['fiwdata/FIDs/F0601/MID2/P06305_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12056_face5.jpg', '0'], ['fiwdata/FIDs/F0593/MID1/P10989_face0.jpg', 'fiwdata/FIDs/F0593/MID1/P10983_face1.jpg', '3'], ['fiwdata/FIDs/F0601/MID5/P06252_face0.jpg', 'fiwdata/FIDs/F0601/MID6/P11952_face11.jpg', '1'], ['fiwdata/FIDs/F0147/MID4/P01580_face1.jpg', 'fiwdata/FIDs/F0147/MID4/P01579_face0.jpg', '3'], ['fiwdata/FIDs/F0615/MID1/P06452_face0.jpg', 'fiwdata/FIDs/F0615/MID3/P06457_face1.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P11727_face2.jpg', 'fiwdata/FIDs/F0009/MID6/P11731_face0.jpg', '2']]
+2020-05-24 22:45:07,176 - INFO - test set
+2020-05-24 22:45:07,176 - INFO - data size: 6000
+2020-05-24 22:45:07,176 - INFO - [['fiwdata/FIDs/F0392/MID3/P04145_face2.jpg', 'fiwdata/FIDs/F0392/unrelated_and_nonfaces/P04151_face6.jpg', '0'], ['fiwdata/FIDs/F0754/MID1/P07927_face0.jpg', 'fiwdata/FIDs/F0754/MID4/P07938_face0.jpg', '1'], ['fiwdata/FIDs/F0754/MID6/P07948_face1.jpg', 'fiwdata/FIDs/F0754/unrelated_and_nonfaces/P07967_face3.jpg', '0'], ['fiwdata/FIDs/F0601/MID8/P06391_face26.jpg', 'fiwdata/FIDs/F0601/MID28/P06393_face4.jpg', '1'], ['fiwdata/FIDs/F0821/MID3/P08688_face0.jpg', 'fiwdata/FIDs/F0821/MID9/P08689_face0.jpg', '1'], ['fiwdata/FIDs/F0531/MID1/P05578_face2.jpg', 'fiwdata/FIDs/F0531/MID4/P05581_face0.jpg', '1'], ['fiwdata/FIDs/F0340/MID1/P03607_face0.jpg', 'fiwdata/FIDs/F0340/MID3/P03607_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID5/P11995_face2.jpg', 'fiwdata/FIDs/F0601/MID7/P04416_face0.jpg', '1'], ['fiwdata/FIDs/F0009/MID1/P11744_face5.jpg', 'fiwdata/FIDs/F0009/MID6/P10573_face4.jpg', '2'], ['fiwdata/FIDs/F0601/MID20/P05240_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12070_face3.jpg', '0']]
+2020-05-24 22:46:49,996 - INFO - batch 0: loss: 0.451272 acc: 0.812500
+2020-05-24 22:51:11,709 - INFO - batch 100: loss: 0.593524 acc: 0.760520
+2020-05-24 22:55:34,593 - INFO - batch 200: loss: 0.579183 acc: 0.775808
+2020-05-24 22:59:57,284 - INFO - batch 300: loss: 0.570313 acc: 0.776786
+2020-05-24 23:04:20,343 - INFO - batch 400: loss: 0.561306 acc: 0.781328
+2020-05-24 23:08:43,595 - INFO - batch 500: loss: 0.557230 acc: 0.785055
+2020-05-24 23:13:06,645 - INFO - batch 600: loss: 0.556356 acc: 0.785358
+2020-05-24 23:17:29,734 - INFO - batch 700: loss: 0.550569 acc: 0.788427
+2020-05-24 23:21:52,799 - INFO - batch 800: loss: 0.546023 acc: 0.790808
+2020-05-24 23:26:15,657 - INFO - batch 900: loss: 0.538383 acc: 0.793493
+2020-05-24 23:30:38,655 - INFO - batch 1000: loss: 0.538708 acc: 0.793706
+2020-05-24 23:35:01,644 - INFO - batch 1100: loss: 0.533058 acc: 0.796265
+2020-05-24 23:39:24,610 - INFO - batch 1200: loss: 0.533105 acc: 0.795951
+2020-05-24 23:41:56,498 - INFO - epoch 0.000000: loss: 0.534612, acc: 0.795750
+2020-05-24 23:41:59,206 - INFO - batch 0: loss: 0.209232 acc: 0.937500
+2020-05-24 23:46:21,373 - INFO - batch 100: loss: 0.330699 acc: 0.887995
+2020-05-24 23:50:43,368 - INFO - batch 200: loss: 0.330646 acc: 0.883085
+2020-05-24 23:55:05,239 - INFO - batch 300: loss: 0.351684 acc: 0.872924
+2020-05-24 23:59:27,059 - INFO - batch 400: loss: 0.347573 acc: 0.873909
+2020-05-25 00:03:49,386 - INFO - batch 500: loss: 0.347430 acc: 0.872755
+2020-05-25 00:08:11,607 - INFO - batch 600: loss: 0.345573 acc: 0.872816
+2020-05-25 00:12:33,733 - INFO - batch 700: loss: 0.346175 acc: 0.871345
+2020-05-25 00:16:55,541 - INFO - batch 800: loss: 0.342220 acc: 0.871957
+2020-05-25 00:21:17,347 - INFO - batch 900: loss: 0.342397 acc: 0.872156
+2020-05-25 00:25:39,246 - INFO - batch 1000: loss: 0.346063 acc: 0.870629
+2020-05-25 00:30:01,003 - INFO - batch 1100: loss: 0.345971 acc: 0.871083
+2020-05-25 00:34:22,960 - INFO - batch 1200: loss: 0.345707 acc: 0.870889
+2020-05-25 00:36:46,367 - INFO - epoch 1.000000: loss: 0.345774, acc: 0.870650
+2020-05-25 00:36:46,369 - INFO - history: {'loss': [0.5346118807792664, 0.3457740843296051], 'accuracy': [0.7957500219345093, 0.8706499934196472], 'val_loss': [0.5959177613258362, 0.6786400079727173], 'val_accuracy': [0.7421875, 0.74609375]}
+2020-05-25 00:41:57,937 - INFO - test accuracy: 0.783333
+2020-05-25 00:41:57,937 - INFO - test lost: 0.662390
+2020-05-25 01:13:05,458 - INFO - train set
+2020-05-25 01:13:05,458 - INFO - data size: 20000
+2020-05-25 01:13:05,460 - INFO - [['fiwdata/FIDs/F0732/MID1/P07672_face2.jpg', 'fiwdata/FIDs/F0732/unrelated_and_nonfaces/P07678_face6.jpg', '0'], ['fiwdata/FIDs/F0068/MID2/P00704_face1.jpg', 'fiwdata/FIDs/F0068/MID2/P00703_face0.jpg', '3'], ['fiwdata/FIDs/F0601/MID28/P06300_face8.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06267_face0.jpg', '0'], ['fiwdata/FIDs/F0432/MID1/P04554_face0.jpg', 'fiwdata/FIDs/F0432/MID1/P04560_face0.jpg', '3'], ['fiwdata/FIDs/F0840/MID1/P08880_face3.jpg', 'fiwdata/FIDs/F0840/MID1/P08877_face0.jpg', '3'], ['fiwdata/FIDs/F0601/MID19/P11985_face1.jpg', 'fiwdata/FIDs/F0601/MID6/P06300_face12.jpg', '1'], ['fiwdata/FIDs/F0465/MID1/P04909_face4.jpg', 'fiwdata/FIDs/F0465/MID2/P04906_face1.jpg', '2'], ['fiwdata/FIDs/F0995/MID2/P11709_face1.jpg', 'fiwdata/FIDs/F0995/MID5/P10486_face6.jpg', '2'], ['fiwdata/FIDs/F0770/MID5/P08131_face1.jpg', 'fiwdata/FIDs/F0770/MID3/P08129_face5.jpg', '1'], ['fiwdata/FIDs/F0606/MID5/P06375_face3.jpg', 'fiwdata/FIDs/F0606/MID6/P06376_face1.jpg', '2']]
+2020-05-25 01:13:05,460 - INFO - test set
+2020-05-25 01:13:05,460 - INFO - data size: 6000
+2020-05-25 01:13:05,461 - INFO - [['fiwdata/FIDs/F0537/MID3/P05638_face0.jpg', 'fiwdata/FIDs/F0537/unrelated_and_nonfaces/P05640_face4.jpg', '0'], ['fiwdata/FIDs/F0450/MID3/P04764_face4.jpg', 'fiwdata/FIDs/F0450/MID3/P04763_face0.jpg', '3'], ['fiwdata/FIDs/F0995/MID2/P10491_face1.jpg', 'fiwdata/FIDs/F0995/MID5/P10493_face1.jpg', '2'], ['fiwdata/FIDs/F0984/MID4/P10364_face4.jpg', 'fiwdata/FIDs/F0984/MID4/P10366_face6.jpg', '3'], ['fiwdata/FIDs/F0422/MID3/P04458_face0.jpg', 'fiwdata/FIDs/F0422/MID3/P04445_face1.jpg', '3'], ['fiwdata/FIDs/F0355/MID1/P03768_face1.jpg', 'fiwdata/FIDs/F0355/MID3/P03765_face0.jpg', '2'], ['fiwdata/FIDs/F0531/MID3/P05578_face1.jpg', 'fiwdata/FIDs/F0531/MID4/P05574_face2.jpg', '2'], ['fiwdata/FIDs/F0628/MID1/P06591_face1.jpg', 'fiwdata/FIDs/F0628/MID3/P06592_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID1/P06296_face6.jpg', 'fiwdata/FIDs/F0601/MID9/P06391_face13.jpg', '1'], ['fiwdata/FIDs/F0601/MID2/P06392_face3.jpg', 'fiwdata/FIDs/F0601/MID2/P06304_face3.jpg', '3']]
+2020-05-25 01:14:48,355 - INFO - batch 0: loss: 0.757868 acc: 0.812500
+2020-05-25 01:19:10,381 - INFO - batch 100: loss: 0.510425 acc: 0.818688
+2020-05-25 01:23:33,171 - INFO - batch 200: loss: 0.510443 acc: 0.814366
+2020-05-25 01:27:56,119 - INFO - batch 300: loss: 0.491779 acc: 0.817899
+2020-05-25 01:32:19,018 - INFO - batch 400: loss: 0.492839 acc: 0.815929
+2020-05-25 01:36:41,898 - INFO - batch 500: loss: 0.482525 acc: 0.817615
+2020-05-25 01:41:04,753 - INFO - batch 600: loss: 0.483413 acc: 0.816348
+2020-05-25 01:45:27,591 - INFO - batch 700: loss: 0.482805 acc: 0.816423
+2020-05-25 01:49:50,643 - INFO - batch 800: loss: 0.480528 acc: 0.818196
+2020-05-25 01:54:13,900 - INFO - batch 900: loss: 0.486269 acc: 0.815205
+2020-05-25 01:58:37,237 - INFO - batch 1000: loss: 0.485157 acc: 0.815809
+2020-05-25 02:03:00,850 - INFO - batch 1100: loss: 0.483569 acc: 0.816190
+2020-05-25 02:07:24,442 - INFO - batch 1200: loss: 0.485160 acc: 0.815570
+2020-05-25 02:09:55,778 - INFO - epoch 0.000000: loss: 0.483523, acc: 0.815900
+2020-05-25 02:09:58,485 - INFO - batch 0: loss: 0.472501 acc: 0.812500
+2020-05-25 02:14:21,280 - INFO - batch 100: loss: 0.318236 acc: 0.884901
+2020-05-25 02:18:44,135 - INFO - batch 200: loss: 0.308205 acc: 0.882774
+2020-05-25 02:23:06,911 - INFO - batch 300: loss: 0.302812 acc: 0.881437
+2020-05-25 02:27:29,654 - INFO - batch 400: loss: 0.298422 acc: 0.884352
+2020-05-25 02:31:52,410 - INFO - batch 500: loss: 0.297740 acc: 0.887101
+2020-05-25 02:36:15,235 - INFO - batch 600: loss: 0.294208 acc: 0.889247
+2020-05-25 02:40:37,985 - INFO - batch 700: loss: 0.292149 acc: 0.890514
+2020-05-25 02:45:00,684 - INFO - batch 800: loss: 0.294100 acc: 0.890762
+2020-05-25 02:49:23,375 - INFO - batch 900: loss: 0.297794 acc: 0.888665
+2020-05-25 02:53:46,051 - INFO - batch 1000: loss: 0.301217 acc: 0.887113
+2020-05-25 02:58:08,870 - INFO - batch 1100: loss: 0.300086 acc: 0.887489
+2020-05-25 03:02:31,704 - INFO - batch 1200: loss: 0.301418 acc: 0.886553
+2020-05-25 03:04:55,166 - INFO - epoch 1.000000: loss: 0.300826, acc: 0.886200
+2020-05-25 03:04:55,168 - INFO - history: {'loss': [0.48352324962615967, 0.30082574486732483], 'accuracy': [0.8159000277519226, 0.8862000107765198], 'val_loss': [0.6207215785980225, 1.0437742471694946], 'val_accuracy': [0.8046875, 0.73046875]}
+2020-05-25 03:10:05,942 - INFO - test accuracy: 0.777500
+2020-05-25 03:10:05,942 - INFO - test lost: 0.861326
+2020-05-25 12:06:38,749 - INFO - train set
+2020-05-25 12:06:38,749 - INFO - data size: 20000
+2020-05-25 12:06:38,751 - INFO - [['fiwdata/FIDs/F0601/MID6/P11980_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12068_face0.jpg', '0'], ['fiwdata/FIDs/F0752/MID2/P07893_face3.jpg', 'fiwdata/FIDs/F0752/MID4/P07880_face2.jpg', '2'], ['fiwdata/FIDs/F0601/MID6/P11986_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11986_face3.jpg', '0'], ['fiwdata/FIDs/F0282/MID4/P03009_face6.jpg', 'fiwdata/FIDs/F0282/MID6/P03014_face1.jpg', '2'], ['fiwdata/FIDs/F0601/MID22/P12048_face1.jpg', 'fiwdata/FIDs/F0601/MID12/P06247_face4.jpg', '1'], ['fiwdata/FIDs/F0709/MID1/P07433_face0.jpg', 'fiwdata/FIDs/F0709/unrelated_and_nonfaces/P07417_face1.jpg', '0'], ['fiwdata/FIDs/F0568/MID2/P05981_face0.jpg', 'fiwdata/FIDs/F0568/MID1/P05977_face2.jpg', '1'], ['fiwdata/FIDs/F0285/MID2/P12265_face2.jpg', 'fiwdata/FIDs/F0285/MID2/P12269_face0.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P10571_face17.jpg', 'fiwdata/FIDs/F0009/MID6/P11723_face1.jpg', '2'], ['fiwdata/FIDs/F0701/MID1/P07330_face2.jpg', 'fiwdata/FIDs/F0701/MID1/P07326_face0.jpg', '3']]
+2020-05-25 12:06:38,751 - INFO - test set
+2020-05-25 12:06:38,751 - INFO - data size: 6000
+2020-05-25 12:06:38,751 - INFO - [['fiwdata/FIDs/F0601/MID22/P06392_face9.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11952_face8.jpg', '0'], ['fiwdata/FIDs/F0601/MID20/P11951_face11.jpg', 'fiwdata/FIDs/F0601/MID20/P11951_face8.jpg', '3'], ['fiwdata/FIDs/F0995/MID2/P11698_face0.jpg', 'fiwdata/FIDs/F0995/MID3/P11710_face0.jpg', '2'], ['fiwdata/FIDs/F0601/MID6/P11979_face1.jpg', 'fiwdata/FIDs/F0601/MID21/P11924_face1.jpg', '1'], ['fiwdata/FIDs/F0358/MID4/P10951_face1.jpg', 'fiwdata/FIDs/F0358/MID5/P10935_face0.jpg', '2'], ['fiwdata/FIDs/F0601/MID5/P06287_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06399_face11.jpg', '0'], ['fiwdata/FIDs/F0995/MID1/P11685_face0.jpg', 'fiwdata/FIDs/F0995/MID15/P11683_face4.jpg', '2'], ['fiwdata/FIDs/F0303/MID2/P12156_face0.jpg', 'fiwdata/FIDs/F0303/MID4/P12167_face0.jpg', '2'], ['fiwdata/FIDs/F0422/MID6/P04451_face1.jpg', 'fiwdata/FIDs/F0422/MID5/P09338_face0.jpg', '1'], ['fiwdata/FIDs/F0009/MID5/P11731_face3.jpg', 'fiwdata/FIDs/F0009/MID2/P10588_face2.jpg', '1']]
+2020-05-25 12:08:16,911 - INFO - batch 0: loss: 1.202057 acc: 0.562500
+2020-05-25 12:12:39,477 - INFO - batch 100: loss: 0.493796 acc: 0.819926
+2020-05-25 12:17:03,288 - INFO - batch 200: loss: 0.470468 acc: 0.825871
+2020-05-25 12:21:27,091 - INFO - batch 300: loss: 0.464512 acc: 0.829734
+2020-05-25 12:25:50,933 - INFO - batch 400: loss: 0.465195 acc: 0.826995
+2020-05-25 12:30:14,914 - INFO - batch 500: loss: 0.459522 acc: 0.828468
+2020-05-25 12:34:38,667 - INFO - batch 600: loss: 0.456180 acc: 0.828411
+2020-05-25 12:39:02,424 - INFO - batch 700: loss: 0.452676 acc: 0.830332
+2020-05-25 12:43:26,389 - INFO - batch 800: loss: 0.454053 acc: 0.828340
+2020-05-25 12:47:50,499 - INFO - batch 900: loss: 0.452025 acc: 0.828663
+2020-05-25 12:52:14,616 - INFO - batch 1000: loss: 0.447842 acc: 0.830857
+2020-05-25 12:56:38,539 - INFO - batch 1100: loss: 0.451694 acc: 0.829530
+2020-05-25 13:01:02,146 - INFO - batch 1200: loss: 0.449546 acc: 0.830350
+2020-05-25 13:03:33,654 - INFO - epoch 0.000000: loss: 0.449272, acc: 0.830750
+2020-05-25 13:03:36,381 - INFO - batch 0: loss: 0.142674 acc: 0.937500
+2020-05-25 13:07:59,492 - INFO - batch 100: loss: 0.262796 acc: 0.898515
+2020-05-25 13:12:22,658 - INFO - batch 200: loss: 0.266195 acc: 0.898943
+2020-05-25 13:16:45,744 - INFO - batch 300: loss: 0.268607 acc: 0.895556
+2020-05-25 13:21:08,954 - INFO - batch 400: loss: 0.269540 acc: 0.896509
+2020-05-25 13:25:32,113 - INFO - batch 500: loss: 0.261273 acc: 0.900324
+2020-05-25 13:29:55,173 - INFO - batch 600: loss: 0.264430 acc: 0.898295
+2020-05-25 13:34:18,307 - INFO - batch 700: loss: 0.265441 acc: 0.898003
+2020-05-25 13:38:41,360 - INFO - batch 800: loss: 0.267192 acc: 0.897082
+2020-05-25 13:43:04,343 - INFO - batch 900: loss: 0.270870 acc: 0.896435
+2020-05-25 13:47:27,609 - INFO - batch 1000: loss: 0.272355 acc: 0.895292
+2020-05-25 13:51:50,910 - INFO - batch 1100: loss: 0.274075 acc: 0.894471
+2020-05-25 13:56:14,331 - INFO - batch 1200: loss: 0.274774 acc: 0.894203
+2020-05-25 13:58:38,116 - INFO - epoch 1.000000: loss: 0.273585, acc: 0.894500
+2020-05-25 13:58:38,118 - INFO - history: {'loss': [0.44927191734313965, 0.2735845446586609], 'accuracy': [0.8307499885559082, 0.8945000171661377], 'val_loss': [0.595343291759491, 0.5369880795478821], 'val_accuracy': [0.8359375, 0.84375]}
+2020-05-25 14:03:49,375 - INFO - test accuracy: 0.804000
+2020-05-25 14:03:49,376 - INFO - test lost: 0.690085
+2020-05-25 15:46:58,457 - INFO - train set
+2020-05-25 15:46:58,458 - INFO - data size: 20000
+2020-05-25 15:46:58,459 - INFO - [['fiwdata/FIDs/F0995/MID6/P11679_face7.jpg', 'fiwdata/FIDs/F0995/MID12/P11646_face4.jpg', '2'], ['fiwdata/FIDs/F0803/MID3/P08501_face5.jpg', 'fiwdata/FIDs/F0803/MID1/P08501_face3.jpg', '1'], ['fiwdata/FIDs/F0207/MID2/P02208_face1.jpg', 'fiwdata/FIDs/F0207/MID3/P02218_face0.jpg', '2'], ['fiwdata/FIDs/F0296/MID1/P03146_face2.jpg', 'fiwdata/FIDs/F0296/MID1/P03145_face1.jpg', '3'], ['fiwdata/FIDs/F0995/MID8/P11702_face7.jpg', 'fiwdata/FIDs/F0995/MID9/P11649_face4.jpg', '2'], ['fiwdata/FIDs/F0327/MID1/P03467_face1.jpg', 'fiwdata/FIDs/F0327/MID1/P03466_face2.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P11733_face0.jpg', 'fiwdata/FIDs/F0009/MID2/P10577_face0.jpg', '2'], ['fiwdata/FIDs/F0548/MID1/P11351_face0.jpg', 'fiwdata/FIDs/F0548/unrelated_and_nonfaces/P11352_face69.jpg', '0'], ['fiwdata/FIDs/F0601/MID20/P06392_face14.jpg', 'fiwdata/FIDs/F0601/MID21/P11964_face0.jpg', '1'], ['fiwdata/FIDs/F0995/MID4/P10494_face0.jpg', 'fiwdata/FIDs/F0995/unrelated_and_nonfaces/P11711_face1.jpg', '0']]
+2020-05-25 15:46:58,460 - INFO - test set
+2020-05-25 15:46:58,460 - INFO - data size: 6000
+2020-05-25 15:46:58,460 - INFO - [['fiwdata/FIDs/F0642/MID1/P06750_face3.jpg', 'fiwdata/FIDs/F0642/MID7/P06734_face2.jpg', '2'], ['fiwdata/FIDs/F0105/MID1/P01080_face2.jpg', 'fiwdata/FIDs/F0105/MID4/P01078_face0.jpg', '1'], ['fiwdata/FIDs/F0542/MID3/P05691_face5.jpg', 'fiwdata/FIDs/F0542/MID7/P05695_face2.jpg', '2'], ['fiwdata/FIDs/F0875/MID1/P09239_face1.jpg', 'fiwdata/FIDs/F0875/MID1/P09240_face1.jpg', '3'], ['fiwdata/FIDs/F0522/MID1/P05492_face0.jpg', 'fiwdata/FIDs/F0522/MID3/P05495_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID5/P11910_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11991_face0.jpg', '0'], ['fiwdata/FIDs/F0729/MID2/P11055_face4.jpg', 'fiwdata/FIDs/F0729/MID3/P11066_face2.jpg', '1'], ['fiwdata/FIDs/F0600/MID3/P10740_face0.jpg', 'fiwdata/FIDs/F0600/MID4/P10750_face2.jpg', '2'], ['fiwdata/FIDs/F0371/MID1/P03933_face0.jpg', 'fiwdata/FIDs/F0371/MID1/P03928_face4.jpg', '3'], ['fiwdata/FIDs/F0601/MID2/P06392_face3.jpg', 'fiwdata/FIDs/F0601/MID5/P11986_face5.jpg', '1']]
+2020-05-25 15:48:37,711 - INFO - batch 0: loss: 0.168894 acc: 0.937500
+2020-05-25 15:53:00,361 - INFO - batch 100: loss: 0.464026 acc: 0.832921
+2020-05-25 15:57:24,470 - INFO - batch 200: loss: 0.439571 acc: 0.837376
+2020-05-25 16:01:48,632 - INFO - batch 300: loss: 0.444576 acc: 0.837417
+2020-05-25 16:06:12,718 - INFO - batch 400: loss: 0.442675 acc: 0.836035
+2020-05-25 16:10:36,897 - INFO - batch 500: loss: 0.439687 acc: 0.839945
+2020-05-25 16:15:01,001 - INFO - batch 600: loss: 0.437176 acc: 0.838706
+2020-05-25 16:19:25,015 - INFO - batch 700: loss: 0.436978 acc: 0.839693
+2020-05-25 16:23:49,099 - INFO - batch 800: loss: 0.434599 acc: 0.840356
+2020-05-25 16:28:13,065 - INFO - batch 900: loss: 0.431272 acc: 0.841010
+2020-05-25 16:32:37,285 - INFO - batch 1000: loss: 0.428879 acc: 0.842033
+2020-05-25 16:37:01,589 - INFO - batch 1100: loss: 0.426364 acc: 0.843324
+2020-05-25 16:41:25,637 - INFO - batch 1200: loss: 0.423471 acc: 0.844296
+2020-05-25 16:43:57,626 - INFO - epoch 0.000000: loss: 0.421462, acc: 0.844700
+2020-05-25 16:44:00,352 - INFO - batch 0: loss: 0.245366 acc: 0.937500
+2020-05-25 16:48:23,569 - INFO - batch 100: loss: 0.229537 acc: 0.917079
+2020-05-25 16:52:46,878 - INFO - batch 200: loss: 0.224136 acc: 0.919465
+2020-05-25 16:57:10,190 - INFO - batch 300: loss: 0.237212 acc: 0.915282
+2020-05-25 17:01:33,250 - INFO - batch 400: loss: 0.242259 acc: 0.911471
+2020-05-25 17:05:56,562 - INFO - batch 500: loss: 0.249227 acc: 0.908558
+2020-05-25 17:10:19,997 - INFO - batch 600: loss: 0.248204 acc: 0.909110
+2020-05-25 17:14:42,932 - INFO - batch 700: loss: 0.249886 acc: 0.908880
+2020-05-25 17:19:06,065 - INFO - batch 800: loss: 0.254135 acc: 0.907772
+2020-05-25 17:23:29,015 - INFO - batch 900: loss: 0.255535 acc: 0.907950
+2020-05-25 17:27:52,138 - INFO - batch 1000: loss: 0.255482 acc: 0.907592
+2020-05-25 17:32:15,213 - INFO - batch 1100: loss: 0.254031 acc: 0.908265
+2020-05-25 17:36:38,247 - INFO - batch 1200: loss: 0.254286 acc: 0.907629
+2020-05-25 17:39:02,000 - INFO - epoch 1.000000: loss: 0.253014, acc: 0.908250
+2020-05-25 17:39:02,002 - INFO - history: {'loss': [0.421461820602417, 0.25301414728164673], 'accuracy': [0.8446999788284302, 0.9082499742507935], 'val_loss': [0.5070163011550903, 0.832899272441864], 'val_accuracy': [0.81640625, 0.7890625]}
+2020-05-25 17:44:13,422 - INFO - test accuracy: 0.802167
+2020-05-25 17:44:13,422 - INFO - test lost: 1.113068
+2020-05-25 19:00:34,307 - INFO - train set
+2020-05-25 19:00:34,308 - INFO - data size: 20000
+2020-05-25 19:00:34,309 - INFO - [['fiwdata/FIDs/F0425/MID1/P11478_face0.jpg', 'fiwdata/FIDs/F0425/MID3/P11493_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID9/P06245_face4.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06393_face9.jpg', '0'], ['fiwdata/FIDs/F0600/MID2/P10747_face0.jpg', 'fiwdata/FIDs/F0600/MID4/P10745_face2.jpg', '2'], ['fiwdata/FIDs/F0601/MID6/P11921_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12043_face1.jpg', '0'], ['fiwdata/FIDs/F0176/MID2/P01896_face4.jpg', 'fiwdata/FIDs/F0176/MID2/P01890_face2.jpg', '3'], ['fiwdata/FIDs/F0425/MID1/P11471_face3.jpg', 'fiwdata/FIDs/F0425/MID10/P11489_face6.jpg', '2'], ['fiwdata/FIDs/F0674/MID1/P07040_face0.jpg', 'fiwdata/FIDs/F0674/MID3/P07036_face5.jpg', '1'], ['fiwdata/FIDs/F0601/MID5/P11968_face4.jpg', 'fiwdata/FIDs/F0601/MID6/P06311_face1.jpg', '1'], ['fiwdata/FIDs/F0601/MID2/P06274_face2.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12054_face0.jpg', '0'], ['fiwdata/FIDs/F0987/MID3/P02450_face3.jpg', 'fiwdata/FIDs/F0987/MID3/P10404_face1.jpg', '3']]
+2020-05-25 19:00:34,309 - INFO - test set
+2020-05-25 19:00:34,310 - INFO - data size: 6000
+2020-05-25 19:00:34,310 - INFO - [['fiwdata/FIDs/F0173/MID2/P01863_face6.jpg', 'fiwdata/FIDs/F0173/MID4/P01863_face4.jpg', '2'], ['fiwdata/FIDs/F0166/MID3/P01782_face3.jpg', 'fiwdata/FIDs/F0166/MID4/P01790_face0.jpg', '2'], ['fiwdata/FIDs/F0367/MID1/P03893_face1.jpg', 'fiwdata/FIDs/F0367/MID3/P03892_face1.jpg', '1'], ['fiwdata/FIDs/F0223/MID3/P02369_face0.jpg', 'fiwdata/FIDs/F0223/MID5/P02373_face1.jpg', '2'], ['fiwdata/FIDs/F0528/MID1/P10973_face28.jpg', 'fiwdata/FIDs/F0528/MID1/P10976_face1.jpg', '3'], ['fiwdata/FIDs/F0995/MID1/P11676_face2.jpg', 'fiwdata/FIDs/F0995/MID8/P11678_face3.jpg', '2'], ['fiwdata/FIDs/F0601/MID19/P11975_face1.jpg', 'fiwdata/FIDs/F0601/MID19/P11991_face3.jpg', '3'], ['fiwdata/FIDs/F0642/MID1/P06735_face1.jpg', 'fiwdata/FIDs/F0642/MID1/P06743_face1.jpg', '3'], ['fiwdata/FIDs/F0601/MID11/P06244_face0.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12054_face9.jpg', '0'], ['fiwdata/FIDs/F0986/MID7/P10392_face1.jpg', 'fiwdata/FIDs/F0986/unrelated_and_nonfaces/P10395_face1.jpg', '0']]
+2020-05-25 19:02:13,762 - INFO - batch 0: loss: 0.141968 acc: 0.937500
+2020-05-25 19:06:35,848 - INFO - batch 100: loss: 0.471253 acc: 0.833540
+2020-05-25 19:10:59,376 - INFO - batch 200: loss: 0.454350 acc: 0.835199
+2020-05-25 19:15:22,959 - INFO - batch 300: loss: 0.444679 acc: 0.835548
+2020-05-25 19:19:46,554 - INFO - batch 400: loss: 0.442138 acc: 0.837282
+2020-05-25 19:24:10,317 - INFO - batch 500: loss: 0.434993 acc: 0.839945
+2020-05-25 19:28:33,823 - INFO - batch 600: loss: 0.423276 acc: 0.845362
+2020-05-25 19:32:57,317 - INFO - batch 700: loss: 0.420765 acc: 0.846024
+2020-05-25 19:37:20,805 - INFO - batch 800: loss: 0.416941 acc: 0.846676
+2020-05-25 19:41:44,470 - INFO - batch 900: loss: 0.416890 acc: 0.847669
+2020-05-25 19:46:07,544 - INFO - batch 1000: loss: 0.413495 acc: 0.849338
+2020-05-25 19:50:30,835 - INFO - batch 1100: loss: 0.413277 acc: 0.848774
+2020-05-25 19:54:53,966 - INFO - batch 1200: loss: 0.410163 acc: 0.850073
+2020-05-25 19:57:25,386 - INFO - epoch 0.000000: loss: 0.409101, acc: 0.850050
+2020-05-25 19:57:28,079 - INFO - batch 0: loss: 0.192858 acc: 0.937500
+2020-05-25 20:01:50,761 - INFO - batch 100: loss: 0.261872 acc: 0.910272
+2020-05-25 20:06:13,350 - INFO - batch 200: loss: 0.242457 acc: 0.913557
+2020-05-25 20:10:35,655 - INFO - batch 300: loss: 0.230120 acc: 0.916944
+2020-05-25 20:14:57,796 - INFO - batch 400: loss: 0.226385 acc: 0.917394
+2020-05-25 20:19:19,931 - INFO - batch 500: loss: 0.228748 acc: 0.916791
+2020-05-25 20:23:42,059 - INFO - batch 600: loss: 0.234368 acc: 0.914621
+2020-05-25 20:28:05,216 - INFO - batch 700: loss: 0.234912 acc: 0.913784
+2020-05-25 20:32:28,223 - INFO - batch 800: loss: 0.232793 acc: 0.914170
+2020-05-25 20:36:51,391 - INFO - batch 900: loss: 0.233042 acc: 0.914401
+2020-05-25 20:41:14,577 - INFO - batch 1000: loss: 0.235068 acc: 0.912900
+2020-05-25 20:45:36,575 - INFO - batch 1100: loss: 0.236863 acc: 0.911785
+2020-05-25 20:49:58,731 - INFO - batch 1200: loss: 0.239098 acc: 0.910387
+2020-05-25 20:52:21,971 - INFO - epoch 1.000000: loss: 0.240019, acc: 0.909950
+2020-05-25 20:52:21,973 - INFO - history: {'loss': [0.4091007709503174, 0.2400185614824295], 'accuracy': [0.8500499725341797, 0.9099500179290771], 'val_loss': [1.4492437839508057, 0.5520923733711243], 'val_accuracy': [0.8359375, 0.82421875]}
+2020-05-25 20:57:33,287 - INFO - test accuracy: 0.824333
+2020-05-25 20:57:33,288 - INFO - test lost: 0.723412
+2020-05-26 00:00:20,282 - INFO - train set
+2020-05-26 00:00:20,282 - INFO - data size: 20000
+2020-05-26 00:00:20,284 - INFO - [['fiwdata/FIDs/F0422/MID2/P09336_face2.jpg', 'fiwdata/FIDs/F0422/MID2/P09338_face4.jpg', '3'], ['fiwdata/FIDs/F0303/MID2/P12155_face0.jpg', 'fiwdata/FIDs/F0303/MID4/P12171_face0.jpg', '2'], ['fiwdata/FIDs/F0111/MID1/P01160_face3.jpg', 'fiwdata/FIDs/F0111/unrelated_and_nonfaces/P01153_face2.jpg', '0'], ['fiwdata/FIDs/F0064/MID5/P00639_face5.jpg', 'fiwdata/FIDs/F0064/unrelated_and_nonfaces/P00641_face1.jpg', '0'], ['fiwdata/FIDs/F0601/MID6/P11973_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P06267_face0.jpg', '0'], ['fiwdata/FIDs/F0282/MID2/P03002_face2.jpg', 'fiwdata/FIDs/F0282/MID7/P03016_face9.jpg', '2'], ['fiwdata/FIDs/F0598/MID1/P10721_face0.jpg', 'fiwdata/FIDs/F0598/MID3/P10724_face6.jpg', '1'], ['fiwdata/FIDs/F0963/MID4/P10255_face1.jpg', 'fiwdata/FIDs/F0963/unrelated_and_nonfaces/P10261_face6.jpg', '0'], ['fiwdata/FIDs/F0601/MID19/P04408_face1.jpg', 'fiwdata/FIDs/F0601/MID7/P11969_face0.jpg', '1'], ['fiwdata/FIDs/F0137/MID3/P01448_face2.jpg', 'fiwdata/FIDs/F0137/MID4/P01444_face4.jpg', '2']]
+2020-05-26 00:00:20,284 - INFO - test set
+2020-05-26 00:00:20,284 - INFO - data size: 6000
+2020-05-26 00:00:20,285 - INFO - [['fiwdata/FIDs/F0995/MID1/P11655_face0.jpg', 'fiwdata/FIDs/F0995/MID11/P11682_face2.jpg', '2'], ['fiwdata/FIDs/F0375/MID1/P03984_face0.jpg', 'fiwdata/FIDs/F0375/MID2/P03987_face0.jpg', '2'], ['fiwdata/FIDs/F0988/MID2/P10408_face0.jpg', 'fiwdata/FIDs/F0988/MID3/P10409_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID2/P06302_face3.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P05238_face0.jpg', '0'], ['fiwdata/FIDs/F0009/MID2/P11738_face0.jpg', 'fiwdata/FIDs/F0009/MID3/P11727_face0.jpg', '2'], ['fiwdata/FIDs/F0772/MID1/P08153_face2.jpg', 'fiwdata/FIDs/F0772/unrelated_and_nonfaces/P08155_face0.jpg', '0'], ['fiwdata/FIDs/F0234/MID1/P02486_face1.jpg', 'fiwdata/FIDs/F0234/MID1/P02482_face10.jpg', '3'], ['fiwdata/FIDs/F0601/MID5/P06302_face4.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P11993_face4.jpg', '0'], ['fiwdata/FIDs/F0813/MID2/P08596_face0.jpg', 'fiwdata/FIDs/F0813/unrelated_and_nonfaces/P08596_face2.jpg', '0'], ['fiwdata/FIDs/F0995/MID1/P10489_face2.jpg', 'fiwdata/FIDs/F0995/MID10/P11687_face0.jpg', '2']]
+2020-05-26 00:02:00,151 - INFO - batch 0: loss: 0.197010 acc: 0.937500
+2020-05-26 00:06:21,787 - INFO - batch 100: loss: 0.405271 acc: 0.849629
+2020-05-26 00:10:44,787 - INFO - batch 200: loss: 0.421790 acc: 0.840796
+2020-05-26 00:15:07,798 - INFO - batch 300: loss: 0.411615 acc: 0.846553
+2020-05-26 00:19:30,741 - INFO - batch 400: loss: 0.406212 acc: 0.844296
+2020-05-26 00:23:54,056 - INFO - batch 500: loss: 0.391263 acc: 0.850175
+2020-05-26 00:28:17,283 - INFO - batch 600: loss: 0.393533 acc: 0.850978
+2020-05-26 00:32:40,414 - INFO - batch 700: loss: 0.389130 acc: 0.853067
+2020-05-26 00:37:03,245 - INFO - batch 800: loss: 0.382165 acc: 0.855727
+2020-05-26 00:41:26,282 - INFO - batch 900: loss: 0.382386 acc: 0.856132
+2020-05-26 00:45:49,132 - INFO - batch 1000: loss: 0.382660 acc: 0.856581
+2020-05-26 00:50:11,873 - INFO - batch 1100: loss: 0.380550 acc: 0.856494
+2020-05-26 00:54:34,661 - INFO - batch 1200: loss: 0.380491 acc: 0.856734
+2020-05-26 00:57:05,790 - INFO - epoch 0.000000: loss: 0.379063, acc: 0.857200
+2020-05-26 00:57:08,504 - INFO - batch 0: loss: 0.058912 acc: 1.000000
+2020-05-26 01:01:30,499 - INFO - batch 100: loss: 0.255213 acc: 0.906559
+2020-05-26 01:05:52,728 - INFO - batch 200: loss: 0.218148 acc: 0.923507
+2020-05-26 01:10:15,011 - INFO - batch 300: loss: 0.211054 acc: 0.923380
+2020-05-26 01:14:37,438 - INFO - batch 400: loss: 0.207371 acc: 0.923784
+2020-05-26 01:18:59,962 - INFO - batch 500: loss: 0.214948 acc: 0.921781
+2020-05-26 01:23:22,374 - INFO - batch 600: loss: 0.214019 acc: 0.922213
+2020-05-26 01:27:44,787 - INFO - batch 700: loss: 0.216553 acc: 0.921273
+2020-05-26 01:32:07,193 - INFO - batch 800: loss: 0.218238 acc: 0.921426
+2020-05-26 01:36:29,650 - INFO - batch 900: loss: 0.220340 acc: 0.920436
+2020-05-26 01:40:52,168 - INFO - batch 1000: loss: 0.219271 acc: 0.920392
+2020-05-26 01:45:14,598 - INFO - batch 1100: loss: 0.219610 acc: 0.920640
+2020-05-26 01:49:36,971 - INFO - batch 1200: loss: 0.219319 acc: 0.920847
+2020-05-26 01:52:00,408 - INFO - epoch 1.000000: loss: 0.219109, acc: 0.920750
+2020-05-26 01:52:00,410 - INFO - history: {'loss': [0.3790629208087921, 0.2191091626882553], 'accuracy': [0.857200026512146, 0.9207500219345093], 'val_loss': [0.6262739300727844, 2.619633197784424], 'val_accuracy': [0.8046875, 0.796875]}
+2020-05-26 01:57:11,799 - INFO - test accuracy: 0.796333
+2020-05-26 01:57:11,800 - INFO - test lost: 4.852093
+2020-05-26 11:47:42,775 - INFO - train set
+2020-05-26 11:47:42,775 - INFO - data size: 20000
+2020-05-26 11:47:42,777 - INFO - [['fiwdata/FIDs/F0528/MID1/P10980_face0.jpg', 'fiwdata/FIDs/F0528/MID4/P10970_face0.jpg', '1'], ['fiwdata/FIDs/F0884/MID3/P09334_face1.jpg', 'fiwdata/FIDs/F0884/MID3/P09327_face2.jpg', '3'], ['fiwdata/FIDs/F0225/MID1/P02398_face0.jpg', 'fiwdata/FIDs/F0225/MID2/P02392_face2.jpg', '2'], ['fiwdata/FIDs/F0422/MID7/P09344_face0.jpg', 'fiwdata/FIDs/F0422/MID7/P04437_face5.jpg', '3'], ['fiwdata/FIDs/F0987/MID15/P10402_face7.jpg', 'fiwdata/FIDs/F0987/unrelated_and_nonfaces/P10404_face4.jpg', '0'], ['fiwdata/FIDs/F0712/MID1/P07459_face0.jpg', 'fiwdata/FIDs/F0712/MID2/P07461_face0.jpg', '1'], ['fiwdata/FIDs/F0355/MID2/P03759_face2.jpg', 'fiwdata/FIDs/F0355/MID1/P03764_face4.jpg', '1'], ['fiwdata/FIDs/F0622/MID2/P06528_face1.jpg', 'fiwdata/FIDs/F0622/MID6/P06533_face0.jpg', '1'], ['fiwdata/FIDs/F0601/MID22/P06300_face19.jpg', 'fiwdata/FIDs/F0601/MID11/P12048_face3.jpg', '1'], ['fiwdata/FIDs/F0601/MID5/P06331_face1.jpg', 'fiwdata/FIDs/F0601/unrelated_and_nonfaces/P12035_face6.jpg', '0']]
+2020-05-26 11:47:42,777 - INFO - test set
+2020-05-26 11:47:42,777 - INFO - data size: 6000
+2020-05-26 11:47:42,777 - INFO - [['fiwdata/FIDs/F0699/MID1/P07285_face0.jpg', 'fiwdata/FIDs/F0699/MID1/P07293_face0.jpg', '3'], ['fiwdata/FIDs/F0873/MID3/P09220_face5.jpg', 'fiwdata/FIDs/F0873/MID4/P09217_face1.jpg', '2'], ['fiwdata/FIDs/F0255/MID1/P02702_face2.jpg', 'fiwdata/FIDs/F0255/unrelated_and_nonfaces/P02702_face5.jpg', '0'], ['fiwdata/FIDs/F0729/MID2/P11068_face2.jpg', 'fiwdata/FIDs/F0729/MID5/P11064_face0.jpg', '1'], ['fiwdata/FIDs/F0995/MID6/P11687_face4.jpg', 'fiwdata/FIDs/F0995/MID7/P11687_face11.jpg', '2'], ['fiwdata/FIDs/F0502/MID1/P05300_face1.jpg', 'fiwdata/FIDs/F0502/MID1/P05305_face0.jpg', '3'], ['fiwdata/FIDs/F0009/MID1/P11732_face0.jpg', 'fiwdata/FIDs/F0009/MID4/P00089_face5.jpg', '2'], ['fiwdata/FIDs/F0686/MID3/P10057_face1.jpg', 'fiwdata/FIDs/F0686/MID3/P10054_face4.jpg', '3'], ['fiwdata/FIDs/F0995/MID11/P11712_face0.jpg', 'fiwdata/FIDs/F0995/MID15/P11671_face6.jpg', '2'], ['fiwdata/FIDs/F0422/MID3/P04439_face2.jpg', 'fiwdata/FIDs/F0422/unrelated_and_nonfaces/P09343_face12.jpg', '0']]
+2020-05-26 11:49:22,367 - INFO - batch 0: loss: 0.590142 acc: 0.812500
+2020-05-26 11:53:44,483 - INFO - batch 100: loss: 0.366206 acc: 0.879951
+2020-05-26 11:58:08,000 - INFO - batch 200: loss: 0.367398 acc: 0.870647
+2020-05-26 12:02:30,809 - INFO - batch 300: loss: 0.371870 acc: 0.868148
+2020-05-26 12:06:54,181 - INFO - batch 400: loss: 0.377479 acc: 0.865960
+2020-05-26 12:11:17,790 - INFO - batch 500: loss: 0.367098 acc: 0.870758
+2020-05-26 12:15:40,742 - INFO - batch 600: loss: 0.366701 acc: 0.870008
+2020-05-26 12:20:04,135 - INFO - batch 700: loss: 0.364503 acc: 0.869205
+2020-05-26 12:24:27,130 - INFO - batch 800: loss: 0.368910 acc: 0.867899
+2020-05-26 12:28:50,724 - INFO - batch 900: loss: 0.364089 acc: 0.869451
+2020-05-26 12:33:14,393 - INFO - batch 1000: loss: 0.361910 acc: 0.870629
+2020-05-26 12:37:38,018 - INFO - batch 1100: loss: 0.360154 acc: 0.871878
+2020-05-26 12:42:01,641 - INFO - batch 1200: loss: 0.360406 acc: 0.871461
+2020-05-26 12:44:33,326 - INFO - epoch 0.000000: loss: 0.357845, acc: 0.872100
+2020-05-26 12:44:36,039 - INFO - batch 0: loss: 0.205442 acc: 0.937500
+2020-05-26 12:48:58,674 - INFO - batch 100: loss: 0.185283 acc: 0.932549
+2020-05-26 12:53:21,163 - INFO - batch 200: loss: 0.194969 acc: 0.925995
+2020-05-26 12:57:43,535 - INFO - batch 300: loss: 0.195069 acc: 0.926495
+2020-05-26 13:02:06,163 - INFO - batch 400: loss: 0.193374 acc: 0.926902
+2020-05-26 13:06:29,151 - INFO - batch 500: loss: 0.194365 acc: 0.926397
+2020-05-26 13:10:51,851 - INFO - batch 600: loss: 0.195321 acc: 0.926997
+2020-05-26 13:15:14,317 - INFO - batch 700: loss: 0.195634 acc: 0.926355
+2020-05-26 13:19:36,833 - INFO - batch 800: loss: 0.198661 acc: 0.925016
+2020-05-26 13:23:59,214 - INFO - batch 900: loss: 0.199774 acc: 0.924528
+2020-05-26 13:28:22,382 - INFO - batch 1000: loss: 0.203374 acc: 0.923389
+2020-05-26 13:32:45,505 - INFO - batch 1100: loss: 0.204693 acc: 0.923081
+2020-05-26 13:37:08,169 - INFO - batch 1200: loss: 0.206395 acc: 0.922252
+2020-05-26 13:39:31,382 - INFO - epoch 1.000000: loss: 0.205774, acc: 0.922250
+2020-05-26 13:39:31,384 - INFO - history: {'loss': [0.357844740152359, 0.20577405393123627], 'accuracy': [0.8720999956130981, 0.922249972820282], 'val_loss': [1.7873419523239136, 5.577467918395996], 'val_accuracy': [0.8515625, 0.81640625]}
+2020-05-26 13:44:42,029 - INFO - test accuracy: 0.810667
+2020-05-26 13:44:42,029 - INFO - test lost: 4.331144
