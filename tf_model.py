@@ -156,5 +156,3 @@ def train():
     test_loss, test_acc = kinnet.evaluate(test_set, verbose=2, callbacks=[LossTracker()])
     logging.info("test accuracy: %f", test_acc)
     logging.info("test lost: %f", test_loss)
-
-train()
