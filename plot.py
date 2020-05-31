@@ -76,4 +76,4 @@ def plot_accuracy():
     axs[1].legend()  # Add a legend.
     plt.show()
 
-plot_accuracy()
+#plot_accuracy()

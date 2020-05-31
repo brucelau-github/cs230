@@ -6,9 +6,12 @@ import tensorflow as tf
 from tensorflow.keras.layers import Dense, Input, Concatenate
 from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.applications import InceptionResNetV2
+from tensorflow.keras.backend import argmax
 
 from load_dataset import load_image_pairs
 from tf_model import process_data, KinNet, read_image
+from plot import plot_images
+
 
 def kin_net(input_shape, weights=None):
     """Kin net model"""
@@ -63,7 +66,9 @@ def predict():
     model = load_model("kinnet_model.hd5")
     x = read_images('fiwdata/FIDs/F0729/MID2/P11068_face2.jpg',
                     'fiwdata/FIDs/F0729/MID5/P11064_face0.jpg')
-    print(model(x))
+    predicts = model(x)
+    for label in predicts:
+        print(argmax(label))
 
 def read_images(pic1, pic2):
     """ read image """
@@ -72,4 +77,5 @@ def read_images(pic1, pic2):
     img2 = read_image(pic2)
     img2 = tf.reshape(img2, [1, 299, 299, 3])
     return [[img1, img2]]
+
 predict()
