@@ -2,6 +2,8 @@
 load model and get all false negative priduction
 """
 
+import logging
+
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, Input, Concatenate
 from tensorflow.keras.models import Model, load_model
@@ -9,7 +11,7 @@ from tensorflow.keras.applications import InceptionResNetV2
 from tensorflow.keras.backend import argmax
 
 from load_dataset import load_image_pairs
-from tf_model import process_data, KinNet, read_image
+from tf_model import process_data, KinNet, read_image, initialize_logger
 from plot import plot_images
 
 
@@ -63,12 +65,15 @@ def construct_model():
 
 def predict():
     """ saved model """
+
+    initialize_logger("predict")
     model = load_model("kinnet_model.hd5")
-    x = read_images('fiwdata/FIDs/F0729/MID2/P11068_face2.jpg',
-                    'fiwdata/FIDs/F0729/MID5/P11064_face0.jpg')
-    predicts = model(x)
-    for label in predicts:
-        print(argmax(label))
+    _, test_pairs = load_image_pairs()
+    for row in test_pairs[]:
+        pic1, pic2, label = row
+        x = read_images(pic1, pic2)
+        predicts = model(x)
+        logging.info("%s:%s:%d:%s", pic1, pic2, argmax(predicts[0]), label)
 
 def read_images(pic1, pic2):
     """ read image """
