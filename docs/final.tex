@@ -30,37 +30,33 @@
 \maketitle
 
 \begin{abstract}
-Face recognition made a significant progress over last decade. At the same
-time, face pictures based kinnship recoginition became one of the popular
-research topics in academia. As more open family face dataset publicly
-accessible and new well-engineered architecture discovered, state-of-art
-results are accomplished from time to time . In this paper, we trained a
-deep neural network architecture based on a fine-tuned inception resnet v2
-to identify parent-child, siblings by comparing two face pictures. We
-achieved 82\% accuracy on FIW test set.
+Computer vision based face recognition experienced a significant progress over
+last decade and most of face idenitification tasks focus on comparing two
+face images to verify if they are the same person. However, Kinship
+recoginition by face pictures is not quite popular in academia. As more
+open family face dataset publicly accessible and new well-engineered deep
+neural network architecture invented, state-of-art results on kinship
+idenitificaiton becomes possible. In this paper, we trained a deep neural
+network architecture based on a fine-tuned Inception ResNet v2 to identify
+parent-child, siblings relationships by comparing two face pictures and
+achieved 82\% accuracy on FIW test set, surpassing previous study about 7\%.
 \end{abstract}
 
 \section{Introduction}
 
-Half of genetic information is shared between parents and children while 50\%
-of DNA are shared among siblings in a family. People biologically related often
-show some sort of delicate similiarities among each other. This declicacy could
-be easily caught by human eyes, by observing faces of their family photos. As
-computer vision performance improving during the past decade, it becomes
-possible to use meachine learning to capture the different. Computer vision
-based kinship recognition could lead variety of usefull applications in real
-life such as missing-children parents matching, family album organization,
-socal networking apps, lost sibling/relatives searching, crime investigation.
-In this paper, we propose a fine-tuned KinNet model to identify the
-relationship between two faces -- parent-children, sibling-sibling,
-none-kinship, and same person. We are able to achieve over 80 percent accuracy.
-
-Solely relying on face pairs for kinship verification might be hard to achieve
-higher accuracy since people without any family relation would look simliar to
-each other. There are other metrics that we could consider to determine if the
-kinship exists. Such information includes hands shape, nail types, foot toes,
-ears, hairs. Due to time limitation and team size, we aren't able to collect
-this data. Otherwise the prediction would improve a lot.
+Half of genetic information is shared between parents and children, and almost
+the same amount of DNA are also shared among siblings in a family. People
+biologically related often show some sort of delicate similiarities among each
+other. This declicacy could be easily caught by human eyes, by observing faces
+of their family photos. As computer vision performance improving during the
+past decade, it becomes possible to use meachine learning to capture the
+different. Computer vision based kinship recognition could lead variety of
+usefull applications in real life such as missing-children parents matching,
+family album organization, socal networking apps, lost sibling/relatives
+searching, crime investigation.  In this paper, we propose a fine-tuned KinNet
+model to identify the relationship between two faces -- parent-children,
+sibling-sibling, none-kinship, and same person. We are able to achieve over 80
+percent accuracy.
 
 \section{Related Works}
 
@@ -84,12 +80,13 @@ top records on this task, such as faceNet[2] designed by Schroff etc. achieved
 99.63\% accuracy.
 
 Similar to face verification problem, kinship recognition is another task that
-attracts many researchers to put effect on.  Past kin recognition work mainly
-focus on kinship verification, to decide whether two faces have kinship, family
-classification, classifing a face to a family, and family member regcontion,
-determining 2 faces siblings or parents. Over the past decades, many methods
-has been proposed on this research, including hand-crafted feature, face
-ecnodings, and metric learning[3].
+attracts many researchers to put effect on.  [3] did some search on VGG-Face
+net to classify family member,  decide whether a face belongs to a families,
+and family kinship regcontion,determining whether two faces are
+mother-daughter, monther-son, father-daughter, father-son, silbling relations.
+They achieved about 75\% accuracy, surpassing human error rate.  While other
+researchers focused on non-deep learning appraches such as hand-crafted
+feature, face ecnodings, and metric learning, it is out of this paper's scope.
 
 \section{Dataset}
 
@@ -101,17 +98,18 @@ ecnodings, and metric learning[3].
 Families In The Wild (FIW) Database[1] is one of the largest and most
 comprehensive database available for kinship recognition, published by Robinson
 etc. in 2016. We use version 0.1.2 at writing time, which includes 13,188 faces
-from 1018 families.  Event though it has 11 kinship types, father-daughter
+from 1018 families. Event though it has 11 kinship types, father-daughter
 (F-D), father-son (F-S), mother-daughter (M-D), mother-son (M-S),
 brother-brother (B-B), sister-sister (S-S), grandfather-granddaughter (GF-GD),
 grandfather-grandson (GF-GS), grandmother-granddaughter (GM-GD),
-grandmother-grandson (GM-GS), to our study, siblings and parent-child types are
-what we are going to use. By adding up 64,669 F-D, 46,143 F-S, 68,935 M-D,
-48,940 M-S types, we get 22,687 parent-child photos while sibling types
-contains 55,937 photos. All face images are the same size with 108*124*3.  The
-same face data is generated by selecting pictures with the same FaceID and
-non-related picture pairs are produced by combining one picture in unrealted
-folder under the family folder and one of the faces in the family.
+grandmother-grandson (GM-GS). Siblings and parent-child types are what most
+relavent to our research. By adding up 64,669 F-D, 46,143 F-S, 68,935 M-D, 48,
+and 940 M-S types, we get 22,687 parent-child photos and for sibling types it
+contains 55,937 pair of photos. All face images are cropped from public family
+photos with idential size 108*124*3 and manually labeled. For the same person
+faces, we generated them by selecting pictures with the same FaceID. Similarly
+non-related picture pairs are created by combining one image in unrealted
+folder under the family ID folder and one of the faces in the family.
 
 \begin{table}[h]
 	\centering
@@ -133,13 +131,15 @@ folder under the family folder and one of the faces in the family.
 	\label{table:1}
 \end{table}
 
-Table 1 shows, we have nearly 1 million picuture pairs. Due to permutation all
-family faces with unrelated images, we have collected over 500,000 unrealted
-image pairs, nearly 52\% of all data. Parent-child and the same face pairs
-contain almost the same amount of data, about 230,000 respectly, nearly 21\%.
-Comparatively, only 5\% of data are sibling face pairs which may affect our
-model on predicting sibling kinship. In practice, we forsake some data in order
-to make our dataset eveno on each catergory.
+Table 1 shows all the data distribution that we have. We managed to assemble
+nearly 1 million image pairs from FIW dataset by scanning folders, permutation
+image pairs, and summing up existing face pairs. The amount of family faces and
+unrelated images pairs is over 500,000 nearly 52\% of all data. Parent-child
+and the same face pairs contain almost the equal number of images, about
+230,000 respectly, nearly 21\%.  On the other hand, only 5\% of data are
+sibling face pairs, which may affect our model on predicting sibling kinship.
+In practice, we forsake some data in order to make our dataset eveno on each
+catergory.
 
 \section{Methods and Models}
 
@@ -239,6 +239,24 @@ learning rate.
 	\includegraphics[width=1\textwidth]{img/loss_accuracy}
 	\centering
 \end{figure}
+
+\section{Conclusion/Future Work }
+Summarize your report and reiterate key points. Which algorithms were the highestperforming?
+Why do you think that some algorithms worked better than others? For
+future work, if you had more time, more team members, or more computational resources,
+what would you explore?
+
+We trained two models on this tasks, tuned learning rate serveral times and obtained 82\% accuracy. The InceptionResNet performed very well on this task. Further attemption on model modification could be 
+
+Even though approxmate half of gene are shared among family members, solely
+relying on face pairs for kinship verification might be hard to achieve higher
+accuracy. People without any family relation could look simliar to each other,
+even human might misjudge their relationship. Gene simliarity shared among
+sibling, or generations could exhibit in term of height, skin color, nail
+shape, toes length, ear contours, hand size etc. These information couldn't
+present in face images. Adding these additional information in to our model, it
+could boost our model significantly. Due to time limitation and team size, we
+aren't able to collect this data.
 
 In the next training session, I would further reduce learing rate to 0.0001 feeding more data into the model. It hopefully reaches 75\%, human performance accuracy.
 

@@ -1,3 +1,6 @@
+final: clean final.tex
+	pdflatex final.tex
+
 ms2: clean milestone2.tex
 	pdflatex milestone2.tex
 
