@@ -246,19 +246,23 @@ Why do you think that some algorithms worked better than others? For
 future work, if you had more time, more team members, or more computational resources,
 what would you explore?
 
-We trained two models on this tasks, tuned learning rate serveral times and obtained 82\% accuracy. The InceptionResNet performed very well on this task. Further attemption on model modification could be 
+By iterative adjusting hyperparmeters of Model II, we attained 82\% test
+accuracy on FIW dataset, though the first model didn't get ideal result. It is
+proved that the InceptionResNet performed well not only on basic object
+recognition task but also on face recognition tasks. Further modification on
+our model could be also worthy to try in future experiment, such as computing
+consin similarity of two face images encoding, using k-neigbhour algorithm to
+cluster the encoding, or changing some layers of InceptionResNet.
 
-Even though approxmate half of gene are shared among family members, solely
+Even though approximate half of genes are shared among family members, solely
 relying on face pairs for kinship verification might be hard to achieve higher
-accuracy. People without any family relation could look simliar to each other,
-even human might misjudge their relationship. Gene simliarity shared among
-sibling, or generations could exhibit in term of height, skin color, nail
-shape, toes length, ear contours, hand size etc. These information couldn't
-present in face images. Adding these additional information in to our model, it
-could boost our model significantly. Due to time limitation and team size, we
-aren't able to collect this data.
-
-In the next training session, I would further reduce learing rate to 0.0001 feeding more data into the model. It hopefully reaches 75\%, human performance accuracy.
+accuracy. If people without any family relation look simliar to each other,
+even human might misjudge their relationship. Beside face likeness, gene
+simliarity shared among siblings, generations could also exhibit in term of
+height, skin color, nail shape, toes length, ear contours, hand size etc. These
+information couldn't present in face images. Adding these additional
+information in to our model, it could boost our model significantly. Due to
+time limitation and team size, we aren't able to collect this data.
 
 github repository: https://github.com/brucelau-github/cs230
 
