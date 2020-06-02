@@ -12,7 +12,6 @@ from tensorflow.keras.backend import argmax
 
 from load_dataset import load_image_pairs
 from tf_model import process_data, KinNet, read_image, initialize_logger
-from plot import plot_images
 
 
 def kin_net(input_shape, weights=None):
@@ -69,7 +68,7 @@ def predict():
     initialize_logger("predict")
     model = load_model("kinnet_model.hd5")
     _, test_pairs = load_image_pairs()
-    for row in test_pairs[]:
+    for row in test_pairs:
         pic1, pic2, label = row
         x = read_images(pic1, pic2)
         predicts = model(x)
